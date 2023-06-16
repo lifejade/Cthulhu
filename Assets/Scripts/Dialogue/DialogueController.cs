@@ -9,15 +9,11 @@ namespace Dialogue
     {
         public static DialogueController instance;
 
-        public Dictionary<string, GameObject> gameObjects = new Dictionary<string, GameObject>();
-
         void Awake()
         {
             if (instance == null)
             {
                 instance = this;
-                gameObjects.Add("Canvas", GameObject.Find("Canvas"));
-                gameObjects.Add("BgrWrapper", GameObject.Find("BackgroundWrapper"));
             }
             else if (instance != this)
             {
@@ -27,8 +23,8 @@ namespace Dialogue
         // Start is called before the first frame update
         void Start()
         {
-            BGMManager.instance.ChangeBgm("pressure");
-            // SceneChanger.instance.loadScene("BloodFilled");
+            AudioManager.instance.ChangeBgm("Dialogue/OminousBGM");
+            SceneChanger.instance.LoadScene("BloodFilled");
         }
 
         // Update is called once per frame

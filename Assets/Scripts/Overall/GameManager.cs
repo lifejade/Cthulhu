@@ -9,28 +9,21 @@ using UnityEditor;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    
+    private Dictionary<string, IEnumerator> coroutineDict = new Dictionary<string, IEnumerator>();
+    public static Dictionary<string, UnityEngine.Object> loadedResources;
 
     public float targetScreenWidthRatio = 16f;
     public float targetScreenHeightRatio = 9f;
     [HideInInspector]
     public float targetScreenRatio, screenRatio, cameraWidth, cameraHeight;
-    [HideInInspector]   
+    [HideInInspector]
     public bool matchToWidth;
     [HideInInspector]
     public Vector2 screenBottomLeftInWorld, screenTopRightInWorld;
 
-    private bool submitDowned = false;
-    public bool SubmitDowned
-    {
-        get 
-        {
-            if (submitDowned)
-            {
-                submitDowned = false;
-                return true;
-            }
-            return false;
-        } 
+    public Dictionary<string, IEnumerator> CoroutineDict{
+        get{return coroutineDict;}
     }
 
     private void Awake()
@@ -48,6 +41,8 @@ public class GameManager : MonoBehaviour
             screenTopRightInWorld = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
             cameraWidth = (screenTopRightInWorld.x - screenBottomLeftInWorld.x) * 100;
             cameraHeight = (screenTopRightInWorld.y - screenBottomLeftInWorld.y) * 100;
+
+            coroutineDict = new Dictionary<string, IEnumerator>();
         }
         else if (instance != this)
         {
@@ -57,26 +52,29 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        InputLogic();
+
     }
 
-    private void InputLogic()
-    {
-        if (Input.GetButtonDown("Submit"))
-        {
-            submitDowned = true;
-        }
-    }
 
-    
+
     public static UnityEngine.Object LoadResource(string filename)
     {
-        UnityEngine.Object loadedObject = Resources.Load<UnityEngine.Object>(filename);
-        if (loadedObject == null)
+        //Load resources indicated by filename. Filename must not have an extension.
+        UnityEngine.Object loadedResource;
+        bool isExist = GameManager.loadedResources.TryGetValue(filename, out loadedResource);
+
+        if (!isExist)
         {
-            throw new Exception(filename + " not found");
+            loadedResource = Resources.Load<UnityEngine.Object>(filename);
+            GameManager.loadedResources.Add(filename, loadedResource);
+            if (loadedResource == null)
+            {
+                throw new Exception(filename + " not found");
+            }
         }
-        return loadedObject;
+
+
+        return loadedResource;
     }
     public static GameObject LoadPrefab(string filename)
     {
@@ -157,5 +155,10 @@ public class GameManager : MonoBehaviour
         { // use relative error
             return diff / (absA + absB) < Mathf.Epsilon;
         }
+    }
+
+    public void test()
+    {
+        Debug.Log("abc");
     }
 }

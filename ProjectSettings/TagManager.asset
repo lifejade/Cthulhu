@@ -50,6 +50,9 @@ TagManager:
   - name: OldBackground
     uniqueID: 3891105469
     locked: 0
+  - name: Character
+    uniqueID: 4253600275
+    locked: 0
   - name: Dialogue
     uniqueID: 1742335321
     locked: 0

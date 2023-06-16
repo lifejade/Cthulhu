@@ -23,7 +23,7 @@ namespace Menu
 
         private void Start()
         {
-            SceneChanger.instance.loadScene("BloodFilled");
+            SceneChanger.instance.LoadScene("BloodFilled");
         }
 
         // Update is called once per frame

@@ -7,6 +7,6 @@ public class NewGame : MonoBehaviour
 {
     public void OnClickButton()
     {
-        SceneChanger.instance.changeScene("Dialogue", "BloodFilled");
+        SceneChanger.instance.ChangeScene("Dialogue", "BloodFilled");
     }
 }

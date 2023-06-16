@@ -18,8 +18,12 @@ public class SceneChanger : MonoBehaviour
             {
                 canvas = GameObject.Find("Canvas");
 
-                //씬이 바뀔때마다 캔버스 객체를 새로 참조함
-                SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) => canvas = GameObject.Find("Canvas");
+                //Re reference the object when the scene has changed.
+                SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode)=>
+                {
+                    canvas = GameObject.Find("Canvas");
+                    GameManager.loadedResources = new Dictionary<string, UnityEngine.Object>();
+                };
             }
         }
         else if (instance != this)
@@ -33,9 +37,10 @@ public class SceneChanger : MonoBehaviour
     }
 
 
-    public void changeScene(string sceneName, string effectName = "FadeOutScene")
+    public void ChangeScene(string sceneName, string effectName)
     {
-        if (effectName == "FadeOutScene")
+
+        if (effectName == "FadeOutScene" || effectName == "")
         {
             StartCoroutine(fadeOutScene(sceneName));
         }
@@ -47,11 +52,14 @@ public class SceneChanger : MonoBehaviour
         {
             StartCoroutine(fadeOutScene(sceneName));
         }
-
-
     }
 
-    public void loadScene(string effectName = "FadeInScene")
+    public void ChangeScene(string sceneName)
+    {
+            StartCoroutine(fadeOutScene(sceneName));
+    }
+
+    public void LoadScene(string effectName = "FadeInScene")
     {
         if (effectName == "FadeInScene")
         {
@@ -69,7 +77,7 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator fadeOutScene(string sceneName)
     {
-        AudioSource audioSource = BGMManager.instance.bgmAudioSource;
+        AudioSource audioSource = AudioManager.instance.bgmAudioSource;
         GameObject blinder = Instantiate(GameManager.LoadPrefab("SceneChanger/FadeOutSceneBlinder"), canvas.transform);
         Animator animator = blinder.GetComponent<Animator>();
         animator.SetTrigger("FadeOut");
@@ -92,7 +100,7 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator fadeInScene()
     {
-        AudioSource audioSource = BGMManager.instance.bgmAudioSource;
+        AudioSource audioSource = AudioManager.instance.bgmAudioSource;
         GameObject blinder = Instantiate(GameManager.LoadPrefab("SceneChanger/FadeInSceneBlinder"), canvas.transform);
         Animator animator = blinder.GetComponent<Animator>();
         animator.SetTrigger("FadeIn");
@@ -115,7 +123,7 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator fadeOutBloodFilled(string sceneName)
     {
-        AudioSource audioSource = BGMManager.instance.bgmAudioSource;
+        AudioSource audioSource = AudioManager.instance.bgmAudioSource;
         GameObject blinder = Instantiate(GameManager.LoadPrefab("SceneChanger/BloodFilledFilter"), canvas.transform);
         Animator animator = blinder.GetComponent<Animator>();
         animator.SetTrigger("FadeOut");
@@ -138,7 +146,7 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator fadeInBloodFilled()
     {
-        AudioSource audioSource = BGMManager.instance.bgmAudioSource;
+        AudioSource audioSource = AudioManager.instance.bgmAudioSource;
         GameObject blinder = Instantiate(GameManager.LoadPrefab("SceneChanger/BloodFilledFilter"), canvas.transform);
         Animator animator = blinder.GetComponent<Animator>();
         animator.SetTrigger("FadeIn");

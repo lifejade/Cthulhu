@@ -1,112 +1,291 @@
 {
   "data": [
     {
-      "speaker": "라디오 진행자",
-      "sentence": "내일은 간만에 가족들과 나들이 가시는 것도 좋을 것 같네요. \n이상 날씨였습니다."
-    },
-    {
-      "speaker": "박준성",
-      "sentence": "…맑기는 무슨…"
-    },
-    {
+      "id": 0,
+      "action": "CenterTextBox | ForceToNextDialogue",
+      "param": "",
       "speaker": "",
-      "sentence": "나는 그렇게 투덜거렸다. \n라디오에서 하는 이야기와는 달리 도로는 안개로 자욱했다."
+      "sentence": "그것은 영원히 누워 있을 죽음이 아니며, 기이한 영겁 속에서 죽음은 죽음마저 소멸시킨다."
     },
     {
+      "id": 1,
+      "action": "EnableDialogueWrapper | GeneralDialogue | EnableDialogueCircle",
+      "param": "",
       "speaker": "",
-      "sentence": "라디오에서 하는 이야기와는 달리 도로는 안개로 자욱했다."
+      "sentence": "꿈을 꾸었다. 끈적끈적한 녹색의 돌로 이루어진 도시의 꿈을"
     },
     {
+      "id": 2,
+      "action": "DisableDialogueCircle | EnableGlitch14 | ChangeBackGround | GeneralDialogue",
+      "param": "BackgroundImage : string : Dialogue/bizarrecity",
       "speaker": "",
-      "sentence": "방금 전까진 없던 갑작스러운 안개…, 도심에서 멀리떨어진 산골이지만 뭐 이리 갑작스러운지"
+      "sentence": "도시는 인간의 도시와는 전혀 다른 구조를 갖고 있었다. 기하학적인 구조가 전부 어긋나있고 만물의 법칙과 원근법이 뒤틀려있는."
     },
     {
+      "id": 3,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "도심에서 멀리떨어진 산골이지만 뭐 이리 갑작스러운지"
+      "sentence": "바라만 봐도 꾸물거리는 공포가 몸을 타고 기어오르는 듯한 기괴한 도시였다."
     },
     {
-      "speaker": "내비게이션",
-      "sentence": "잠시후 왼쪽방향입니다."
-    },
-    {
+      "id": 4,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "지박재라고 씌여진 표지판이 안개를 뚫고 보인다."
+      "sentence": "도시의 중앙에는 거대한 첨탑이 있었다."
     },
     {
-      "speaker": "박준성",
-      "sentence": "제대로 왔군"
-    },
-    {
+      "id": 5,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "조금 흥분한 나는 엑셀을 살짝 더 세게 눌렀다.\n차는 안개를 스치며 지박재로 미끌어져 들어갔다."
+      "sentence": "홀로 우뚝 솟아있는 첨탑을 보며 그 존재에 의문을 갖자, 머릿속으로 정보가 흘러들어왔다."
     },
     {
+      "id": 6,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "차는 흐릿한 안개로 휩싸인 길을 계속 달린다."
+      "sentence": "그것은 거대한 납골당이었다. 문어와도 같은 머리를 가지고 있는 거대하고 강력한 존재가 꿈을 꾸며 그의 하수인들과 함께 깨어날 때를 기다리고 있는 그들의 무덤이자, 휴식처. 그리고 전초기지였다."
     },
     {
-      "speaker": "라디오진행자",
-      "sentence": "최현상의 시사~쇼!"
-    },
-    {
+      "id": 7,
+      "action": "GeneralDialogue | DisableDialogueWrapper | PlayAudio | ShakeCamera | WaitForSec | SuckIntoOtherSpace",
+      "param": "WaitForSeconds : float : 1 | AudioName : string : Dialogue/Swoosh | BackgroundImage : string : Dialogue/Hastur",
       "speaker": "",
-      "sentence": "오늘 모실 게스트는 모두가 잘아는 ~~"
+      "sentence": "잠들어있는 그들에게 다가가려 하자, 무언가가 나를 강하게 끌어당겼"
     },
     {
+      "id": 8,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "뉴스트레이스의 pd 김석훈 pd님을 모시겠습니다."
+      "sentence": "정신을 차리자 이번엔 무저갱과도 같은 어둠으로 가득 찬 공간에 있었다. 바라만 봐도 두려움을 느낄법한 아득한 어둠."
     },
     {
-      "speaker": "박준성",
-      "sentence": "허억!"
-    },
-    {
+      "id": 9,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "여긴 전파가 터지지 않으니 전화일리는 없다."
+      "sentence": "그곳에 노란 옷을 입은 누군가가 오연히 서 있었다."
     },
     {
+      "id": 10,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "그렇다고 알람을 맞춰둔 기억도 없는데 핸드폰이 울리고 있다."
+      "sentence": "발이 있어야 할 곳에는 고름이 흘러내리는 촉수가 꿈틀거렸으며 가면 같은 무언가로 얼굴을 가리고 있음에도 나를 바라보고 있다는 느낌이 들었다."
     },
     {
+      "id": 11,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "나는 손을 이리저리 뻗어 핸드폰을 찾았지만 손에 잡히지 않았다."
+      "sentence": "평범한 사람이 본다면 그 기괴하고 두려운 외형에 미쳐버릴 정도로 끔찍한 모습이었지만, 어째서인지 나는 무리 없이 그것을 바라보고 있었다."
     },
     {
+      "id": 12,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "여긴 어디고, 당신은 누구십니까?"
+    },
+    {
+      "id": 13,
+      "action": "",
+      "param": "",
+      "speaker": "???",
+      "sentence": "알 필요 없다. 그나저나, 보았느냐? 한 나의 형제, ㅡㅡㅡ를."
+    },
+    {
+      "id": 14,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "나는 잠시 기다렸다."
+      "sentence": "형제라는 단어를 듣자 떠오르는 그 모습에 치밀어오르는 토기를 간신히 참아냈다."
     },
     {
+      "id": 15,
+      "action": "",
+      "param": "",
+      "speaker": "???",
+      "sentence": "너, 별을 읽는 아이야. 너는 다가올 미래에 끔찍한 최후를 맞게 될 것이다."
+    },
+    {
+      "id": 16,
+      "action": "",
+      "param": "",
+      "speaker": "???",
+      "sentence": "사느냐, 죽느냐, 그것이 문제로다. 삶이란 그저 걸어가는 그림자일 뿐."
+    },
+    {
+      "id": 17,
+      "action": "",
+      "param": "",
+      "speaker": "???",
+      "sentence": "별이 아로새겨진 눈은 제단 위에 공양될 것이고, 그 새빨간 피와 매끄러운 살갗 또한 제단을 수놓는 한 떨기 붉은 꽃, 한 필의 비단이 될 것이다."
+    },
+    {
+      "id": 18,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "눈이 어둠에 익숙해지자 담요 옆에 뒤집어진 핸드폰이 보인다."
+      "sentence": "허나, 네게 행운이 따르는구나. 내 아버지의 눈에 들어, 그 끔찍한 운명에게서 발버둥칠 기회를 얻었으니 말이다. 네게 시간을 돌릴 기회를 주마."
     },
     {
+      "id": 19,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "뒤집어서 시간을 확인했다."
+      "sentence": "물론, 온전한 권능을 네가 담기엔 과욕일지니. 시간을 돌릴 때 기억은 가지고 돌아갈 수는 없을 것이다."
     },
     {
-      "speaker": "박준성",
-      "sentence": "지금 몇 시…"
-    },
-    {
+      "id": 20,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "…?"
+      "sentence": "하지만, 걱정하지 말거라. 조력자가 있으니. 조력자는 네가 과업을 완수할 때까지 너를 도울 것이다."
     },
     {
-      "speaker": "",
-      "sentence": "존재할 수 없는 시간이, 핸드폰에 표시 되었다."
+      "id": 21,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "흐아악!!!"
     },
     {
+      "id": 22,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "기분 나쁨은 곧 끔찍한 두통으로 이어진다."
+      "sentence": "분명 꿈일 텐데. 꿈이어야만 하는데도 오른팔에서 느껴지는 고통이 격렬하게 꿈이 아니라고 울부짖는 듯 했다."
     },
     {
-      "speaker": "",
-      "sentence": "기분 나쁨은 곧 끔찍한 두통으로 이어진다아아아아아아아아"
+      "id": 23,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "흐억… 헉… 헉…"
     },
     {
+      "id": 24,
+      "action": "",
+      "param": "",
+      "speaker": "???",
+      "sentence": "흠. 이제 슬슬 깨어날 시간이다. 이성호. 부디 힘껏 발버둥 쳐다오."
+    },
+    {
+      "id": 25,
+      "action": "",
+      "param": "",
+      "speaker": "???",
+      "sentence": "명심하라. 시간의 낫에 맞서는 것은 아무도 없으니, 시간의 격류에 이울지 말거라."
+    },
+    {
+      "id": 26,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "으아아악!!"
+    },
+    {
+      "id": 27,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "하아… 무슨 꿈이…"
+    },
+    {
+      "id": 28,
+      "action": "",
+      "param": "",
       "speaker": "",
-      "sentence": "기분 나쁨은 곧 끔찍한 두통으로 이어진다아아아아아아아아아아아아아아아아아아아아아아악"
+      "sentence": "식은땀으로 젖어 끈적이는 몸을 이끌고 화장실로 들어서자, 거울에 비치는 건 오른팔에 새겨진 기이한 모양의 문신."
+    },
+    {
+      "id": 29,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "꿈이… 아니었어…?"
+    },
+    {
+      "id": 30,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "기괴한 녹색도시, 노란 로브를 휘감고 있던 괴생명체의 예언."
+    },
+    {
+      "id": 31,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "평소였다면 늘 꾸는 악몽이라고 생각해 대수롭지 않게 넘겼겠지만, 거울에 비쳐 보이는 문신은 이것이 현실임을 증명하고 있었다."
+    },
+    {
+      "id": 32,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "즉, 진짜로 그 꿈이 단순한 꿈이 아닌 예지몽이었다면. 나는 그가 예언했듯이 끔찍한 죽음을 맞이하게 될 운명인것이다."
+    },
+    {
+      "id": 33,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "내가 무언가를 변화시킬 수 있는 사람이 아니라는 건 이미 10년 전에 뼈저리게 느꼈던 사실. 사람들은 ‘모두가 자기 인생의 주인공’이라 말하지만 내게 붙어있던 주인공이란 딱지는 어머니가 돌아가셨을 때 떼어진 지 오래다."
+    },
+    {
+      "id": 34,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "무력감이 목을 조여오는 것이 느껴진다. 그럼에도 이겨내야 한다. "
+    },
+    {
+      "id": 35,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "어머니를 죽게 만든 그놈을 찾기 위해서. 고통스럽게 돌아가신 어머니가 편히 눈감으실 수 있도록."
+    },
+    {
+      "id": 36,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "우웅- 우웅-"
+    },
+    {
+      "id": 37,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "여보세요?"
+    },
+    {
+      "id": 38,
+      "action": "",
+      "param": "",
+      "speaker": "???",
+      "sentence": "오고 있어? 날이 추우니까 따듯하게 입고와."
+    },
+    {
+      "id": 39,
+      "action": "",
+      "param": "",
+      "speaker": "이성호",
+      "sentence": "네. 카페에서 뵈어요."
+    },
+    {
+      "id": 40,
+      "action": "",
+      "param": "",
+      "speaker": "",
+      "sentence": "여태껏 그래왔듯이 흘러나오는 부정적인 감정들을 씹어 삼켰다. 마치 아무 일도 없었던 것처럼."
     }
   ]
 }

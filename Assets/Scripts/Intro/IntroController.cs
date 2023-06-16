@@ -51,7 +51,7 @@ namespace Intro
 
             if (Input.anyKeyDown && !isChangingScene)
             {
-                SceneChanger.instance.changeScene("Menu", "BloodFilled");
+                SceneChanger.instance.ChangeScene("Menu", "BloodFilled");
                 isChangingScene = true;
             }
         }
@@ -59,10 +59,10 @@ namespace Intro
 
         IEnumerator StartIntro()
         {
-            //ui°¡ ¸ðµÎ ·ÎµùµÇ¾ú´Ù¸é ½ÃÀÛ
+            //uiï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½Ç¾ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½
             if (bgrndImageObj.activeInHierarchy && titleTextObj.activeInHierarchy && pakTextObj.activeInHierarchy)
             {
-                //title°ú pressanykey¸¦ Åõ¸íÇÏ°Ô¸¸µë
+                //titleï¿½ï¿½ pressanykeyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Ô¸ï¿½ï¿½ï¿½
                 TextMeshProUGUI teamNameText = TeamNameTextObj.GetComponent<TextMeshProUGUI>();
                 TextMeshProUGUI titleText = titleTextObj.GetComponent<TextMeshProUGUI>();
                 TextMeshProUGUI pressAnyKeyText = pakTextObj.GetComponent<TextMeshProUGUI>();
@@ -72,18 +72,18 @@ namespace Intro
                 backgroundImage.color = new Color(backgroundImage.color.r, backgroundImage.color.g, backgroundImage.color.b, 0);
                 teamNameText.color = new Color(teamNameText.color.r, teamNameText.color.g, teamNameText.color.b, 0);
 
-                //Å¸ÀÌÆ²ÅØ½ºÆ®¸¦ ÆäÀÌµåÀÎ½ÃÅ´
+                //Å¸ï¿½ï¿½Æ²ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½Î½ï¿½Å´
 
                 yield return StartCoroutine(FadeinAndOutUI(teamNameText));
                 StartCoroutine(FadeInUI(titleText));
                 StartCoroutine(FadeInUI(backgroundImage));
-                //duration ÃÊ µÚ¿¡ pressanykeyµµ ÆäÀÌµåÀÎ½ÃÅ´
+                //duration ï¿½ï¿½ ï¿½Ú¿ï¿½ pressanykeyï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½Î½ï¿½Å´
                 yield return StartCoroutine(FadeInUI(pressAnyKeyText));
 
-                //ÀÌ¶§ºÎÅÍ ¾Æ¹«Å°¸¦ ´©¸£¸é ´ÙÀ½ ¾ÀÀ¸·Î ÁøÇà
+                //ï¿½Ì¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¹ï¿½Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 readyToGo = true;
 
-                //pressanykey¸¦ ±ôºý°Å¸®°ÔÇÔ
+                //pressanykeyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½
                 StartCoroutine(LastingFadeinAndOutUI(pressAnyKeyText));
             }
             StopCoroutine(StartIntro());
@@ -97,7 +97,7 @@ namespace Intro
             float deltaTimeDivDur;
             float halfDuration = duration / 2f;
 
-            //elementÀÇ Åõ¸íµµ¸¦ 1±îÁö ³ôÀÌ°í
+            //elementï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½
             while (element.color.a <= 1f)
             {
                 deltaTimeDivDur = Time.deltaTime / halfDuration;
@@ -106,7 +106,7 @@ namespace Intro
             }
 
 
-            //elementÀÇ Åõ¸íµµ¸¦ 0±îÁö ³·Ãá´Ù
+            //elementï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
             while (element.color.a > 0f)
             {
                 deltaTimeDivDur = Time.deltaTime / halfDuration;
@@ -139,20 +139,20 @@ namespace Intro
 
                 float deltaTimeDivDur = Time.deltaTime / duration;
 
-                //elementÀÇ Åõ¸íµµ°¡ 0.5¹Ì¸¸ÀÌ¶ó¸é
+                //elementï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0.5ï¿½Ì¸ï¿½ï¿½Ì¶ï¿½ï¿½
                 if (element.color.a < 0.5f)
                 {
-                    //elementÀÇ Åõ¸íµµ¸¦ 1±îÁö ³ôÀÌ°í
+                    //elementï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½
                     while (element.color.a <= 1f)
                     {
                         element.color = new Color(element.color.r, element.color.g, element.color.b, element.color.a + deltaTimeDivDur);
                         yield return new WaitForSeconds(deltaTimeDivDur);
                     }
                 }
-                //elementÀÇ Åõ¸íµµ°¡ 1ÃÊ°ú¶ó¸é
+                //elementï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½Ê°ï¿½ï¿½ï¿½ï¿½
                 else if (element.color.a > 1.0f)
                 {
-                    //elementÀÇ Åõ¸íµµ¸¦ 0.5±îÁö ³·Ãá´Ù
+                    //elementï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0.5ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
                     while (element.color.a >= 0.5f)
                     {
                         element.color = new Color(element.color.r, element.color.g, element.color.b, element.color.a - deltaTimeDivDur);

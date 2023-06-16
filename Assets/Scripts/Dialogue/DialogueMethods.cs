@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Cinemachine;
+using UnityEngine.UI;
 
 namespace Dialogue
 {
@@ -21,11 +23,11 @@ namespace Dialogue
                 isPrinting = value;
             }
         }
-        protected int dialogueLength = 0;
         protected int dialogueIndex = 0;
-        protected int dialogueCorCompCount = 0;
 
         protected DialogueUnits dialogues;
+        protected DialogueUnit prsntDialogue;
+        protected bool forceToNextDialogue;
 
         public static DialogueMethods instance;
 
@@ -44,52 +46,102 @@ namespace Dialogue
 
         public void EndOfUnitCor()
         {
-            if (dialogues.data[dialogueIndex].CorList.Count <= ++dialogueCorCompCount)
+            /*
+            코루틴이 끝날때마다 실행되는 메소드 모든 코루틴들의 실행이 완료되었다면 
+            isprinting을 false로 만들고 다음 대화를 불러오기 위해 dialogueIndex를 증가시킨다.
+            */
+            if (prsntDialogue.CorList.Count == ++prsntDialogue.dialogueCorCompCount)
             {
                 IsPrinting = false;
-                dialogueCorCompCount = 0;
+                prsntDialogue.dialogueCorCompCount = 0;
                 dialogueIndex++;
+
+
+                if (forceToNextDialogue)
+                {
+                    forceToNextDialogue = false;
+                    InputManager.inst.PressSpace();
+                }
             }
         }
 
         public IEnumerator ExecutePerFrame()
         {
+            /*
+            Coroutines that executed every frame
+            매 프레임마다 실행되는 코루틴
+            현재 출력중이 아니고 스페이스입력이 들어오면 내부 로직 실행
+            */
             if (!IsPrinting && InputManager.inst.GetInput("space"))
             {
                 IsPrinting = true;
+
                 if (dialogueIndex >= dialogues.data.Count)
                 {
-                    yield return StartCoroutine(GeneralDialogueCor(new DialogueUnit("대화의 끝")));
-                    dialogueIndex = 0;
-                }
-                else
-                {
-                    DialogueUnit unit = dialogues.data[dialogueIndex];
-                    foreach (var cor in unit.CorList)
+                    //대본이 끝났다면
+                    prsntDialogue = new DialogueUnit("대화의 끝");
+                    foreach (var cor in prsntDialogue.CorList)
                     {
-                        if (unit.parallelExe)
+                        if (cor.parallelExe)
                         {
-                            StartCoroutine(cor.Invoke(unit));
+                            StartCoroutine(cor.func.Invoke(prsntDialogue));
                         }
                         else
                         {
-                            yield return StartCoroutine(cor.Invoke(unit));
+                            yield return StartCoroutine(cor.func.Invoke(prsntDialogue));
+                        }
+                    }
+                    dialogueIndex = 1;
+                }
+                else
+                {
+                    //대본이 끝나지 않았다면
+                    prsntDialogue = dialogues.data[dialogueIndex];
+                    foreach (var cor in prsntDialogue.CorList)
+                    {
+                        if (cor.parallelExe)
+                        {
+                            StartCoroutine(cor.func.Invoke(prsntDialogue));
+                        }
+                        else
+                        {
+                            yield return StartCoroutine(cor.func.Invoke(prsntDialogue));
                         }
                     }
                 }
             }
         }
 
-        public IEnumerator ExecuteEndOfDialoguesCor(DialogueUnit unit)
+        public IEnumerator PlayAudio(DialogueUnit unit)
         {
-            yield return null;
+            string audioName = (string)unit.EtcInfo["AudioName"];
+            if (audioName == null)
+            {
+                EndOfUnitCor();
+                yield break;
+            }
+
+            AudioManager.instance.PlayAudio(audioName);
+            EndOfUnitCor();
         }
 
-
-        public IEnumerator GeneralDialogueCor(DialogueUnit unit)
+        public IEnumerator GeneralDialogue(DialogueUnit unit)
         {
-            TextMeshPro speakerTMPro = getGObjFromController("SpeakerText").GetComponent<TextMeshPro>();
-            TextMeshPro dialogueTMPro = getGObjFromController("DialogueText").GetComponent<TextMeshPro>();
+            //If Dialogue Circle is fading in and out. it stops and disappear.
+            Image circle = GameObject.Find("DialogueCircle").GetComponent<Image>();
+            if (circle.enabled == true)
+            {
+                circle.enabled = false;
+                if (coroutineDict.ContainsKey("FadeInAndOutCircle"))
+                {
+                    StopCoroutine(coroutineDict["FadeInAndOutCircle"]);
+                    coroutineDict.Remove("FadeInAndOutCircle");
+                }
+            }
+            circle = null;
+
+            TextMeshProUGUI speakerTMPro = GameObject.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
+            TextMeshProUGUI dialogueTMPro = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
             string speaker = unit.speaker;
             string sentence = unit.sentence;
 
@@ -108,69 +160,193 @@ namespace Dialogue
                     yield return new WaitForSeconds(textSpeed);
 
 
-                if (InputManager.inst.GetInput("space"))
+                if (InputManager.inst.GetInput("space") && !forceToNextDialogue)
                 {
                     dialogueTMPro.text = sentence;
                     break;
                 }
             }
 
-            SpriteRenderer image = getGObjFromController("DialogueCircle").GetComponent<SpriteRenderer>();
-            image.enabled = true;
-            IEnumerator coroutine = FadeInAndOut(image);
-            coroutineDict.Add("FadeInAndOut", coroutine);
-
-            StartCoroutine(coroutine);
-            getGObjFromController("DialogueCircle").GetComponent<SpriteRenderer>().enabled = false;
-            if (coroutineDict.ContainsKey("FadeInAndOut"))
-            {
-                StopCoroutine(coroutineDict["FadeInAndOut"]);
-            }
-            coroutineDict.Remove("FadeInAndOut");
-
-            this.SendMessage("EndOfUnitCor");
+            EndOfUnitCor();
         }
 
-        public IEnumerator disableDialogueCircle(DialogueUnit unit)
+        public IEnumerator WaitForSec(DialogueUnit unit)
         {
-            getGObjFromController("DialogueCircle").GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds((float)unit.EtcInfo["WaitForSeconds"]);
+            EndOfUnitCor();
+        }
+
+        public IEnumerator DisableDialogueCircle(DialogueUnit unit)
+        {
+            /*
+            DialogueCircle 비활성화 코루틴
+            DialogueCircle을 깜빡거리게 하는 코루틴을 중지시키고 coroutineDict로부터 반복자를 제거시킨다
+            */
+            GameObject.Find("DialogueCircle").GetComponent<Image>().enabled = false;
             if (coroutineDict.ContainsKey("FadeInAndOut"))
             {
                 StopCoroutine(coroutineDict["FadeInAndOut"]);
                 coroutineDict.Remove("FadeInAndOut");
             }
 
-            yield return null;
-            this.SendMessage("EndOfUnitCor");
+            EndOfUnitCor();
+            yield break;
         }
 
-        public IEnumerator enableDialogueCircle(DialogueUnit unit)
+        public IEnumerator EnableDialogueCircle(DialogueUnit unit)
         {
-            SpriteRenderer image = getGObjFromController("DialogueCircle").GetComponent<SpriteRenderer>();
+            /*
+            DialogueCircle 활성화 코루틴 보통 대화창의 모든 글자가 출력된 후 실행된다.
+            
+            DialogueCircle을 enable시키고 DialogueCircle을 깜빡거리게 하는 코루틴을 실행 후 
+            추후에 코루틴 중지를 위해 코루틴 반복자를 coroutineDict에 저장  
+            */
+            Image image = GameObject.Find("DialogueCircle").GetComponent<Image>();
             image.enabled = true;
-            IEnumerator coroutine = FadeInAndOut(image);
-            coroutineDict.Add("FadeInAndOut", coroutine);
+            IEnumerator coroutine = FadeInAndOutImage(image);
+            coroutineDict.Add("FadeInAndOutCircle", coroutine);
 
             StartCoroutine(coroutine);
-            yield return null;
-            this.SendMessage("EndOfUnitCor");
+            EndOfUnitCor();
+            yield break;
         }
 
-        public IEnumerator ToggleDialogueWrapperCor(DialogueUnit unit)
+        public IEnumerator ShakeCamera(DialogueUnit unit)
         {
-            GameObject wrapper = Instantiate(GameManager.LoadPrefab("Dialogue/DialogueWrapper"));
-            yield return null;
-            controller.gameObjects.Add("SpeakerText", GameObject.Find("SpeakerText"));
-            controller.gameObjects.Add("DialogueText", GameObject.Find("DialogueText"));
-            controller.gameObjects.Add("DialogueCircle", GameObject.Find("DialogueCircle"));
-            yield return null;
+            /*
+            DialogueController의 Component인 CinemachineImpulseSource로 impulse 생성
+            */
+            CinemachineImpulseSource source = DialogueController.instance.GetComponent<CinemachineImpulseSource>();
 
-            this.SendMessage("EndOfUnitCor");
+            source.GenerateImpulse();
+
+            EndOfUnitCor();
+            yield break;
         }
 
-        public IEnumerator ChangeBackGroundCor(DialogueUnit unit)
+        public IEnumerator ForceToNextDialogue(DialogueUnit unit)
+        {
+            /*
+            This Coroutine should be added before Dialogue Coroutine.
+            As Dialogue Coroutine executed, It checks forcetoNextDialogue for whether it could be skip or not
+            */
+            forceToNextDialogue = true;
+
+            EndOfUnitCor();
+            yield break;
+        }
+
+        public IEnumerator GenerateCharacter(DialogueUnit unit)
+        {
+            /*
+            필요정보
+            CharacterPrefab 프리팹 경로 string
+            CharacterPos 캐릭터가 나타날 위치 Vector2
+
+            CharacterPrefab을 생성시키고 CharacterPos로 캐릭터 위치를 이동시킨다.
+            */
+            Dictionary<string, object> info = unit.EtcInfo;
+
+            if (!info.ContainsKey("CharacterPrefab") || !info.ContainsKey("CharacterPos"))
+            {
+                throw new Exception("CharacterPrefab or CharacterPos missed on EtcInfo");
+            }
+
+            GameObject character = Instantiate(GameManager.LoadPrefab((string)info["CharacterPrefab"]));
+            character.transform.position = (Vector2)info["CharacterPos"];
+            yield return null;
+
+            EndOfUnitCor();
+        }
+
+        public IEnumerator MakeCharacterWalk(DialogueUnit unit)
+        {
+            /*
+            필요정보
+            CharacterName : Character GameObject 이름
+            int WalkCount : 캐릭터가 몇번 걸을지
+            WalkDirection : 걸어갈 방향
+            */
+            Dictionary<string, object> info = unit.EtcInfo;
+            Transform chT = GameObject.Find(info["CharacterName"] + "(Clone)").transform;
+            int walkCount = (int)info["WalkCount"];
+            for (int i = 0; i < walkCount; i++)
+            {
+                Vector2[] points =
+                                {
+                                new Vector2(chT.position.x, chT.position.y),
+                                new Vector2(chT.position.x, chT.position.y+1),
+                                new Vector2(chT.position.x + 1.5f, chT.position.y+1),
+                                new Vector2(chT.position.x + 1.5f, chT.position.y)
+                            };
+
+                float t = 0;
+                while (t < 1)
+                {
+                    chT.position = DrawTrajectory(points, t);
+
+                    t += Time.deltaTime;
+
+                    yield return null;
+                }
+
+            }
+
+            EndOfUnitCor();
+            yield break;
+        }
+
+        private Vector2 DrawTrajectory(Vector2[] point, float t)
+        {
+            if (point.Length > 4)
+                throw new Exception("Bezier Exception");
+
+            return
+            new Vector2(
+                FourPointBezier(point[0].x, point[1].x, point[2].x, point[3].x, t),
+                FourPointBezier(point[0].y, point[1].y, point[2].y, point[3].y, t)
+            );
+        }
+
+        private float FourPointBezier(float a, float b, float c, float d, float t)
+        {
+            return Mathf.Pow((1 - t), 3) * a
+                    + Mathf.Pow((1 - t), 2) * 3 * t * b
+                    + Mathf.Pow(t, 2) * 3 * (1 - t) * c
+                    + Mathf.Pow(t, 3) * d;
+        }
+
+        public IEnumerator EnableDialogueWrapper(DialogueUnit unit)
+        {
+            string wrapperName = "DialogueWrapperUI";
+            if (GameObject.Find(wrapperName) == null)
+            {
+                GameObject wrapper =
+                    Instantiate(
+                        GameManager.LoadPrefab("Dialogue/" + wrapperName),
+                        GameObject.Find("Canvas").transform
+                    );
+                wrapper.name = wrapperName;
+            }
+            EndOfUnitCor();
+            yield break;
+        }
+
+        public IEnumerator DisableDialogueWrapper(DialogueUnit unit)
+        {
+            string wrapperName = "DialogueWrapperUI";
+            if (GameObject.Find(wrapperName) != null)
+            {
+                Destroy(GameObject.Find(wrapperName));
+            }
+            EndOfUnitCor();
+            yield break;
+        }
+
+        public IEnumerator ChangeBackGround(DialogueUnit unit)
         {
             GameObject oldBackgroundImage = GameObject.Find("BackgroundImage(Clone)");
+            GameObject bgrWrapper = GameObject.Find("BgrWrapper");
             bool isOldExist = oldBackgroundImage != null;
 
             if (isOldExist)
@@ -180,7 +356,7 @@ namespace Dialogue
             else
             {
                 oldBackgroundImage =
-                    Instantiate(GameManager.LoadPrefab("Dialogue/BackgroundImage"), getGObjFromController("BgrWrapper").transform);
+                    Instantiate(GameManager.LoadPrefab("Dialogue/BackgroundImage"), bgrWrapper.transform);
                 oldBackgroundImage.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0);
                 oldBackgroundImage.GetComponent<SpriteRenderer>().sortingLayerName = "OldBackground";
             }
@@ -188,7 +364,7 @@ namespace Dialogue
             GameObject backgroundImage = GameManager.LoadPrefab("Dialogue/BackgroundImage");
 
             //배경이미지 프리팹으로 오브젝트를생성하고 스프라이트 변경
-            backgroundImage = Instantiate(backgroundImage, getGObjFromController("BgrWrapper").transform);
+            backgroundImage = Instantiate(backgroundImage, bgrWrapper.transform);
             SpriteRenderer image = backgroundImage.GetComponent<SpriteRenderer>();
             image.sprite = GameManager.LoadImage(unit.EtcInfo["BackgroundImage"] as string);
             int oldBackgrIndex =
@@ -198,8 +374,18 @@ namespace Dialogue
 
 
             //이전 배경이미지를 페이드아웃 시킨다.
+            object backOption = 0;
             oldBackgroundImage.GetComponent<SpriteRenderer>().material = GameManager.LoadMaterial("FadeMaterial");
-            oldBackgroundImage.GetComponent<SpriteRenderer>().material.SetInteger("_Option", 5);
+            unit.EtcInfo.TryGetValue("BackOption", out backOption);
+            
+            
+            // if (backOption != null)
+            // {
+                oldBackgroundImage.GetComponent<SpriteRenderer>().material.SetInteger("_Option", 5);
+                
+            // }
+            
+
             Animator animator = oldBackgroundImage.AddComponent<Animator>();
             animator.runtimeAnimatorController = GameManager.LoadResource("Animator/Dialogue/FadeInAndOutImage") as RuntimeAnimatorController;
             animator.SetTrigger("FadeOut");
@@ -210,7 +396,8 @@ namespace Dialogue
             yield return new WaitForSeconds(duration);
             Destroy(oldBackgroundImage);
 
-            this.SendMessage("EndOfUnitCor");
+            EndOfUnitCor();
+            yield break;
         }
 
         public IEnumerator FadeInAndOut(SpriteRenderer element)
@@ -220,20 +407,16 @@ namespace Dialogue
             {
                 float deltaTimeDivDur = Time.deltaTime / duration;
 
-                //element�� �������� 0.5�̸��̶��
                 if (element.color.a < 1.0f)
                 {
-                    //element�� �������� 1���� ���̰�
                     while (element.color.a <= 1f)
                     {
                         element.color = new Color(element.color.r, element.color.g, element.color.b, element.color.a + deltaTimeDivDur);
                         yield return new WaitForSeconds(deltaTimeDivDur);
                     }
                 }
-                //element�� �������� 1�̻��̶��
                 else if (element.color.a >= 1.0f)
                 {
-                    //element�� �������� 0.5���� �����
                     while (element.color.a >= 0.5f)
                     {
                         element.color = new Color(element.color.r, element.color.g, element.color.b, element.color.a - deltaTimeDivDur);
@@ -245,13 +428,35 @@ namespace Dialogue
             }
         }
 
-        protected GameObject getGObjFromController(string keyName)
+        public IEnumerator FadeInAndOutImage(Image element)
         {
-            if (controller.gameObjects.ContainsKey(keyName))
+            float duration = 1f;
+            while (true)
             {
-                return controller.gameObjects[keyName];
+                float deltaTimeDivDur = Time.deltaTime / duration;
+
+                if (element.color.a < 1.0f)
+                {
+                    while (element.color.a <= 1f)
+                    {
+                        element.color = new Color(element.color.r, element.color.g, element.color.b, element.color.a + deltaTimeDivDur);
+                        yield return new WaitForSeconds(deltaTimeDivDur);
+                    }
+                }
+                else if (element.color.a >= 1.0f)
+                {
+                    while (element.color.a >= 0.5f)
+                    {
+                        element.color = new Color(element.color.r, element.color.g, element.color.b, element.color.a - deltaTimeDivDur);
+                        yield return new WaitForSeconds(deltaTimeDivDur);
+                    }
+                }
+
+                yield return new WaitForSeconds(deltaTimeDivDur);
             }
-            throw new Exception("error from get GameObject of controller");
         }
+
+
+
     }
 }

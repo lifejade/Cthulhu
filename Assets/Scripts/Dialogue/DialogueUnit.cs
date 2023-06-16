@@ -12,31 +12,15 @@ namespace Dialogue
     public class DialogueUnit
     {
         public string speaker;
+        public string action;
+        public string param;
         public string sentence;
-        
-        // public UnityAction<DialogueUnit> action;
-        // public UnityAction<DialogueUnit> Action 
-        // { 
-        //     get { return action; } 
-        //     set => action = value; 
-        // }
-        public List<Func<DialogueUnit, IEnumerator>> corList = new List<Func<DialogueUnit, IEnumerator>>();
-        public List<Func<DialogueUnit, IEnumerator>> CorList 
-        {
-            get
-                {
-                    if(this.corList == null){
-                        corList = new List<Func<DialogueUnit, IEnumerator>>();
-                        this.AddCoroutine(DialogueMethods.instance.disableDialogueCircle)
-                        .AddCoroutine(DialogueMethods.instance.GeneralDialogueCor)
-                        .AddCoroutine(DialogueMethods.instance.enableDialogueCircle);
-
-                    }
-                    return this.corList;
-                }
-        }
         private Dictionary<string, object> etcInfo;
-        public Dictionary<string, object> EtcInfo 
+        public List<CorStruct> corList;
+        public int dialogueCorCompCount = 0;
+        public bool parallelExe = false;
+        //Whether to execute coroutines in parallel. If parallel execution is true, registered coroutines are executed at once.
+        public Dictionary<string, object> EtcInfo
         { 
             get 
             {
@@ -46,28 +30,56 @@ namespace Dialogue
             }
             set => etcInfo = value; 
         }
-        //코루틴 병렬 실행 여부다. 병렬실행이 true라면 등록된 코루틴들이 한번에 실행되도록 한다.
-        public bool parallelExe = false;
 
+        public struct CorStruct{
+            //Whether to run in parallel, and structure with coroutine reference
+            public CorStruct(Func<DialogueUnit, IEnumerator> func, bool parallelExe){
+                this.func = func;
+                this.parallelExe = parallelExe;
+            }
+            public CorStruct(Func<DialogueUnit, IEnumerator> func){
+                this.func = func;
+                this.parallelExe = false;
+            }
+            public Func<DialogueUnit, IEnumerator> func;
+            public bool parallelExe;
+        }
+        public List<CorStruct> CorList
+        {
+            get
+                {
+                    if(this.corList == null){
+                        corList = new List<CorStruct>();
+                        this.AddCoroutine(DialogueMethods.instance.DisableDialogueCircle)
+                        .AddCoroutine(DialogueMethods.instance.GeneralDialogue)
+                        .AddCoroutine(DialogueMethods.instance.EnableDialogueCircle);
+
+                    }
+                    return this.corList;
+                }
+        }
 
         public DialogueUnit(string speaker, string sentence)
         {
             this.speaker = speaker;
             this.sentence = sentence;
-            this.corList = new List<Func<DialogueUnit, IEnumerator>>();
         }
         public DialogueUnit(string sentence)
         {
             this.speaker = "";
             this.sentence = sentence;
-            this.corList = new List<Func<DialogueUnit, IEnumerator>>();
         }
 
         public DialogueUnit AddCoroutine(Func<DialogueUnit, IEnumerator> corToAdd)
         {
             if(corList == null)
-                corList = new List<Func<DialogueUnit, IEnumerator>>();
-            corList.Add(corToAdd);
+                corList = new List<CorStruct>();
+            corList.Add(new CorStruct(corToAdd, parallelExe));
+            return this;
+        }
+
+        public DialogueUnit AddInfo(string key, object obj){
+            EtcInfo.Add(key, obj);
             return this;
         }
 
