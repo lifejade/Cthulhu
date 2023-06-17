@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class TestScript : MonoBehaviour
-{
-    private int i = 0;
+public class TestScript : MonoBehaviour{
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,14 +13,6 @@ public class TestScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(i%20 == 0){
-        if(InputManager.inst.GetInput("space"))
-            Debug.Log(1);
-        if(InputManager.inst.GetInput("space"))
-            Debug.Log(2);
-        
-        }
-        i++;
-    }
+    {}
+    
 }
