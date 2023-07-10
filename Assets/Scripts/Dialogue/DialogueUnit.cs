@@ -50,7 +50,7 @@ namespace Dialogue
                 {
                     if(this.corList == null){
                         corList = new List<CorStruct>();
-                        this.AddCoroutine(DialogueMethods.instance.DisableDialogueCircle)
+                        this
                         .AddCoroutine(DialogueMethods.instance.GeneralDialogue)
                         .AddCoroutine(DialogueMethods.instance.EnableDialogueCircle);
 

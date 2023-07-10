@@ -23,6 +23,7 @@ namespace Dialogue
                 isPrinting = value;
             }
         }
+        protected bool isDWrapperEnabled = false;
         protected int dialogueIndex = 0;
 
         protected DialogueUnits dialogues;
@@ -127,9 +128,26 @@ namespace Dialogue
 
         public IEnumerator GeneralDialogue(DialogueUnit unit)
         {
+            if (isDWrapperEnabled == false)
+            {
+                string wrapperName = "DialogueWrapperUI";
+                GameObject wrapper =
+                    Instantiate(
+                        GameManager.LoadPrefab("Dialogue/" + wrapperName),
+                        GameObject.Find("Canvas").transform
+                    );
+                wrapper.name = wrapperName;
+                isDWrapperEnabled = true;
+            }
+            //give time to enable wrapper
+            yield return null;
+            yield return null;
+            yield return null; yield return null; yield return null; yield return null;
+
             //If Dialogue Circle is fading in and out. it stops and disappear.
-            Image circle = GameObject.Find("DialogueCircle").GetComponent<Image>();
-            if (circle.enabled == true)
+            Image circle = null;
+
+            if (GameObject.Find("DialogueCircle").TryGetComponent<Image>(out circle) && circle.enabled == true)
             {
                 circle.enabled = false;
                 if (coroutineDict.ContainsKey("FadeInAndOutCircle"))
@@ -138,7 +156,6 @@ namespace Dialogue
                     coroutineDict.Remove("FadeInAndOutCircle");
                 }
             }
-            circle = null;
 
             TextMeshProUGUI speakerTMPro = GameObject.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI dialogueTMPro = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
@@ -183,10 +200,10 @@ namespace Dialogue
             DialogueCircle을 깜빡거리게 하는 코루틴을 중지시키고 coroutineDict로부터 반복자를 제거시킨다
             */
             GameObject.Find("DialogueCircle").GetComponent<Image>().enabled = false;
-            if (coroutineDict.ContainsKey("FadeInAndOut"))
+            if (coroutineDict.ContainsKey("FadeInAndOutCircle"))
             {
-                StopCoroutine(coroutineDict["FadeInAndOut"]);
-                coroutineDict.Remove("FadeInAndOut");
+                StopCoroutine(coroutineDict["FadeInAndOutCircle"]);
+                coroutineDict.Remove("FadeInAndOutCircle");
             }
 
             EndOfUnitCor();
@@ -318,15 +335,16 @@ namespace Dialogue
 
         public IEnumerator EnableDialogueWrapper(DialogueUnit unit)
         {
-            string wrapperName = "DialogueWrapperUI";
-            if (GameObject.Find(wrapperName) == null)
+            if (isDWrapperEnabled == false)
             {
+                string wrapperName = "DialogueWrapperUI";
                 GameObject wrapper =
                     Instantiate(
                         GameManager.LoadPrefab("Dialogue/" + wrapperName),
                         GameObject.Find("Canvas").transform
                     );
                 wrapper.name = wrapperName;
+                isDWrapperEnabled = true;
             }
             EndOfUnitCor();
             yield break;
@@ -335,10 +353,12 @@ namespace Dialogue
         public IEnumerator DisableDialogueWrapper(DialogueUnit unit)
         {
             string wrapperName = "DialogueWrapperUI";
-            if (GameObject.Find(wrapperName) != null)
+            if (isDWrapperEnabled == true)
             {
                 Destroy(GameObject.Find(wrapperName));
+                isDWrapperEnabled = false;
             }
+
             EndOfUnitCor();
             yield break;
         }
@@ -377,14 +397,14 @@ namespace Dialogue
             object backOption = 0;
             oldBackgroundImage.GetComponent<SpriteRenderer>().material = GameManager.LoadMaterial("FadeMaterial");
             unit.EtcInfo.TryGetValue("BackOption", out backOption);
-            
-            
+
+
             // if (backOption != null)
             // {
-                oldBackgroundImage.GetComponent<SpriteRenderer>().material.SetInteger("_Option", 5);
-                
+            oldBackgroundImage.GetComponent<SpriteRenderer>().material.SetInteger("_Option", 5);
+
             // }
-            
+
 
             Animator animator = oldBackgroundImage.AddComponent<Animator>();
             animator.runtimeAnimatorController = GameManager.LoadResource("Animator/Dialogue/FadeInAndOutImage") as RuntimeAnimatorController;

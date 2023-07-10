@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
     public static InputManager inst;
     private static Queue<InputUnit> inputQueue = new Queue<InputUnit>();
     private static Dictionary<string, InputUnit> inputDict = new Dictionary<string, InputUnit>();
-    private static int inputLastingFrame = 15;
+    private static int inputLastingFrame = 20;
 
     //싱글턴
     void Awake()

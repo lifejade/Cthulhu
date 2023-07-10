@@ -9,14 +9,14 @@
     },
     {
       "id": 1,
-      "action": "EnableDialogueWrapper | GeneralDialogue | EnableDialogueCircle",
+      "action": "",
       "param": "",
       "speaker": "",
       "sentence": "꿈을 꾸었다. 끈적끈적한 녹색의 돌로 이루어진 도시의 꿈을"
     },
     {
       "id": 2,
-      "action": "DisableDialogueCircle | EnableGlitch14 | ChangeBackGround | GeneralDialogue",
+      "action": "DisableDialogueCircle | EnableGlitch14 | ChangeBackGround | GeneralDialogue | EnableDialogueCircle",
       "param": "BackgroundImage : string : Dialogue/bizarrecity",
       "speaker": "",
       "sentence": "도시는 인간의 도시와는 전혀 다른 구조를 갖고 있었다. 기하학적인 구조가 전부 어긋나있고 만물의 법칙과 원근법이 뒤틀려있는."

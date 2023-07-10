@@ -1,1 +1,0 @@
-  sound:SFX_STORY_What, <effect:none>……., transition, motionway:1,-15,0.4,0, <font:size,38>

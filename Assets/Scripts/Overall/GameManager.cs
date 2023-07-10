@@ -22,10 +22,6 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public Vector2 screenBottomLeftInWorld, screenTopRightInWorld;
 
-    public Dictionary<string, IEnumerator> CoroutineDict{
-        get{return coroutineDict;}
-    }
-
     private void Awake()
     {
         if (instance == null)
@@ -126,11 +122,13 @@ public class GameManager : MonoBehaviour
 
     public T LoadJsonFile<T>(string loadPath, string fileName)
     {
-        FileStream fileStream = new(string.Format("{0}/{1}.json", loadPath, fileName), FileMode.Open);
-        byte[] data = new byte[fileStream.Length];
-        fileStream.Read(data, 0, data.Length);
-        fileStream.Close();
-        string jsonData = Encoding.UTF8.GetString(data);
+        // FileStream fileStream = new(string.Format("{0}/{1}.json", loadPath, fileName), FileMode.Open);
+        // byte[] data = new byte[fileStream.Length];
+        // fileStream.Read(data, 0, data.Length);
+        // fileStream.Close();
+        // string jsonData = Encoding.UTF8.GetString(data);
+        string jsonData = Resources.Load<TextAsset>("Dialogues/" + fileName).text;
+        Debug.Log(jsonData);
         return JsonUtility.FromJson<T>(jsonData);
     }
 
@@ -157,8 +155,4 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void test()
-    {
-        Debug.Log("abc");
-    }
 }
