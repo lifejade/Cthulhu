@@ -7,163 +7,121 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using Limitless;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using UnityEngine.EventSystems;
 
 
 namespace Dialogue
 {
     public class DialogueMethodsCp1 : DialogueMethods
     {
-        public Dictionary<string, Func<DialogueUnit, IEnumerator>> corList;
+        //List of coroutines using in this chapter.
+        public Dictionary<string, Func<DialogueUnit, IEnumerator>> corDict;
         public AnimationCurve animCurve;
         public AnimationCurve animCurve2;
+
         // Start is called before the first frame update
         private void Start()
         {
-            corList = new Dictionary<string, Func<DialogueUnit, IEnumerator>>();
+            corDict = new Dictionary<string, Func<DialogueUnit, IEnumerator>>();
             controller = DialogueController.instance;
 
-            corList.Add("SuckIntoOtherSpace", SuckIntoOtherSpace);
-            corList.Add("EnableGlitch14", EnableGlitch14);
-            corList.Add("DisableGlitch14", DisableGlitch14);
-            corList.Add("CenterTextBox", CenterTextBox);
-            corList.Add("PlayAudio", PlayAudio);
-            corList.Add("GeneralDialogue", GeneralDialogue);
-            corList.Add("DisableDialogueCircle", DisableDialogueCircle);
-            corList.Add("EnableDialogueCircle", EnableDialogueCircle);
-            corList.Add("ShakeCamera", ShakeCamera);
-            corList.Add("ForceToNextDialogue", ForceToNextDialogue);
-            corList.Add("GenerateCharacter", GenerateCharacter);
-            corList.Add("MakeCharacterWalk", MakeCharacterWalk);
-            corList.Add("EnableDialogueWrapper", EnableDialogueWrapper);
-            corList.Add("DisableDialogueWrapper", DisableDialogueWrapper);
-            corList.Add("ChangeBackGround", ChangeBackGround);
-            corList.Add("WaitForSec", WaitForSec);
+            corDict.Add("SuckIntoOtherSpace", SuckIntoOtherSpace);
+            corDict.Add("EnableGlitch14", EnableGlitch14);
+            corDict.Add("DisableGlitch14", DisableGlitch14);
+            corDict.Add("CenterTextBox", CenterTextBox);
+            corDict.Add("PlayAudio", PlayAudio);
+            corDict.Add("GeneralDialogue", GeneralDialogue);
+            corDict.Add("SelectChoices", SelectChoices);
+            corDict.Add("DisableDialogueCircle", DisableDialogueCircle);
+            corDict.Add("EnableDialogueCircle", EnableDialogueCircle);
+            corDict.Add("ShakeCamera", ShakeCamera);
+            corDict.Add("ForceToNextDialogue", ForceToNextDialogue);
+            corDict.Add("GenerateCharacter", GenerateCharacter);
+            corDict.Add("MakeCharacterWalk", MakeCharacterWalk);
+            corDict.Add("EnableDialogueWrapper", EnableDialogueWrapper);
+            corDict.Add("DisableDialogueWrapper", DisableDialogueWrapper);
+            corDict.Add("ChangeBackGround", ChangeBackGround);
+            corDict.Add("ShowImage", ShowImage);
+            corDict.Add("WaitForSec", WaitForSec);
+            corDict.Add("ControlCharacter1", ControlCharacter1);
+            corDict.Add("ControlCharacter2", ControlCharacter2);
+            corDict.Add("DisappearCharacter", DisappearCharacter);
 
-            dialogues = GameManager.instance.LoadJsonFile<DialogueUnits>("Assets/Resources/Dialogues", "dialogue1");
-
-            RegisterActions();
-        }
-
-        // Update is called per frame
-        void Update()
-        {
-
-        }
-
-
-        private void RegisterActions()
-        {
-            List<DialogueUnit> list = dialogues.data;
+            dialogues = JsonConvert.DeserializeObject<DialogueUnits>(GameManager.LoadResource<TextAsset>("Dialogues/" + "DialogueCp1json").text);
             
-            foreach (DialogueUnit unit in list)
-            {
-                string actionString = unit.action;
-                actionString = actionString.Replace(" ", "");
-                string[] actionArr = actionString.Split("|");
+            dialogues.GetReadyToUse(corDict);
+        }
 
-                string paramString = unit.param;
-                paramString = paramString.Replace(" ", "");
-                string[] paramArr = paramString.Split("|");
+        
+        public IEnumerator SelectChoices(DialogueUnit unit)
+        {
+            List<DialogueUnits> choices = unit.choices;
+            float yPosToAdd = 125;
+            float yPos = (choices.Count * 125 - 100) / 2 * -1;
+            bool selected = false;
 
-                foreach(string action in actionArr)
+            //InnerMethod when choice button clicked
+            void innerSelectChoice()
+            {   
+                GameObject clickedButton = EventSystem.current.currentSelectedGameObject;
+
+                if (clickedButton != null)
                 {
-                    if(action == ""){
-                        unit.AddCoroutine(GeneralDialogue).AddCoroutine(EnableDialogueCircle);
-                        continue;
-                    }
-                    unit.AddCoroutine(corList[action]);
-                }
-                foreach (string param in paramArr)
-                {
-                    if (param == "")
+                    Button button = clickedButton.GetComponent<Button>();
+                    if (button != null)
                     {
-                        break;
-                    }
-                    Debug.Log(param);
-                    string[] splited = param.Split(":");
-                    string key = splited[0];
-                    string type = splited[1];
-                    string value = splited[2];
-                    switch (type)
-                    {
-                        case "string":
-                            unit.AddInfo(key, value);
-                            break;
-                        case "float":
-                            unit.AddInfo(key, float.Parse(value));
-                            break;
-                        default:
-                            throw new Exception("param type exception. " + type + "is not valid type");
+                        List<DialogueUnits> unitsList = dialogues.PrUnit.Choices;
+                        foreach (DialogueUnits units in unitsList)
+                        {
+                            if (units.name == button.name)
+                            {
+                                LinkedListNode<DialogueUnit> tempNextNode = dialogues.PrNode.Next;
+                                foreach (DialogueUnit unit in units.uList)
+                                {
+                                    dialogues.uList.AddBefore(tempNextNode,unit);
+                                }
+                                dialogues.GetReadyToUse(this.corDict);
+                                break;
+                            }
+                        }
                     }
                 }
-                
+                selected = true;
             }
-            
-            // list[0]
-            //     .AddCoroutine(CenterTextBox)
-            //     .AddCoroutine(ForceToNextDialogue);
+            //Coroutine awaits players select
+            IEnumerator checkSelected()
+            {
+                while (true)
+                {
+                    if(selected)
+                        break;
+                    yield return null;
+                }
+            }
+            List<GameObject> tempButtons = new();
+            foreach (DialogueUnits choice in choices)
+            {
+                GameObject chButton = Instantiate(Resources.Load<GameObject>("Prefab/Dialogue/SelectChoicesButton"), GameObject.Find("Canvas").transform);
+                tempButtons.Add(chButton);
+                chButton.name = choice.name;
+                chButton.GetComponent<RectTransform>().localPosition = new Vector2(0, yPos);
+                chButton.GetComponent<Button>().onClick.AddListener(innerSelectChoice);
 
-            // list[1]
-            //     .AddCoroutine(EnableDialogueWrapper)
-            //     .AddCoroutine(DisableDialogueCircle)
-            //     .AddCoroutine(GeneralDialogue)
-            //     .AddCoroutine(EnableDialogueCircle);
+                yPos += yPosToAdd;
+            }
 
-            // list[2]
-            //     .AddInfo("BackgroundImage", "Dialogue/bizarrecity")
-            //     .AddCoroutine(DisableDialogueCircle)
-            //     .AddCoroutine(EnableGlitch14)
-            //     .AddCoroutine(ChangeBackGround)
-            //     .AddCoroutine(GeneralDialogue);
-
-
-
-
-            // // list[2]
-            // //     .AddCoroutine(DisableDialogueCircle)
-            // //     .AddCoroutine(ChangeBackGroundCor)
-            // //     .AddInfo("BackgroundImage", "DialogueExample")
-            // //     .AddCoroutine(GeneralDialogueCor)
-            // //     .AddCoroutine(GenerateCharacter)
-            // //     .AddInfo("CharacterPrefab", "Heroines/heroine1")
-            // //     .AddInfo("CharacterPos", new Vector2(-4, -2))
-            // //     .AddCoroutine(EnableDialogueCircle);
-
-
-            // list[7]
-            //     .AddInfo("WaitForSeconds", 1f)
-            //     .AddInfo("AudioName", "Dialogue/Swoosh")
-            //     .AddInfo("BackgroundImage", "Dialogue/Hastur")
-            //     .AddCoroutine(DisableDialogueCircle)
-            //     .AddCoroutine(GeneralDialogue)
-            //     .AddCoroutine(DisableDialogueWrapper)
-            //     .AddCoroutine(PlayAudio)
-            //     .AddCoroutine(ShakeCamera)
-            //     .AddCoroutine(WaitForSecCor)
-            //     .AddCoroutine(SuckIntoOtherSpace);
-
-            // list[8]
-            //     .AddCoroutine(EnableDialogueWrapper)
-            //     .AddCoroutine(EnableGlitch14)
-            //     .AddCoroutine(GeneralDialogue)
-            //     .AddCoroutine(EnableDialogueCircle);
-
-            // list[21]
-            //     .AddCoroutine(ShakeCamera)
-            //     .AddCoroutine(DisableDialogueCircle)
-            //     .AddCoroutine(GeneralDialogue)
-            //     .AddCoroutine(EnableDialogueCircle);
-
-
-            // list[26]
-            //     .AddInfo("BackgroundImage", "Dialogue/bizarrecity")
-            //     .AddCoroutine(DisableDialogueCircle)
-            //     .AddCoroutine(DisableGlitch14)
-            //     .AddCoroutine(ChangeBackGround)
-            //     .AddCoroutine(GeneralDialogue)
-            //     .AddCoroutine(EnableDialogueCircle);
-
+            yield return StartCoroutine(checkSelected());
+            foreach (var button in tempButtons)
+            {
+                Destroy(button);
+            }
+            // dialogues.ForceToNextDialogue = true;
+            yield break;
         }
+
+
 
         private IEnumerator CenterTextBox(DialogueUnit unit)
         {
@@ -172,7 +130,7 @@ namespace Dialogue
                 throw new Exception("CenterTextBox Already Exist");
 
 
-            float slowTxtSpd = textSpeed * 2f;
+            float slowTxtSpd = dialogues.TextSpeed * 2f;
             float deltaTimeDivDur = 0f;
             float duration = 4f;
             //center textbox prefab name
@@ -227,7 +185,7 @@ namespace Dialogue
                     yield return new WaitForSeconds(slowTxtSpd);
 
 
-                if (InputManager.inst.GetInput("space"))
+                if (InputManager.inst.GetInputNextText())
                 {
                     text.text = sentence;
                     break;
@@ -249,7 +207,6 @@ namespace Dialogue
 
             Destroy(centerTextBox);
 
-            EndOfUnitCor();
         }
 
         private IEnumerator SuckIntoOtherSpace(DialogueUnit unit)
@@ -266,7 +223,6 @@ namespace Dialogue
             if (!GameObject.Find("Global Volume").TryGetComponent<Volume>(out volume))
             {
                 Debug.LogError($"No {nameof(Volume)} component attached to this object!", this);
-                EndOfUnitCor();
                 yield break;
             }
 
@@ -325,7 +281,6 @@ namespace Dialogue
 
                 yield return null;
             }
-            EndOfUnitCor();
             yield break;
         }
 
@@ -339,14 +294,12 @@ namespace Dialogue
             if (!GameObject.Find("Global Volume").TryGetComponent<Volume>(out volume))
             {
                 Debug.LogError($"No {nameof(Volume)} component attached to this object!", this);
-                EndOfUnitCor();
                 yield break;
             }
             volumeProfile = volume.profile;
             volumeProfile.TryGet<LimitlessGlitch14>(out glitch14);
             glitch14.active = true;
 
-            EndOfUnitCor();
             yield break;
         }
 
@@ -360,14 +313,12 @@ namespace Dialogue
             if (!GameObject.Find("Global Volume").TryGetComponent<Volume>(out volume))
             {
                 Debug.LogError($"No {nameof(Volume)} component attached to this object!", this);
-                EndOfUnitCor();
                 yield break;
             }
             volumeProfile = volume.profile;
             volumeProfile.TryGet<LimitlessGlitch14>(out glitch14);
             glitch14.active = false;
 
-            EndOfUnitCor();
             yield break;
         }
 

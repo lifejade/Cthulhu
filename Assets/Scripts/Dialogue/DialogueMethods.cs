@@ -5,30 +5,20 @@ using TMPro;
 using System;
 using Cinemachine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Dialogue
 {
     public class DialogueMethods : MonoBehaviour
     {
+
+        //Dictionary to save a coroutines that might be stopped
         private Dictionary<string, IEnumerator> coroutineDict = new Dictionary<string, IEnumerator>();
 
         protected DialogueController controller;
-        protected float textSpeed = 0.03f;
-        protected bool isPrinting = false;
-        public bool IsPrinting
-        {
-            get { return isPrinting; }
-            set
-            {
-                isPrinting = value;
-            }
-        }
         protected bool isDWrapperEnabled = false;
-        protected int dialogueIndex = 0;
 
         protected DialogueUnits dialogues;
-        protected DialogueUnit prsntDialogue;
-        protected bool forceToNextDialogue;
 
         public static DialogueMethods instance;
 
@@ -43,74 +33,11 @@ namespace Dialogue
                 Destroy(gameObject);
             }
         }
+        
 
-
-        public void EndOfUnitCor()
+        public void ExecutePerFrame()
         {
-            /*
-            코루틴이 끝날때마다 실행되는 메소드 모든 코루틴들의 실행이 완료되었다면 
-            isprinting을 false로 만들고 다음 대화를 불러오기 위해 dialogueIndex를 증가시킨다.
-            */
-            if (prsntDialogue.CorList.Count == ++prsntDialogue.dialogueCorCompCount)
-            {
-                IsPrinting = false;
-                prsntDialogue.dialogueCorCompCount = 0;
-                dialogueIndex++;
-
-
-                if (forceToNextDialogue)
-                {
-                    forceToNextDialogue = false;
-                    InputManager.inst.PressSpace();
-                }
-            }
-        }
-
-        public IEnumerator ExecutePerFrame()
-        {
-            /*
-            Coroutines that executed every frame
-            매 프레임마다 실행되는 코루틴
-            현재 출력중이 아니고 스페이스입력이 들어오면 내부 로직 실행
-            */
-            if (!IsPrinting && InputManager.inst.GetInput("space"))
-            {
-                IsPrinting = true;
-
-                if (dialogueIndex >= dialogues.data.Count)
-                {
-                    //대본이 끝났다면
-                    prsntDialogue = new DialogueUnit("대화의 끝");
-                    foreach (var cor in prsntDialogue.CorList)
-                    {
-                        if (cor.parallelExe)
-                        {
-                            StartCoroutine(cor.func.Invoke(prsntDialogue));
-                        }
-                        else
-                        {
-                            yield return StartCoroutine(cor.func.Invoke(prsntDialogue));
-                        }
-                    }
-                    dialogueIndex = 1;
-                }
-                else
-                {
-                    //대본이 끝나지 않았다면
-                    prsntDialogue = dialogues.data[dialogueIndex];
-                    foreach (var cor in prsntDialogue.CorList)
-                    {
-                        if (cor.parallelExe)
-                        {
-                            StartCoroutine(cor.func.Invoke(prsntDialogue));
-                        }
-                        else
-                        {
-                            yield return StartCoroutine(cor.func.Invoke(prsntDialogue));
-                        }
-                    }
-                }
-            }
+            StartCoroutine(dialogues.InvokeIfGotSpace());
         }
 
         public IEnumerator PlayAudio(DialogueUnit unit)
@@ -118,12 +45,12 @@ namespace Dialogue
             string audioName = (string)unit.EtcInfo["AudioName"];
             if (audioName == null)
             {
-                EndOfUnitCor();
                 yield break;
             }
 
             AudioManager.instance.PlayAudio(audioName);
-            EndOfUnitCor();
+
+            yield break;
         }
 
         public IEnumerator GeneralDialogue(DialogueUnit unit)
@@ -139,14 +66,9 @@ namespace Dialogue
                 wrapper.name = wrapperName;
                 isDWrapperEnabled = true;
             }
-            //give time to enable wrapper
-            yield return null;
-            yield return null;
-            yield return null; yield return null; yield return null; yield return null;
 
             //If Dialogue Circle is fading in and out. it stops and disappear.
             Image circle = null;
-
             if (GameObject.Find("DialogueCircle").TryGetComponent<Image>(out circle) && circle.enabled == true)
             {
                 circle.enabled = false;
@@ -169,28 +91,31 @@ namespace Dialogue
                 string slicedSentence = sentence.Substring(0, i);
                 string lastchar = sentence.Substring(i - 1, 1);
 
+                if (lastchar == "<")
+                {
+                    i += sentence.Substring(i).IndexOf('>');
+                    continue;
+                }
                 dialogueTMPro.text = slicedSentence;
 
-                if (lastchar == "\n" || lastchar == "," || lastchar == ".")
-                    yield return new WaitForSeconds(textSpeed * 5);
+                if (lastchar == "\n" || lastchar == "," || lastchar == "." || lastchar == "…")
+                    yield return new WaitForSeconds(dialogues.TextSpeed * 5);
                 else
-                    yield return new WaitForSeconds(textSpeed);
+                    yield return new WaitForSeconds(dialogues.TextSpeed);
 
 
-                if (InputManager.inst.GetInput("space") && !forceToNextDialogue)
+                if (InputManager.inst.GetInputNextText() && !dialogues.ForceToNextDialogue)
                 {
                     dialogueTMPro.text = sentence;
                     break;
                 }
             }
 
-            EndOfUnitCor();
         }
 
         public IEnumerator WaitForSec(DialogueUnit unit)
         {
             yield return new WaitForSeconds((float)unit.EtcInfo["WaitForSeconds"]);
-            EndOfUnitCor();
         }
 
         public IEnumerator DisableDialogueCircle(DialogueUnit unit)
@@ -206,7 +131,6 @@ namespace Dialogue
                 coroutineDict.Remove("FadeInAndOutCircle");
             }
 
-            EndOfUnitCor();
             yield break;
         }
 
@@ -224,7 +148,6 @@ namespace Dialogue
             coroutineDict.Add("FadeInAndOutCircle", coroutine);
 
             StartCoroutine(coroutine);
-            EndOfUnitCor();
             yield break;
         }
 
@@ -237,7 +160,6 @@ namespace Dialogue
 
             source.GenerateImpulse();
 
-            EndOfUnitCor();
             yield break;
         }
 
@@ -247,9 +169,8 @@ namespace Dialogue
             This Coroutine should be added before Dialogue Coroutine.
             As Dialogue Coroutine executed, It checks forcetoNextDialogue for whether it could be skip or not
             */
-            forceToNextDialogue = true;
+            dialogues.ForceToNextDialogue = true;
 
-            EndOfUnitCor();
             yield break;
         }
 
@@ -273,7 +194,6 @@ namespace Dialogue
             character.transform.position = (Vector2)info["CharacterPos"];
             yield return null;
 
-            EndOfUnitCor();
         }
 
         public IEnumerator MakeCharacterWalk(DialogueUnit unit)
@@ -309,7 +229,6 @@ namespace Dialogue
 
             }
 
-            EndOfUnitCor();
             yield break;
         }
 
@@ -346,7 +265,6 @@ namespace Dialogue
                 wrapper.name = wrapperName;
                 isDWrapperEnabled = true;
             }
-            EndOfUnitCor();
             yield break;
         }
 
@@ -359,7 +277,146 @@ namespace Dialogue
                 isDWrapperEnabled = false;
             }
 
-            EndOfUnitCor();
+            yield break;
+        }
+
+        public IEnumerator ControlCharacter1(DialogueUnit unit)
+        {
+            /*
+            ControlCharacter1 contains character's emotion, voiceSource, position
+            ex) ControlCharacter1 : ControlCharacter : Shinoh, Sad, VoiceFileName, -4, -1
+
+            */
+            if (!unit.EtcInfo.ContainsKey("ControlCharacter1"))
+            {
+                Debug.LogError("ControlCharacter1 parameter missed");
+                yield break;
+            }
+            ControlCharacter control = (ControlCharacter)unit.EtcInfo["ControlCharacter1"];
+
+
+            GameObject character;
+            character = GameObject.Find(control.name);
+            if (character == null)
+            {
+                float appearSpeed = Time.deltaTime * 3;
+                character = Instantiate(GameManager.LoadPrefab("Character"), control.position, new Quaternion(), GameObject.Find("BgrWrapper").transform);
+                character.GetComponent<SpriteRenderer>().sprite =
+                GameManager.LoadImage("Character/" + control.name + control.emotion);
+                character.name = control.name;
+
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.flipX = control.flip;
+                Color color = sprite.color;
+
+                float f = 0;
+                while (f < 1)
+                {
+                    sprite.color = new Color(color.r, color.g, color.b, f);
+                    f += appearSpeed;
+                    yield return null;
+                }
+            }
+            else
+            {
+                character.transform.position = control.position;
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.sprite = GameManager.LoadImage("Character/" + control.name + control.emotion);
+                sprite.flipX = control.flip;
+            }
+
+            if (control.voice != "")
+            {
+                AudioManager.instance.PlayVoice("Voice/" + control.voice);
+            }
+
+            yield break;
+        }
+
+
+        public IEnumerator ControlCharacter2(DialogueUnit unit)
+        {
+            /*
+            ControlCharacter2 contains character's emotion, voiceSource, position
+            ex) ControlCharacter2 : ControlCharacter : Shinoh, Sad, VoiceFileName, -4, -1
+
+            */
+            if (!unit.EtcInfo.ContainsKey("ControlCharacter2"))
+            {
+                Debug.LogError("ControlCharacter1 parameter missed");
+                yield break;
+            }
+            ControlCharacter control = (ControlCharacter)unit.EtcInfo["ControlCharacter2"];
+
+
+            GameObject character;
+            character = GameObject.Find(control.name);
+            if (character == null)
+            {
+                float appearSpeed = Time.deltaTime * 3;
+                character = Instantiate(GameManager.LoadPrefab("Character"), control.position, new Quaternion(), GameObject.Find("BgrWrapper").transform);
+                character.GetComponent<SpriteRenderer>().sprite =
+                GameManager.LoadImage("Character/" + control.name + control.emotion);
+                character.name = control.name;
+
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.flipX = control.flip;
+                Color color = sprite.color;
+
+                float f = 0;
+                while (f < 1)
+                {
+                    sprite.color = new Color(color.r, color.g, color.b, f);
+                    f += appearSpeed;
+                    yield return null;
+                }
+            }
+            else
+            {
+                character.transform.position = control.position;
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.sprite = GameManager.LoadImage("Character/" + control.name + control.emotion);
+                sprite.flipX = control.flip;
+            }
+
+            if (control.voice != "")
+            {
+                AudioManager.instance.PlayVoice("Voice/" + control.voice);
+            }
+
+
+            yield break;
+        }
+
+        public IEnumerator DisappearCharacter(DialogueUnit unit)
+        {
+
+            string names = (string)unit.EtcInfo["DisappearCharacter"];
+            string[] namesArr = names.Trim().Split(",");
+            List<GameObject> characterList = new List<GameObject>();
+
+            foreach (string name in namesArr)
+            {
+                characterList.Add(GameObject.Find(name));
+            }
+
+            float appearSpeed;
+            SpriteRenderer sprite;
+            Color color;
+            float f = 1;
+            while (f > 0)
+            {
+                appearSpeed = Time.deltaTime * 3;
+                foreach (GameObject item in characterList)
+                {
+                    sprite = item.GetComponent<SpriteRenderer>();
+                    color = sprite.color;
+                    sprite.color = new Color(color.r, color.g, color.b, f);
+                }
+                f -= appearSpeed;
+                yield return null;
+            }
+
             yield break;
         }
 
@@ -394,20 +451,12 @@ namespace Dialogue
 
 
             //이전 배경이미지를 페이드아웃 시킨다.
-            object backOption = 0;
             oldBackgroundImage.GetComponent<SpriteRenderer>().material = GameManager.LoadMaterial("FadeMaterial");
-            unit.EtcInfo.TryGetValue("BackOption", out backOption);
-
-
-            // if (backOption != null)
-            // {
-            oldBackgroundImage.GetComponent<SpriteRenderer>().material.SetInteger("_Option", 5);
-
-            // }
-
+            if (unit.EtcInfo.ContainsKey("BackOption"))
+                oldBackgroundImage.GetComponent<SpriteRenderer>().material.SetInt("option", 5);
 
             Animator animator = oldBackgroundImage.AddComponent<Animator>();
-            animator.runtimeAnimatorController = GameManager.LoadResource("Animator/Dialogue/FadeInAndOutImage") as RuntimeAnimatorController;
+            animator.runtimeAnimatorController = GameManager.LoadResource<RuntimeAnimatorController>("Animator/Dialogue/FadeInAndOutImage") as RuntimeAnimatorController;
             animator.SetTrigger("FadeOut");
 
             yield return null;
@@ -416,7 +465,33 @@ namespace Dialogue
             yield return new WaitForSeconds(duration);
             Destroy(oldBackgroundImage);
 
-            EndOfUnitCor();
+            yield break;
+        }
+
+        public IEnumerator ShowImage(DialogueUnit unit)
+        {
+
+            GameObject bgrWrapper = GameObject.Find("BgrWrapper");
+            GameObject image = GameManager.LoadPrefab("Dialogue/Image");
+
+
+            image = Instantiate(image, bgrWrapper.transform);
+
+            SpriteRenderer sRenderer = image.GetComponent<SpriteRenderer>();
+            Color sColor = sRenderer.color;
+            sRenderer.sprite = GameManager.LoadImage((string)unit.EtcInfo["Image"]);
+            float appearSpeed;
+            float f = 0;
+            while (f < 1)
+            {
+                appearSpeed = Time.deltaTime * 3;
+
+                sRenderer.color = new Color(sColor.r, sColor.g, sColor.b, f);
+
+                f += appearSpeed;
+                yield return null;
+            }
+
             yield break;
         }
 

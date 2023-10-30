@@ -63,7 +63,6 @@ public class Setting : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         isFullscreen = toggle.isOn;
-        Debug.Log(isFullscreen);
         Screen.fullScreen = isFullscreen;
     }
 

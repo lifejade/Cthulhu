@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class PlayerDataManager : MonoBehaviour, EManager
 {
+    public Dictionary<int, bool> Clear_MainChapter;
+    public Dictionary<int, bool> Clear_ResearchChapter;
+    public Dictionary<int, bool> HaveItem;
 
-   
+    public List<string> Clear_Tutorial;
+
 
     public void init()
     {
         Debug.Log("PlayerDataManager Init");
+        Clear_MainChapter = new Dictionary<int, bool>();
+        Clear_ResearchChapter = new Dictionary<int, bool>();
+
+
+        HaveItem = new Dictionary<int, bool>();
+        Clear_Tutorial = new List<string>();
+
     }
 
     public void update_()

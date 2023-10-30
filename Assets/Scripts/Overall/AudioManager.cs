@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource bgmAudioSource;
     public AudioSource audioSource;
+    public AudioSource voiceSource;
     public static AudioManager instance;
 
     void Awake()
@@ -39,6 +40,14 @@ public class AudioManager : MonoBehaviour
         AudioClip audioClip = GameManager.LoadAudio(audioClipName);
         audioSource.clip = audioClip;
         audioSource.Play();
+    }
+
+    public void PlayVoice(string audioClipName)
+    {
+        AudioClip audioClip = GameManager.LoadAudio(audioClipName);
+        voiceSource.clip = audioClip;
+        voiceSource.Play();
+
     }
 
 }

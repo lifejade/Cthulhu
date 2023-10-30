@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
 {    
@@ -8,6 +10,10 @@ public class InputManager : MonoBehaviour
     private static Queue<InputUnit> inputQueue = new Queue<InputUnit>();
     private static Dictionary<string, InputUnit> inputDict = new Dictionary<string, InputUnit>();
     private static int inputLastingFrame = 20;
+
+
+    GraphicRaycaster canvas_gr;
+
 
     //싱글턴
     void Awake()
@@ -30,11 +36,38 @@ public class InputManager : MonoBehaviour
         InputLogic();
     }
 
+    public bool GetInputNextText()
+    {
+        return GetInput("space")| isMouseInScreen();
+    }
+
+    public bool isMouseInScreen()
+    {
+        if (!InputManager.inst.GetInput("mousebtn0"))
+            return false;
+        if(canvas_gr == null)
+            canvas_gr = GameObject.Find("Canvas").GetComponent<GraphicRaycaster>();
+
+        List<RaycastResult> results = new List<RaycastResult>();
+        PointerEventData m_ped = new PointerEventData(null);
+        m_ped.position = Input.mousePosition;
+        canvas_gr.Raycast(m_ped, results);
+
+        results.RemoveAll((RaycastResult e) => { if (e.gameObject.layer == 2) return true; else return false; });
+
+
+        if (results.Count > 0)
+            return false;
+
+        return true;
+    }
 
     //사용자가 스페이스를 누르지 않았음에도 연출적으로 예상하지 못한 타이밍에 대화를 진행시키기 위한 메소드
     public void PressSpace()
     {
-        inputDict.Add("space", new InputUnit(KeyCode.Space, StartCoroutine(RemoveAfterLastingFrame("space"))));
+        bool suc = inputDict.TryAdd("space", new InputUnit(KeyCode.Space, StartCoroutine(RemoveAfterLastingFrame("space"))));
+        if(!suc)
+            Debug.Log("failed to press");
     }
     //inputName으로 dict에 등록된 inputUnit이 있는지 검색하고 있다면 true를 반환
     public bool GetInput(string inputName)
@@ -49,7 +82,7 @@ public class InputManager : MonoBehaviour
             //endofframe에서 사용한 inputunit을 제거하는 코루틴을 실행한다.
             StopCoroutine(iUnit.removeCor);
             iUnit.isUsed = true;
-            StartCoroutine(RemoveImmediately("space"));
+            StartCoroutine(RemoveImmediately(inputName));
         }
         return true;
     }
@@ -60,6 +93,11 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PressSpace();
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            inputDict.TryAdd("mousebtn0", new InputUnit(0, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+                Input.mousePosition.y, -Camera.main.transform.position.z)), StartCoroutine(RemoveAfterLastingFrame("mousebtn0"))));
         }
     }
 

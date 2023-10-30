@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Linq;
 using UnityEngine.UI;
 
 public class RegionManager : MonoBehaviour, EManager
 {
-    public int playerMaxTurn = 100;
-    public int playerTurn = 100;
+    public int playerMaxTurn = 18;
+    public int playerTurn { get { return _playerTurn; } set { _playerTurn = value;RegionUI.updaterestTurn(_playerTurn); } }
+    private int _playerTurn = 18;
+
     public int dayTurn = 3;
     public int nightTurn = 5;
     public int monsterMaxNum = 1;
@@ -18,9 +19,13 @@ public class RegionManager : MonoBehaviour, EManager
     public GameObject PlayerIcon;
     public GameObject Monsterprefab = null;
     public List<RegionMonster> Monsters = new List<RegionMonster>();
+    public int dead_count = 0;
 
+    private TutorialComponent tutorial;
     private string last_move_scene;
+    
     private bool isRegionMap = true;
+
     public RegionGraphEdit graph { 
         get {
             
@@ -35,12 +40,27 @@ public class RegionManager : MonoBehaviour, EManager
     private RegionGraphEdit _graph = null;
 
 
+    public RegionMapUI RegionUI
+    {
+        get
+        {
+            if(_regionUI== null)
+            {
+                _regionUI = GameObject.Find("Canvas").GetComponent<RegionMapUI>();
+            }
+            _regionUI.updaterestTurn(playerTurn);
+            return _regionUI;
+        }
+        
+    }
+    private RegionMapUI _regionUI;
+
     public GameObject EnterUI { 
         get {
             if(_enterUI == null)
             {
-                _enterUI = GameObject.Find("SceneMoveParents").transform.Find("SceneMove").gameObject;
-                _enterUI.transform.GetChild(0).Find("yes").GetComponent<Button>().onClick.AddListener(delegate() { isRegionMap = false; SceneManager.LoadScene(last_move_scene); });
+                _enterUI = RegionUI.SceneMoveParents.transform.Find("SceneMove").gameObject;
+                _enterUI.transform.GetChild(0).Find("yes").GetComponent<Button>().onClick.AddListener(delegate() { isRegionMap = false; SceneChanger.instance.ChangeScene(last_move_scene); });
             }
                 
             return _enterUI;
@@ -48,13 +68,27 @@ public class RegionManager : MonoBehaviour, EManager
     }
     private GameObject _enterUI;
 
+    public GameObject ClearEnterUI
+    {
+        get
+        {
+            if (_clearenterUI == null)
+            {
+                _clearenterUI = RegionUI.SceneMoveParents.transform.Find("ClearSceneMove").gameObject;
+                _clearenterUI.transform.GetChild(0).Find("yes").GetComponent<Button>().onClick.AddListener(delegate () { isRegionMap = false; PlayerInNameLast = null; SceneChanger.instance.ChangeScene("Lobby 2"); });
+            }
+
+            return _clearenterUI;
+        }
+    }
+    private GameObject _clearenterUI;
+
 
     [HideInInspector]
-    public string PlayerInNameLast;
+    public string PlayerInNameLast = null;
     public Dictionary<string,string> MonsterInNamesLast = new Dictionary<string,string>();
     
 
-    //씬 이동시 데이터 인계x 생각해볼것
     public RegionNode PlayerIsIn
     {
         get { 
@@ -84,7 +118,8 @@ public class RegionManager : MonoBehaviour, EManager
     {
         if(PlayerIcon == null) PlayerIcon = GameObject.Find("PlayerIcon");
         if (Monsterprefab == null) Monsterprefab = Resources.Load<GameObject>("Prefab/Region/MonsterIcon");
-
+        if (tutorial == null) tutorial = GameObject.Find("Canvas").GetComponent<TutorialComponent>();
+        playerTurn = playerMaxTurn;
         StartCoroutine(CheckRegionNodeInitOver());
     }
 
@@ -94,6 +129,7 @@ public class RegionManager : MonoBehaviour, EManager
         createMonster();
         isInSight();
         isRegionMap = true;
+        tutorial.SetTutorialActive("Tutorial-Basic step");
     }
 
     public static RegionManager createInstance()
@@ -102,6 +138,7 @@ public class RegionManager : MonoBehaviour, EManager
         if (go == null)
         {
             go = new GameObject { name = "@RegionManager" };
+            //Todo : remove
             go.transform.parent = Managers.MGRS.transform;
         }
 
@@ -122,10 +159,14 @@ public class RegionManager : MonoBehaviour, EManager
         if (!isRegionMap)
             return;
 
+
         if (playerTurn <= 0 && PlayerIsIn.board_State != RegionNode.Board_State.end)
         {
             //if(조건만족)
+            PlayerDead();
             Debug.Log("GameOver");
+            isRegionMap = false;
+            PlayerInNameLast = null; SceneChanger.instance.ChangeScene("Lobby 2");
             return;
         }
 
@@ -133,9 +174,10 @@ public class RegionManager : MonoBehaviour, EManager
         {
             foreach(RegionMonster m in Monsters)
             {
-                if (m.isActive && m.here == PlayerIsIn)
+                if (m.IsActive && m.here == PlayerIsIn)
                 {
-                    Debug.Log("GG");
+                    PlayerDead();
+                    PlayerIsIn = graph.regions.First(value => { return value.board_State == RegionNode.Board_State.start; }); 
                     return;
                 }
             }
@@ -151,44 +193,72 @@ public class RegionManager : MonoBehaviour, EManager
             {
                 //Debug.Log(hit.transform.gameObject.name);
                 RegionNode region = hit.collider.gameObject.GetComponent<RegionNode>();
-                if (region != null &&region.board_State != RegionNode.Board_State.ban)
+                if (region != null)
                 {
-                    if (region != PlayerIsIn && region.adj_list.Any(e => { return e.isIn(PlayerIsIn); }))
+                    if(region.board_State == RegionNode.Board_State.ban)
                     {
-                        PlayerIsIn = region;
-                        playerTurn--;
-                        //Debug.Log(playerTurn);
-                        if((playerMaxTurn - playerTurn) % (dayTurn + nightTurn) < dayTurn)
-                        {
-                            Debug.Log("지금은 낮입니다");
-                            sight = 2;
-                        }
-                        else
-                        {
-                            Debug.Log("지금은 밤입니다");
-                            sight = 1;
-                        }
-
-                        chaseMonster();
-                        if ((playerMaxTurn - playerTurn) % (dayTurn + nightTurn) == dayTurn)
-                        {
-                            activeMonster();
-                        }
-                        else if((playerMaxTurn - playerTurn) % (dayTurn + nightTurn) == 0)
-                        {
-                            deleteMonster();
-                        }
-
-
-                        isInSight();
+                        tutorial.SetTutorialActive("Tutorial-Ban Region");
+                        return;
                     }
-                    
 
-                    if(region.board_State == RegionNode.Board_State.enter)
+
+
+                    if (region.adj_list.Any(e => { return e.isIn(PlayerIsIn); }))
                     {
-                        EnterUI.SetActive(true);
-                        last_move_scene = _playerIsIn.SceneName;
+                        if(region != PlayerIsIn)
+                        {
+                            if ((playerMaxTurn - playerTurn) % (dayTurn + nightTurn) < dayTurn)
+                            {
+                                Debug.Log("지금은 낮입니다");
+                                sight = 2;
+                            }
+                            else
+                            {
+                                tutorial.SetTutorialActive("Tutorial-Day and Night");
+                                Debug.Log("지금은 밤입니다");
+                                sight = 1;
+                            }
+
+                            PlayerIsIn = region;
+                            playerTurn--;
+
+                            if (PlayerIsIn.board_State == RegionNode.Board_State.end)
+                            {
+                                tutorial.SetTutorialActive("Tutorial-Clear Check");
+                                ClearEnterUI.SetActive(true);
+                                //if(clear)
+                                //ClearEnterUI.~~
+                                return;
+                            }
+
+                            chaseMonster();
+                            if ((playerMaxTurn - playerTurn) % (dayTurn + nightTurn) == dayTurn)
+                            {
+                                activeMonster();
+                            }
+                            else if ((playerMaxTurn - playerTurn) % (dayTurn + nightTurn) == 0)
+                            {
+                                deleteMonster();
+                            }
+                        }
+
+                        if (region.board_State == RegionNode.Board_State.enter)
+                        {
+                            tutorial.SetTutorialActive("Tutorial-Research Region");
+                            EnterUI.SetActive(true);
+                            last_move_scene = _playerIsIn.SceneName;
+                        }
+                        if (region.board_State == RegionNode.Board_State.heroine)
+                        {
+                            tutorial.SetTutorialActive("Tutorial-HeroinSelect");
+                            EnterUI.SetActive(true);
+                            last_move_scene = "SelectHerionStory";
+                        }
+
                     }
+
+
+
                 }
             }
         }
@@ -235,7 +305,7 @@ public class RegionManager : MonoBehaviour, EManager
 
             if (Monsters.Count <= idx || idx >= monsterMaxNum)
                 break;
-            Monsters[idx].isActive = true;
+            Monsters[idx].IsActive = true;
             Monsters[idx].origin = v.Key;
             Monsters[idx].here = v.Key;
             idx++;
@@ -248,7 +318,7 @@ public class RegionManager : MonoBehaviour, EManager
     {
         foreach(RegionMonster m in Monsters)
         {
-            if (m.isActive && m.here != null)
+            if (m.IsActive && m.here != null)
                 m.chasePlayer();
         }
     }
@@ -257,7 +327,7 @@ public class RegionManager : MonoBehaviour, EManager
     {
         foreach (RegionMonster m in Monsters)
         {
-            m.isActive = false;
+            m.IsActive = false;
         }
         MonsterInNamesLast.Clear();
     }
@@ -269,7 +339,7 @@ public class RegionManager : MonoBehaviour, EManager
         {
             GameObject go = Instantiate(Monsterprefab);
             RegionMonster m = go.GetComponent<RegionMonster>();
-            m.isActive = false;
+            m.IsActive = false;
             Monsters.Add(m);
         }
     }
@@ -326,11 +396,18 @@ public class RegionManager : MonoBehaviour, EManager
         StartCoroutine(CheckInitOverBackToScene());
     }
 
+    public void PlayerDead()
+    {
+        tutorial.SetTutorialActive("Tutorial-Return");
+        playerTurn = playerMaxTurn;
+        dead_count++;
+        deleteMonster();
+    }
+
     IEnumerator CheckInitOverBackToScene()
     {
         yield return new WaitUntil(() => graph != null);
         yield return new WaitUntil(() => graph.regions.All(value => { return value.initializeOver; }));
-        graph.regions.First(value => { return value.board_State == RegionNode.Board_State.start; }).board_State = RegionNode.Board_State.normal;
 
         createMonster();
         bool monsteractive = (playerMaxTurn - playerTurn) % (dayTurn + nightTurn) >= dayTurn;
@@ -343,13 +420,17 @@ public class RegionManager : MonoBehaviour, EManager
             RegionMonster m = Monsters[idx];
             m.origin = graph.regions.First(value => { return value.gameObject.name == name; });
             m.here = graph.regions.First(value => { return value.gameObject.name == MonsterInNamesLast[m.origin.gameObject.name]; });
-            m.isActive = monsteractive;
+            m.IsActive = monsteractive;
         }
 
         if (PlayerIcon == null) PlayerIcon = GameObject.Find("PlayerIcon");
         PlayerIsIn = graph.regions.First(value => { return value.gameObject.name == PlayerInNameLast; });
+        if (Monsterprefab == null) Monsterprefab = Resources.Load<GameObject>("Prefab/Region/MonsterIcon");
+        if (tutorial == null) tutorial = GameObject.Find("Canvas").GetComponent<TutorialComponent>();
 
 
+        if (RegionUI == null)
+            Debug.Log("error");
         isInSight();
         isRegionMap = true;
     }

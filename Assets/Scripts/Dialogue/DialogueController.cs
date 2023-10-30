@@ -23,16 +23,21 @@ namespace Dialogue
         // Start is called before the first frame update
         void Start()
         {
-            AudioManager.instance.ChangeBgm("Dialogue/OminousBGM");
+            AudioManager.instance.ChangeBgm("Dialogue/1번_theme_48-24");
             SceneChanger.instance.LoadScene("BloodFilled");
         }
 
         // Update is called once per frame
         void Update()
-        {
-            StartCoroutine( DialogueMethods.instance.ExecutePerFrame() );   
-        }
+        {DialogueMethodsCp1.instance.ExecutePerFrame(); }
 
+        public void DialogueEnd()
+        {
+            if(!Managers.PlayerData.Clear_MainChapter.ContainsKey(1))
+                Managers.PlayerData.Clear_MainChapter.Add(1, true);
+
+            SceneChanger.instance.ChangeScene("Lobby 2");
+        }
 
     }
 }

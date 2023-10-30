@@ -1,0 +1,127 @@
+{
+    "name" : "Chapter1 Dialogue Unit List",
+    "uList": [
+        {
+            "id": 0,
+            "action": "ChangeBackGround | PlayAudio",
+            "param": "BackgroundImage : string : Dialogue/bizarrecity | BackOption : float : 5 | AudioName : string : Dialogue/BellRinging",
+            "sentence": "[카페 종 소리]"
+        },
+        {
+            "id": 1,
+            "action": "GeneralDialogue | EnableDialogueCircle | ForceToNextDialogue",
+            "param": "",
+            "sentence": "??? : <size=140%><b>꼬맹아!</b></size>"
+        },
+        {
+            "id": 2,
+            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+            "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1",
+            "sentence": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다."
+        },
+        {
+            "id": 3,
+            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+            "sentence": "이성호 : 저 왔어요. 우리 박신오 교수님."
+        },
+        {
+            "id": 4,
+            "action": "GeneralDialogue | SelectChoices | ForceToNextDialogue",
+            "param": "",
+            "sentence": "박신오 : 왜 이렇게 늦어? 커피 다 식겠다.",
+            "choices": [
+                {
+                    "name" : "Choice1",
+                    "sentence" : "선택지 1을 선택한다.",
+                    "uList": [
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 5, -1, true",
+                            "sentence": "choice1 - 1"
+                        },
+                        {
+                            "action": "",
+                            "param": "",
+                            "sentence": "choice1  - 2"
+                        }
+                    ]
+                },
+                {
+                    "name" : "Choice2",
+                    "sentence" : "선택지 2을 선택한다.",
+                    "uList": [
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice2"
+                        },
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice2"
+                        }
+                    ]
+                },
+                {
+                    "name" : "Choice3",
+                    "sentence" : "선택지 3을 선택한다.",
+                    "uList": [
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice3"
+                        },
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "chooice3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "action": "",
+            "param": "",
+            "sentence": "이성호 : 시간 맞춰서 왔는데요?"
+        },
+        {
+            "id": 6,
+            "action": "",
+            "param": "",
+            "sentence": "박신오 : 인마. 나이도 먹을 대로 먹은 노친네를 기다리게 했으면 늦은거지. "
+        },
+        {
+            "id": 7,
+            "action": "",
+            "param": "",
+            "sentence": "이성호 : 어휴…"
+        },
+        {
+            "id": 8,
+            "action": "",
+            "param": "",
+            "sentence": "박신오 : 한숨 쉬면 복 나간다는 말 못 들어봤냐?"
+        },
+        {
+            "id": 9,
+            "action": "",
+            "param": "",
+            "sentence": "이성호 : 에휴…"
+        },
+        {
+            "id": 10,
+            "action": "",
+            "param": "",
+            "sentence": "박신오 : 이 자식이?"
+        },
+        {
+            "id": 11,
+            "action": "DisappearCharacter | GeneralDialogue | EnableDialogueCircle",
+            "param": "DisappearCharacter : string : Shinoh, Seongho",
+            "sentence": "우리는 시간 가는 줄 모르고 시시콜콜한 이야기를 나누었다."
+        }
+    ]
+}

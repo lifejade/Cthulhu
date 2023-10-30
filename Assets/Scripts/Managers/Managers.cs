@@ -17,8 +17,6 @@ public class Managers : MonoBehaviour
     public static RegionManager Region { get { if (_region == null) _region = RegionManager.createInstance(); return _region; } }
     public static ResearchAreaManager ResearchArea { get { if (_researchArea == null) _researchArea = ResearchAreaManager.createInstance(); return _researchArea; } }
     private static ResearchAreaManager _researchArea = null;
-    public static SceneMoveManager SceneMove { get { if (_scenemove == null) _scenemove = SceneMoveManager.createInstance(); return _scenemove; } }
-    private static SceneMoveManager _scenemove = null;
 
 
     static void init()

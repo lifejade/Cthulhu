@@ -14,7 +14,8 @@ public class RegionMonster : MonoBehaviour
     private RegionNode _here = null;
     private SpriteRenderer render;
 
-    public bool isActive = false;
+    public bool IsActive { get { return isactive; } set { isactive = value; if (!isactive && render != null) render.enabled = false; } }
+    private bool isactive = false;
     public RegionNode origin;
 
 
@@ -33,7 +34,7 @@ public class RegionMonster : MonoBehaviour
 
     public void chasePlayer()
     {
-        if (!isActive)
+        if (!IsActive)
             return;
 
         RegionNode player = Managers.Region.PlayerIsIn;
@@ -60,11 +61,11 @@ public class RegionMonster : MonoBehaviour
                     continue;
 
 
-                if (solution.ContainsKey(node))
+                if (solution.ContainsKey(node) && solution[node] <= dist + 1)
                     continue;
 
                 q.Enqueue(node);
-                solution.Add(node, dist + 1);
+                solution[node]= dist + 1;
                 pre.Add(node, q_node);
             }
         }
@@ -75,7 +76,7 @@ public class RegionMonster : MonoBehaviour
         }
         here = nextmovenode;
 
-        if (solution[here] <= Managers.Region.sight)
+        if (solution[player] - solution[here] < Managers.Region.sight)
         {
             render.enabled = true;
         }

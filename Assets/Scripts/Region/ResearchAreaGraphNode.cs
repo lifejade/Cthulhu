@@ -33,7 +33,7 @@ public class ResearchAreaGraphNode : GraphNode
         initializeOver = true;
     }
 
-    protected override void UpdateBoardState()
+    public override void UpdateBoardState()
     {
         Image render = GetComponent<Image>();
         if (PlayerIsHere)

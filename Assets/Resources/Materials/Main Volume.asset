@@ -396,6 +396,28 @@ MonoBehaviour:
   scale:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-1318889572509732403
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11190c21184d047bdb95ce16c89d2910, type: 3}
+  m_Name: CustomTexV
+  m_EditorClassIdentifier: 
+  active: 1
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
+  texture:
+    m_OverrideState: 1
+    m_Value: {fileID: 8400000, guid: fa9640d5fb230434cafd6e374a26f484, type: 2}
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &-1100946227455311121
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -451,28 +473,8 @@ MonoBehaviour:
   components:
   - {fileID: -3846913272623231528}
   - {fileID: -1628519756731543895}
-  - {fileID: 5714806411657525990}
-  - {fileID: -4545379327866791662}
-  - {fileID: -6866936353624926076}
-  - {fileID: -3768787254291699032}
-  - {fileID: 4425569626864177748}
-  - {fileID: 2996768225554602795}
-  - {fileID: 289581020081746791}
-  - {fileID: -4430890438092437571}
-  - {fileID: 1587624359230984188}
-  - {fileID: 2290179648619113411}
-  - {fileID: -7478299739478302779}
-  - {fileID: -5009617638810678258}
-  - {fileID: -1100946227455311121}
-  - {fileID: 5625917695993931045}
-  - {fileID: 8923795499492661662}
-  - {fileID: 7260297228884820406}
-  - {fileID: -7223907048538563720}
-  - {fileID: 7328621132211221236}
-  - {fileID: -6489499716809353881}
-  - {fileID: -6058911035500025591}
-  - {fileID: 8110444904426483368}
-  - {fileID: -2163088965146264099}
+  - {fileID: 2458688950621181355}
+  - {fileID: -1318889572509732403}
 --- !u!114 &289581020081746791
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -560,6 +562,43 @@ MonoBehaviour:
   fade:
     m_OverrideState: 1
     m_Value: 1
+  mask:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+--- !u!114 &2458688950621181355
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4855cad5f7da5a44d9f55f73408a4750, type: 3}
+  m_Name: LimitlessGlitch14
+  m_EditorClassIdentifier: 
+  active: 1
+  enable:
+    m_OverrideState: 1
+    m_Value: 0
+  stop:
+    m_OverrideState: 0
+    m_Value: 0
+  fade:
+    m_OverrideState: 1
+    m_Value: 1
+  amount:
+    m_OverrideState: 1
+    m_Value: 1.5
+  speed:
+    m_OverrideState: 1
+    m_Value: 4
+  RandomActivationSpeed:
+    m_OverrideState: 1
+    m_Value: 0.2
+  randomActivateAmount:
+    m_OverrideState: 1
+    m_Value: 0.75
   mask:
     m_OverrideState: 0
     m_Value: {fileID: 0}

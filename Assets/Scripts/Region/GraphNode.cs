@@ -6,5 +6,5 @@ public abstract class GraphNode : MonoBehaviour
 {
     public List<GraphEdgeNode> adj_list;
 
-    protected abstract void UpdateBoardState();
+    public abstract void UpdateBoardState();
 }

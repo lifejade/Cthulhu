@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [ExecuteInEditMode]
 public class RegionGraphEdit : MonoBehaviour
@@ -11,9 +14,24 @@ public class RegionGraphEdit : MonoBehaviour
 
     public Material lineMaterial;
 
+    [SerializeField]
+    public RegionBanCondition condition;
+
+    [SerializeField]
+    public RegionNode[] ban_nodes;
+
+    private void Start()
+    {
+        if(Application.isPlaying && Managers.Region.PlayerInNameLast == null)
+            Managers.Region.init();
+    }
+
     private void Update()
     {
         regions = GameObject.FindObjectsOfType<RegionNode>();
+        ban_nodes = Array.FindAll<RegionNode>(regions, (RegionNode n) => { return n.board_State == RegionNode.Board_State.ban; });
+        if(condition != null)
+            condition.UpdateDicOnEditorMode(ban_nodes);
 
         if (edges.Length == 0)
             return;
@@ -37,6 +55,16 @@ public class RegionGraphEdit : MonoBehaviour
                 LineUpdate(e);
             }
         }
+
+
+        if (!Application.isPlaying)
+        {
+            foreach (RegionNode n in regions)
+            {
+                n.UpdateBoardStateOnEditorMode();
+            }
+        }
+
     }
 
     void LineInit(GraphEdgeNode e)

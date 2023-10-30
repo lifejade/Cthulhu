@@ -1,0 +1,85 @@
+{
+    "name" : "Chapter1 Dialogue Unit List",
+    "uList": [
+        {
+            "id": 0,
+            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+            "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1",
+            "sentence": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다."
+        },
+        {
+            "id": 1,
+            "action": "",
+            "param": "",
+            "sentence": "??? : <size=140%><b>꼬맹아!</b></size>"
+        },
+        {
+            "id": 2,
+            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+            "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1",
+            "sentence": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다."
+        },
+        {
+            "id": 3,
+            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+            "sentence": "이성호 : 저 왔어요. 우리 박신오 교수님."
+        },
+        {
+            "id": 4,
+            "action": "",
+            "param": "",
+            "sentence": "박신오 : 왜 이렇게 늦어? 커피 다 식겠다.",
+            "choices": [
+                {
+                    "name" : "choice1 unit list",
+                    "sentence" : "선택지 1을 선택한다.",
+                    "uList": [
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice1"
+                        },
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice1"
+                        }
+                    ]
+                },
+                {
+                    "name" : "choice2 unit list",
+                    "sentence" : "선택지 2을 선택한다.",
+                    "uList": [
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice2"
+                        },
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice2"
+                        }
+                    ]
+                },
+                {
+                    "name" : "choice3 unit list",
+                    "sentence" : "선택지 3을 선택한다.",
+                    "uList": [
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "choice3"
+                        },
+                        {
+                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+                            "sentence": "chooice3"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

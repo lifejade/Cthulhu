@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
 
             targetScreenRatio = targetScreenWidthRatio / targetScreenHeightRatio;
             screenRatio = (float)Screen.width / (float)Screen.height;
-            matchToWidth = GameManager.NearlyEqual(targetScreenRatio, screenRatio) ? true : matchToWidth = targetScreenRatio > screenRatio;
+            matchToWidth = true;
+            // GameManager.NearlyEqual(targetScreenRatio, screenRatio) ? true : targetScreenRatio > screenRatio;
 
             screenBottomLeftInWorld = Camera.main.ScreenToWorldPoint(new Vector2(0, 0));
             screenTopRightInWorld = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
@@ -53,24 +54,25 @@ public class GameManager : MonoBehaviour
 
 
 
-    public static UnityEngine.Object LoadResource(string filename)
+    public static T LoadResource<T>(string filename) where T : UnityEngine.Object
     {
-        //Load resources indicated by filename. Filename must not have an extension.
+        //Load resources that indicated by filename parameter. Filename must not have an extension.
         UnityEngine.Object loadedResource;
         bool isExist = GameManager.loadedResources.TryGetValue(filename, out loadedResource);
 
         if (!isExist)
         {
+            //Resources.Load method's generic type can't be System.Object
             loadedResource = Resources.Load<UnityEngine.Object>(filename);
             GameManager.loadedResources.Add(filename, loadedResource);
             if (loadedResource == null)
             {
-                throw new Exception(filename + " not found");
+                throw new FileNotFoundException(filename + " not found");
             }
         }
 
 
-        return loadedResource;
+        return (T)loadedResource;
     }
     public static GameObject LoadPrefab(string filename)
     {

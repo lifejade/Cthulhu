@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static ResearchAreaUI;
 
 public class ResearchAreaManager : MonoBehaviour, EManager
 {
+    TutorialComponent tutorial;
+
     public ResearchAreaGraphEdit graph
     {
         get
@@ -47,12 +50,32 @@ public class ResearchAreaManager : MonoBehaviour, EManager
     {
         yield return new WaitUntil(() => graph.regions.All(value => { return value.initializeOver; }));
         ResearchAreaGraphNode tmp = PlayerIsIn;
+        tutorial = GameObject.Find("Canvas").GetComponent<TutorialComponent>();
+        tutorial.SetTutorialActive("Tutorial-Research Basic");
     }
 
-    public void update_()
+    public void update_(){}
+
+    void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 m_vecMouseDownPos = Input.mousePosition;
+            Vector2 pos = Camera.main.ScreenToWorldPoint(m_vecMouseDownPos);
+            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
 
+            if (hit.collider != null)
+            {
+                ResearchAreaItemListener listener = hit.collider.gameObject.GetComponent<ResearchAreaItemListener>();
+                if (listener != null)
+                {
+                    Managers.PlayerData.HaveItem.Add(listener.id, true);
+                }
+            }
+        }
+        
     }
+
 
     EManager EManager.createInstance()
     {
@@ -65,7 +88,6 @@ public class ResearchAreaManager : MonoBehaviour, EManager
         if (go == null)
         {
             go = new GameObject { name = "@ResearchAreaManager" };
-            go.transform.parent = Managers.MGRS.transform;
         }
 
         ResearchAreaManager result = go.GetComponent<ResearchAreaManager>();
@@ -75,35 +97,67 @@ public class ResearchAreaManager : MonoBehaviour, EManager
         return result;
     }
 
-    public void pressButton(int arrow)
+    public void pressButton(ResearchAreaUI.Arrow arrow)
+    {
+        GraphEdgeNode e = getENodeWithArrow(arrow);
+        if (e == null)
+            return;
+
+        Vector3 vec = getVecWithArrow(arrow);
+        PlayerIsIn = (ResearchAreaGraphNode)e.opposite(PlayerIsIn);
+        Camera.main.transform.position += vec;
+    }
+
+
+    public GraphEdgeNode getENodeWithArrow(ResearchAreaUI.Arrow arrow)
     {
         GraphEdgeNode e = null;
-        ResearchAreaGraphNode dest = null;
+        switch (arrow)
+        {
+            case ResearchAreaUI.Arrow.left:
+                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.x < PlayerIsIn.transform.position.x);
+                break;
+            case ResearchAreaUI.Arrow.right:
+                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.x > PlayerIsIn.transform.position.x);
+                break;
+            case ResearchAreaUI.Arrow.up:
+                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.y > PlayerIsIn.transform.position.y);
+                break;
+            case ResearchAreaUI.Arrow.down:
+                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.y < PlayerIsIn.transform.position.y);
+                break;
+        }
+
+        return e;
+    }
+
+
+    public Vector3 getVecWithArrow(ResearchAreaUI.Arrow arrow)
+    {
         Vector3 vec = Vector3.zero;
         switch (arrow)
         {
-            case 0:
-                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.x < PlayerIsIn.transform.position.x);
+            case ResearchAreaUI.Arrow.left:
                 vec.x = -100;
                 break;
-            case 1:
-                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.x > PlayerIsIn.transform.position.x);
+            case ResearchAreaUI.Arrow.right:
                 vec.x = 100;
                 break;
-            case 2:
-                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.y > PlayerIsIn.transform.position.y);
+            case ResearchAreaUI.Arrow.up:
                 vec.y = 100;
                 break;
-            case 3:
-                e = PlayerIsIn.adj_list.Find(value => value.opposite(PlayerIsIn).gameObject.transform.position.y < PlayerIsIn.transform.position.y);
+            case ResearchAreaUI.Arrow.down:
                 vec.y = -100;
                 break;
         }
 
-        if (e == null)
-            return;
-        dest = (ResearchAreaGraphNode)e.opposite(PlayerIsIn);
-        PlayerIsIn = dest;
-        Camera.main.transform.position += vec;
+        return vec;
     }
+
+    void OnDestroy()
+    {
+
+    }
+
+
 }
