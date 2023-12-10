@@ -8,7 +8,7 @@ namespace Dialogue
     public class DialogueController : MonoBehaviour
     {
         public static DialogueController instance;
-
+        public DialogueMethods Methods;
         void Awake()
         {
             if (instance == null)
@@ -25,11 +25,12 @@ namespace Dialogue
         {
             AudioManager.instance.ChangeBgm("Dialogue/1번_theme_48-24");
             SceneChanger.instance.LoadScene("BloodFilled");
+            Methods = DialogueMethodsCp1.instance;
         }
 
         // Update is called once per frame
         void Update()
-        {DialogueMethodsCp1.instance.ExecutePerFrame(); }
+        { Methods.ExecutePerFrame(); }
 
         public void DialogueEnd()
         {

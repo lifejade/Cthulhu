@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class RegionManager : MonoBehaviour, EManager
 {
@@ -189,7 +190,7 @@ public class RegionManager : MonoBehaviour, EManager
             Vector2 pos = Camera.main.ScreenToWorldPoint(m_vecMouseDownPos);
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
 
-            if (hit.collider != null)
+            if (hit.collider != null && EventSystem.current.IsPointerOverGameObject() == false)
             {
                 //Debug.Log(hit.transform.gameObject.name);
                 RegionNode region = hit.collider.gameObject.GetComponent<RegionNode>();

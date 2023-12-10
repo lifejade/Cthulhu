@@ -99,6 +99,11 @@ public class InputManager : MonoBehaviour
             inputDict.TryAdd("mousebtn0", new InputUnit(0, Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                 Input.mousePosition.y, -Camera.main.transform.position.z)), StartCoroutine(RemoveAfterLastingFrame("mousebtn0"))));
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            inputDict.TryAdd("ESC", new InputUnit(KeyCode.Escape, StartCoroutine(RemoveAfterLastingFrame("ESC"))));
+        }
+        
     }
 
     private IEnumerator RemoveImmediately(string inputName)

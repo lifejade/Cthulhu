@@ -11,19 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dialogue.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby 1.unity
     guid: 29f308b6826712048bf70a8514e624e8
   - enabled: 1
     path: Assets/Scenes/Lobby 2.unity
     guid: aeb6ad00a502ce14faa896adf4986831
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby Main_pre.unity
     guid: 650271f2283a7d1429fad0047a461dd5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby-Select.unity
     guid: 93e2165a3aaab2148b2d2dcbb61ae051
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lobby.unity
     guid: 8b2326df7bf04f64bacdcedff1241239
   - enabled: 1

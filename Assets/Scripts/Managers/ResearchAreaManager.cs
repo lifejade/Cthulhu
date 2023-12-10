@@ -69,7 +69,15 @@ public class ResearchAreaManager : MonoBehaviour, EManager
                 ResearchAreaItemListener listener = hit.collider.gameObject.GetComponent<ResearchAreaItemListener>();
                 if (listener != null)
                 {
-                    Managers.PlayerData.HaveItem.Add(listener.id, true);
+                    if (!Managers.PlayerData.HaveItem.ContainsKey(listener.id))
+                    {
+                        Managers.PlayerData.HaveItem.Add(listener.id, true);
+                    }
+                    else
+                    {
+                        Managers.PlayerData.HaveItem[listener.id] = true;
+                    }
+                    
                 }
             }
         }

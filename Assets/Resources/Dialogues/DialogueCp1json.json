@@ -1,127 +1,2179 @@
 {
-    "name" : "Chapter1 Dialogue Unit List",
-    "uList": [
+  "name": "Chapter1 Dialogue Unit List",
+  "uList": [
+    {
+      "id": 0,
+      "action": "ChangeBackGround | PlayAudio",
+      "param": "BackgroundImage : string : Dialogue/bizarrecity | BackOption : float : 5 | AudioName : string : Dialogue/BellRinging",
+      "sentence": "[카페 종 소리]"
+    },
+    {
+      "id": 1,
+      "action": "GeneralDialogue | EnableDialogueCircle | ForceToNextDialogue",
+      "param": "",
+      "sentence": "??? : <size=140%><b>꼬맹아!</b></size>"
+    },
+    {
+      "id": 2,
+      "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+      "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1",
+      "sentence": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다."
+    },
+    {
+      "id": 3,
+      "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+      "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+      "sentence": "이성호 : 저 왔어요. 우리 박신오 교수님."
+    },
+    {
+      "id": 4,
+      "action": "GeneralDialogue | SelectChoices | ForceToNextDialogue",
+      "param": "",
+      "sentence": "박신오 : 왜 이렇게 늦어? 커피 다 식겠다.",
+      "choices": [
         {
-            "id": 0,
-            "action": "ChangeBackGround | PlayAudio",
-            "param": "BackgroundImage : string : Dialogue/bizarrecity | BackOption : float : 5 | AudioName : string : Dialogue/BellRinging",
-            "sentence": "[카페 종 소리]"
+          "name": "Choice1",
+          "sentence": "선택지 1을 선택한다.",
+          "uList": [
+            {
+              "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+              "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 5, -1, true",
+              "sentence": "choice1 - 1"
+            },
+            {
+              "action": "",
+              "param": "",
+              "sentence": "choice1  - 2"
+            }
+          ]
         },
         {
-            "id": 1,
-            "action": "GeneralDialogue | EnableDialogueCircle | ForceToNextDialogue",
-            "param": "",
-            "sentence": "??? : <size=140%><b>꼬맹아!</b></size>"
+          "name": "Choice2",
+          "sentence": "선택지 2을 선택한다.",
+          "uList": [
+            {
+              "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+              "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+              "sentence": "choice2"
+            },
+            {
+              "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+              "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+              "sentence": "choice2"
+            }
+          ]
         },
         {
-            "id": 2,
-            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-            "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1",
-            "sentence": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다."
-        },
-        {
-            "id": 3,
-            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-            "sentence": "이성호 : 저 왔어요. 우리 박신오 교수님."
-        },
-        {
-            "id": 4,
-            "action": "GeneralDialogue | SelectChoices | ForceToNextDialogue",
-            "param": "",
-            "sentence": "박신오 : 왜 이렇게 늦어? 커피 다 식겠다.",
-            "choices": [
-                {
-                    "name" : "Choice1",
-                    "sentence" : "선택지 1을 선택한다.",
-                    "uList": [
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 5, -1, true",
-                            "sentence": "choice1 - 1"
-                        },
-                        {
-                            "action": "",
-                            "param": "",
-                            "sentence": "choice1  - 2"
-                        }
-                    ]
-                },
-                {
-                    "name" : "Choice2",
-                    "sentence" : "선택지 2을 선택한다.",
-                    "uList": [
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice2"
-                        },
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice2"
-                        }
-                    ]
-                },
-                {
-                    "name" : "Choice3",
-                    "sentence" : "선택지 3을 선택한다.",
-                    "uList": [
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice3"
-                        },
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "chooice3"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": 5,
-            "action": "",
-            "param": "",
-            "sentence": "이성호 : 시간 맞춰서 왔는데요?"
-        },
-        {
-            "id": 6,
-            "action": "",
-            "param": "",
-            "sentence": "박신오 : 인마. 나이도 먹을 대로 먹은 노친네를 기다리게 했으면 늦은거지. "
-        },
-        {
-            "id": 7,
-            "action": "",
-            "param": "",
-            "sentence": "이성호 : 어휴…"
-        },
-        {
-            "id": 8,
-            "action": "",
-            "param": "",
-            "sentence": "박신오 : 한숨 쉬면 복 나간다는 말 못 들어봤냐?"
-        },
-        {
-            "id": 9,
-            "action": "",
-            "param": "",
-            "sentence": "이성호 : 에휴…"
-        },
-        {
-            "id": 10,
-            "action": "",
-            "param": "",
-            "sentence": "박신오 : 이 자식이?"
-        },
-        {
-            "id": 11,
-            "action": "DisappearCharacter | GeneralDialogue | EnableDialogueCircle",
-            "param": "DisappearCharacter : string : Shinoh, Seongho",
-            "sentence": "우리는 시간 가는 줄 모르고 시시콜콜한 이야기를 나누었다."
+          "name": "Choice3",
+          "sentence": "선택지 3을 선택한다.",
+          "uList": [
+            {
+              "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+              "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+              "sentence": "choice3"
+            },
+            {
+              "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+              "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+              "sentence": "chooice3"
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": 5,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 시간 맞춰서 왔는데요?"
+    },
+    {
+      "id": 6,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 인마. 나이도 먹을 대로 먹은 노친네를 기다리게 했으면 늦은거지. "
+    },
+    {
+      "id": 7,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 어휴…"
+    },
+    {
+      "id": 8,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 한숨 쉬면 복 나간다는 말 못 들어봤냐?"
+    },
+    {
+      "id": 9,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 에휴…"
+    },
+    {
+      "id": 10,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 이 자식이?"
+    },
+    {
+      "id": 11,
+      "action": "DisappearCharacter | GeneralDialogue | EnableDialogueCircle",
+      "param": "DisappearCharacter : string : Shinoh, Seongho",
+      "sentence": "우리는 시간 가는 줄 모르고 시시콜콜한 이야기를 나누었다."
+    },
+    {
+      "id": 12,
+      "action": "",
+      "param": "",
+      "sentence": "세상 돌아가는 이야기, 어제 있었던 일. 즐거운 경험. "
+    },
+    {
+      "id": 13,
+      "action": "",
+      "param": "",
+      "sentence": "마음을 터놓고 이야기할 수 있는 상대가 있다는 것에서 느껴지는 편안한 기분."
+    },
+    {
+      "id": 14,
+      "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+      "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1, true",
+      "sentence": "박신오 : 그래서. "
+    },
+    {
+      "id": 15,
+      "action": "",
+      "param": "",
+      "sentence": "낮게 깔린 목소리."
+    },
+    {
+      "id": 16,
+      "action": "",
+      "param": "",
+      "sentence": "의아함에 고개를 돌리자, 아저씨가 굳은 얼굴로 나를 보고 있었다."
+    },
+    {
+      "id": 17,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 무슨 일 있냐?"
+    },
+    {
+      "id": 18,
+      "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
+      "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
+      "sentence": "이성호 : 예? 딱히 별일 없어요."
+    },
+    {
+      "id": 19,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 성호야."
+    },
+    {
+      "id": 20,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 네?"
+    },
+    {
+      "id": 21,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 말하기 힘든 일이야?"
+    },
+    {
+      "id": 22,
+      "action": "",
+      "param": "",
+      "sentence": "말해도 될까?"
+    },
+    {
+      "id": 23,
+      "action": "",
+      "param": "",
+      "sentence": "괜한 걱정을 끼쳐드릴 수도 있다."
+    },
+    {
+      "id": 24,
+      "action": "",
+      "param": "",
+      "sentence": "하지만 ‘그’가 말한 조력자에 가장 부합하는 사람은 아저씨일 것이다."
+    },
+    {
+      "id": 25,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 사실은.."
+    },
+    {
+      "id": 26,
+      "action": "",
+      "param": "",
+      "sentence": "아저씨에게 꿈의 내용에 대해 사실대로 털어놓았다. "
+    },
+    {
+      "id": 27,
+      "action": "",
+      "param": "",
+      "sentence": "기괴한 녹색도시, 그 속에 잠들어 있던 끔찍한 생물."
+    },
+    {
+      "id": 28,
+      "action": "",
+      "param": "",
+      "sentence": "그리고 노란 로브의 괴인이 예언한 나의 죽음과 잠에서 깨고 나니 팔에 새겨져 있던 문신."
+    },
+    {
+      "id": 29,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 흠..."
+    },
+    {
+      "id": 30,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 팔에 문신이 생겼다고?"
+    },
+    {
+      "id": 31,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 네. 자고 나니까 오른팔에 생겼더라고요."
+    },
+    {
+      "id": 32,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 팔 좀 보여다오."
+    },
+    {
+      "id": 33,
+      "action": "ShowImage",
+      "param": "",
+      "sentence": "[이성호 오른팔 문신 그림]"
+    },
+    {
+      "id": 34,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 음.. 안보이는데… "
+    },
+    {
+      "id": 35,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 네 눈에만 보이는 것 같구나. 넌 어릴 적부터 특별했으니까."
+    },
+    {
+      "id": 36,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 문신이 어떻게 생겼는지 묘사는 힘들고?"
+    },
+    {
+      "id": 37,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 뭐랄까.. 잊혀진 고대 문명에서 사용할 것 같은 문자라서 말로는 설명하기 힘들 것 같아요."
+    },
+    {
+      "id": 38,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 흠.. 그렇지."
+    },
+    {
+      "id": 39,
+      "action": "",
+      "param": "",
+      "sentence": "[ 부스럭거리는 소리 ]"
+    },
+    {
+      "id": 40,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 자, 여기에 문신을 그려주렴."
+    },
+    {
+      "id": 41,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 음.. 최대한 잘 그려볼게요."
+    },
+    {
+      "id": 42,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 하지 마."
+    },
+    {
+      "id": 43,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 크윽?!"
+    },
+    {
+      "id": 44,
+      "action": "",
+      "param": "",
+      "sentence": "펜을 종이에 댄 순간 머리가 찢어질 듯이 아파져 왔다."
+    },
+    {
+      "id": 45,
+      "action": "",
+      "param": "",
+      "sentence": "[속삭이는 소리]"
+    },
+    {
+      "id": 46,
+      "action": "",
+      "param": "",
+      "sentence": "머릿속을 누군가 헤집는 듯한 기분 나쁜 목소리."
+    },
+    {
+      "id": 47,
+      "action": "",
+      "param": "",
+      "sentence": "끔찍한 두통에 결국 쥐고 있던 펜을 떨어뜨렸다."
+    },
+    {
+      "id": 48,
+      "action": "",
+      "param": "",
+      "sentence": "그러자 머릿속을 헤집던 목소리는 언제 그랬냐는 듯이 두통과 함께 조용히 사그라들었다."
+    },
+    {
+      "id": 49,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 성호야!"
+    },
+    {
+      "id": 50,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 후우… 후우…"
+    },
+    {
+      "id": 51,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 이제 좀 괜찮니?"
+    },
+    {
+      "id": 52,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 후… 네. 괜찮아진 것 같아요. 펜을 종이에 대고 그리려니까, 머리가 찢어질 듯이 아프더라고요."
+    },
+    {
+      "id": 53,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 미안하다, 성호야. 내가 더 도와줄 수 있는 부분은 없는 것 같구나."
+    },
+    {
+      "id": 54,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 하지만 도움을 줄 만한 사람은 알고 있지. 잠깐 전화 좀 하고 오마."
+    },
+    {
+      "id": 55,
+      "action": "",
+      "param": "",
+      "sentence": "괜한 말을 한 걸까. 아저씨도 요즘 힘들어하시던데."
+    },
+    {
+      "id": 56,
+      "action": "",
+      "param": "",
+      "sentence": "미약한 후회가 커피잔을 쥔 손을 타고 흘러내린다."
+    },
+    {
+      "id": 57,
+      "action": "",
+      "param": "",
+      "sentence": "다시금 피어오르는 부정적인 생각을 애써 털어내며 주변을 둘러보았다."
+    },
+    {
+      "id": 58,
+      "action": "",
+      "param": "",
+      "sentence": "[ 이미지 : 카페의 풍경 ]"
+    },
+    {
+      "id": 59,
+      "action": "",
+      "param": "",
+      "sentence": "이 카페도 많이 달라졌구나. 예전에는 좀 더 낡고 허름한 느낌이었는데."
+    },
+    {
+      "id": 60,
+      "action": "",
+      "param": "",
+      "sentence": "어릴 적, 슬픈 일이 있을 때마다 이 카페로 나를 데려와 음료를 사주시며 위로와 응원을 보내주시던 아저씨. "
+    },
+    {
+      "id": 61,
+      "action": "",
+      "param": "",
+      "sentence": "아저씨는 오랜 시간이 흘렀음에도, 소나무처럼 늘 묵묵하게 나를 지탱해주고 계셨다. "
+    },
+    {
+      "id": 62,
+      "action": "",
+      "param": "",
+      "sentence": "그때 그 모습 그대로."
+    },
+    {
+      "id": 63,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 오래 기다렸지? 그 사람이 이리로 오고 있다니까 그동안 이야기나 나누고 있자. "
+    },
+    {
+      "id": 64,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그 사람이요?"
+    },
+    {
+      "id": 65,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 도와줄 만한 사람 말이다. 젊은 놈이 벌써 그래서야 쯧쯧."
+    },
+    {
+      "id": 66,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그 분은 어떤 분이세요?"
+    },
+    {
+      "id": 67,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 흠.. 특이한 사람이지. 그런쪽으로 해박한 지식을 갖고 있는 사람이니 믿어도 된다."
+    },
+    {
+      "id": 68,
+      "action": "",
+      "param": "",
+      "sentence": "아저씨가 보증한 사람이라면 믿을 수 있다."
+    },
+    {
+      "id": 69,
+      "action": "",
+      "param": "",
+      "sentence": "남은 건 부디 그 사람이 문제의 실마리를 쥐고 있길 바랄 뿐."
+    },
+    {
+      "id": 70,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 그래서 다은이는 요즘 어때? 잘 지내냐?"
+    },
+    {
+      "id": 71,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 제 걱정은 안 해주세요?"
+    },
+    {
+      "id": 72,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 인마. 내가 시커먼 남정네를 걱정해서 뭐 하냐? "
+    },
+    {
+      "id": 73,
+      "action": "",
+      "param": "",
+      "sentence": "딸랑-"
+    },
+    {
+      "id": 74,
+      "action": "",
+      "param": "",
+      "sentence": "종이 딸랑이며 흔들리는 소리에 카페의 입구를 바라보자 눈에 들어오는 건 묘령의 여인."
+    },
+    {
+      "id": 75,
+      "action": "",
+      "param": "",
+      "sentence": "단안경을 낀, 어딘가 건조하고 차가운 인상을 가진 훤칠한 미녀였다."
+    },
+    {
+      "id": 76,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 아. 설아 씨, 이쪽이에요."
+    },
+    {
+      "id": 77,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 안녕하세요. 교수님. 그동안 강녕하셨죠?"
+    },
+    {
+      "id": 78,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 허허. 저야 늘 쌩쌩합니다. 아, 그렇지. 이쪽 꼬맹이는 이성호라고 합니다. 제 자식 같은 놈이죠."
+    },
+    {
+      "id": 79,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 성호야. 이쪽은 한설아 씨란다. 고고학에 해박하신 분이니 도움을 주실 거야."
+    },
+    {
+      "id": 80,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 아… 안녕하세요."
+    },
+    {
+      "id": 81,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 흐음.."
+    },
+    {
+      "id": 82,
+      "action": "",
+      "param": "",
+      "sentence": "감정이라곤 느껴지지 않는 차가운 눈으로 내 눈을 뚫어져라 바라보고 있는 설아 씨."
+    },
+    {
+      "id": 83,
+      "action": "",
+      "param": "",
+      "sentence": "솔직히 엄청 부담스럽다. "
+    },
+    {
+      "id": 84,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 어… 제 얼굴에 뭐라도 묻었나요?"
+    },
+    {
+      "id": 85,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 아무것도 아니에요. 반가워요 성호 씨. "
+    },
+    {
+      "id": 86,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 아. 저는 일이 있어서 슬슬 일어나야 할 것 같습니다."
+    },
+    {
+      "id": 87,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 예? 아저씨 어디가세요?"
+    },
+    {
+      "id": 88,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 야. 나도 먹고는 살아야지. 너 보려고 하던 업무도 내팽개치고 왔어. "
+    },
+    {
+      "id": 89,
+      "action": "",
+      "param": "",
+      "sentence": "박신오 : 설아 씨. 그럼, 우리 성호 잘 부탁드립니다."
+    },
+    {
+      "id": 90,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 예."
+    },
+    {
+      "id": 91,
+      "action": "",
+      "param": "",
+      "sentence": "아저씨는 옷매무새를 가다듬지도 않고 뛰어서 카페를 나가셨다."
+    },
+    {
+      "id": 92,
+      "action": "",
+      "param": "",
+      "sentence": "진짜로 급하신가 보네. 어지간한 일로는 뛰지도 않으시는 분이."
+    },
+    {
+      "id": 93,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 그래서 무슨 일이 있었는지 알 수 있을까요?"
+    },
+    {
+      "id": 94,
+      "action": "",
+      "param": "",
+      "sentence": "나는 설아 씨에게 자초지종을 설명했다."
+    },
+    {
+      "id": 95,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 소설에나 나올법한 이야기네요."
+    },
+    {
+      "id": 96,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 믿기지 않으시겠지만, 그렇습니다."
+    },
+    {
+      "id": 97,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 흠. 알겠어요."
+    },
+    {
+      "id": 98,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : …믿어주시는 건가요?"
+    },
+    {
+      "id": 99,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 믿어요. 성호 씨, 미안한 말이지만 다시 한번 문신의 모양을 이 종이에 그려주세요."
+    },
+    {
+      "id": 100,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 윽.. 일단은 알겠습니다."
+    },
+    {
+      "id": 101,
+      "action": "",
+      "param": "",
+      "sentence": "나는 애써 펜을 쥐고, 떨리는 손으로 새하얀 종이에 가져다 댔다."
+    },
+    {
+      "id": 102,
+      "action": "",
+      "param": "",
+      "sentence": "곧 다가올 고통을 견디기 위해 눈을 감고 이를 꽉 물었지만, 찾아왔어야 할 두통은 감감무소식이었다."
+    },
+    {
+      "id": 103,
+      "action": "",
+      "param": "",
+      "sentence": "어째서? 아까 느꼈던 끔찍한 두통과 목소리는 내 착각이었던 건가?"
+    },
+    {
+      "id": 104,
+      "action": "",
+      "param": "",
+      "sentence": "아니야, 그럴 리 없어. 뭔가 다른 이유가 있을 거야. "
+    },
+    {
+      "id": 105,
+      "action": "",
+      "param": "",
+      "sentence": "[종이에 그림 그리는 소리]"
+    },
+    {
+      "id": 106,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 다 그렸습니다."
+    },
+    {
+      "id": 107,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 이건…"
+    },
+    {
+      "id": 108,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 뭔가 알고 계세요?"
+    },
+    {
+      "id": 109,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 제가 잘 알고 있는 분야는 아닌지라 확답을 드리기는 어렵지만, 이누이트족의 언어 같네요."
+    },
+    {
+      "id": 110,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 이누이트족이라면… 알래스카에 살고 있다는 그 부족을 말씀하시는 건가요?"
+    },
+    {
+      "id": 111,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 예. 자세한 건 이 분야를 연구하시는 학자분께 여쭤보거나, 관련 문헌을 참고해봐야 알 것 같아요."
+    },
+    {
+      "id": 112,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그럼, 지금으로선 더 알 수 있는 정보는 없다는 거죠?"
+    },
+    {
+      "id": 113,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 이 그림으로 알 수 있는 건 그 정도가 끝이죠."
+    },
+    {
+      "id": 114,
+      "action": "",
+      "param": "",
+      "sentence": "이누이트족… 대체 그 노란 로브의 괴인과는 어떤 관련이 있는 걸까?"
+    },
+    {
+      "id": 115,
+      "action": "",
+      "param": "",
+      "sentence": "더 많은 정보를 듣지 못한 건 아쉽지만, 그래도 해결의 실마리를 얻었으니 감사한 일이겠지."
+    },
+    {
+      "id": 116,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 음… 정말 감사합니다. 큰 도움이 되었어요."
+    },
+    {
+      "id": 117,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 도움이 되었다면 다행이네요."
+    },
+    {
+      "id": 118,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 식사라도 대접하고 싶지만, 바쁘신 분인 것 같으니 다음에…"
+    },
+    {
+      "id": 119,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 아뇨. 그 식사 지금 대접해주시죠."
+    },
+    {
+      "id": 120,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 어… 시간 괜찮으신가요?"
+    },
+    {
+      "id": 121,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 예. 그리고 성호 씨에게 궁금한 것도 있고 말이죠."
+    },
+    {
+      "id": 122,
+      "action": "",
+      "param": "",
+      "sentence": "— —"
+    },
+    {
+      "id": 123,
+      "action": "",
+      "param": "",
+      "sentence": "카페를 나와 도착한 곳은 인근 파스타 식당."
+    },
+    {
+      "id": 124,
+      "action": "",
+      "param": "",
+      "sentence": "이런 곳은 부담스럽지만, 대접하는 입장이니 어쩔 수 없지."
+    },
+    {
+      "id": 125,
+      "action": "",
+      "param": "",
+      "sentence": "뇨끼? 라구? 비스크? 이게 대체 무슨 말이지?"
+    },
+    {
+      "id": 126,
+      "action": "",
+      "param": "",
+      "sentence": "태어나서 처음 보는 단어들의 향연에 정신이 아득해지는 것 같다."
+    },
+    {
+      "id": 127,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 저는 버섯 크림 뇨끼로 할게요."
+    },
+    {
+      "id": 128,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 아… 그럼 저도 같은 걸로."
+    },
+    {
+      "id": 129,
+      "action": "",
+      "param": "",
+      "sentence": "점원 : 네, 주문받았습니다!"
+    },
+    {
+      "id": 130,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 성호 씨는 나이가 어떻게 되나요?"
+    },
+    {
+      "id": 131,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 스물… 셋입니다."
+    },
+    {
+      "id": 132,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 제가 연상이네요. 말을 놓아도 괜찮을까요?"
+    },
+    {
+      "id": 133,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 아… 예! 편하신 대로 하세요."
+    },
+    {
+      "id": 134,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 그래. 너도 누나라고 부르렴."
+    },
+    {
+      "id": 135,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 네. 설아 누나."
+    },
+    {
+      "id": 136,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : …"
+    },
+    {
+      "id": 137,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : …"
+    },
+    {
+      "id": 138,
+      "action": "",
+      "param": "",
+      "sentence": "무슨 말을 꺼내야 할지 몰라 고개를 돌려 창밖을 바라봤다."
+    },
+    {
+      "id": 139,
+      "action": "",
+      "param": "",
+      "sentence": "나뭇가지에 필사적으로 매달려 생을 부지하려는 붉게 물든 나뭇잎."
+    },
+    {
+      "id": 140,
+      "action": "",
+      "param": "",
+      "sentence": "삶에 마침표를 찍고 싶어 했던 과거와 대비되어 현재의 나를 조명하고 있는 듯하다."
+    },
+    {
+      "id": 141,
+      "action": "",
+      "param": "",
+      "sentence": "마침표가 아닌 쉼표를 찍으려 발버둥 치는 지금의 나는 자의로 움직이는가, 타의로 움직이는가."
+    },
+    {
+      "id": 142,
+      "action": "",
+      "param": "",
+      "sentence": "점원 : 주문하신 음식 나왔습니다. 맛있게 드세요."
+    },
+    {
+      "id": 143,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 감사합니다."
+    },
+    {
+      "id": 144,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 잘 먹을게."
+    },
+    {
+      "id": 145,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 네. 맛있게 드세요."
+    },
+    {
+      "id": 146,
+      "action": "",
+      "param": "",
+      "sentence": "[식기가 달그락거리는 소리]"
+    },
+    {
+      "id": 147,
+      "action": "",
+      "param": "",
+      "sentence": "오가는 말 없이 식기와 그릇이 맞닿아 달그락거리는 소리만이 테이블 위를 가득 채우고 있었다."
+    },
+    {
+      "id": 148,
+      "action": "",
+      "param": "",
+      "sentence": "밥이 코로 들어가는지 입으로 들어가는지 분간이 안될 때쯤, 오랜 정적을 깨고 설아 누나의 목소리가 들려왔다."
+    },
+    {
+      "id": 149,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 성호야. 별이 갖는 의미를 알고 있니?"
+    },
+    {
+      "id": 150,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 예?"
+    },
+    {
+      "id": 151,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 별은 역사 속에서 하나의 상징으로서 기능했어. 점성술사들은 별을 신과 인간을 이어주는, 예언적 장치이자 상징으로 사용했지."
+    },
+    {
+      "id": 152,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 신화 속의 영웅을 기리며 별을 엮어 별자리를 만들기도 하고, 항해사들은 별을 길잡이 삼아 짙푸른 바다를 누볐었어."
+    },
+    {
+      "id": 153,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 누군가에겐 신과 인간을 이어주는 통로. 또 다른 누군가에겐 길잡이 혹은 영웅."
+    },
+    {
+      "id": 154,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 너에게 있어서 별은 어떤 의미일까. 길잡이? 신? 아니면 영웅? 아니면 그 반대일 수도 있겠네."
+    },
+    {
+      "id": 155,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : …"
+    },
+    {
+      "id": 156,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 당장 답을 주지 않아도 괜찮아. 그저 궁금해서 이야기를 꺼냈을 뿐."
+    },
+    {
+      "id": 157,
+      "action": "",
+      "param": "",
+      "sentence": "한설아 : 만족스러운 식사였어. 조만간 연락할게. 그럼, 안녕."
+    },
+    {
+      "id": 158,
+      "action": "",
+      "param": "",
+      "sentence": "식사를 끝마친 지 오래였음에도 나는 한참을 멍하니 앉아 있었다."
+    },
+    {
+      "id": 159,
+      "action": "",
+      "param": "",
+      "sentence": "설아 누나가 던진 화두, 나에게 있어서 별이 갖는 의미."
+    },
+    {
+      "id": 160,
+      "action": "",
+      "param": "",
+      "sentence": "내 과거를 알고 있는 걸까? 어떻게? 아저씨도 모르는 사실일 텐데?"
+    },
+    {
+      "id": 161,
+      "action": "",
+      "param": "",
+      "sentence": "설아 누나가 그 괴인이 점지한 조력자인 걸까? 그것도 아니라면 내가 맞이할 죽음의 원인이 될 사람인 걸까."
+    },
+    {
+      "id": 162,
+      "action": "",
+      "param": "",
+      "sentence": "혹은, 누나가 별생각 없이 던진 화두에 내가 너무 과한 의미 부여를 하고 있나?"
+    },
+    {
+      "id": 163,
+      "action": "",
+      "param": "",
+      "sentence": "표류하던 온갖 끔찍한 망상들이 수면위로 올라오기 시작했다."
+    },
+    {
+      "id": 164,
+      "action": "",
+      "param": "",
+      "sentence": "목이 조여온다."
+    },
+    {
+      "id": 165,
+      "action": "",
+      "param": "",
+      "sentence": "— —"
+    },
+    {
+      "id": 166,
+      "action": "",
+      "param": "",
+      "sentence": "땅거미가 내릴 무렵의 주택가."
+    },
+    {
+      "id": 167,
+      "action": "",
+      "param": "",
+      "sentence": "소슬바람이 낙엽을 스치며 바스락거리는 소리가 적막함을 메우고 있었다."
+    },
+    {
+      "id": 168,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 하아…"
+    },
+    {
+      "id": 169,
+      "action": "",
+      "param": "",
+      "sentence": "한숨이 미처 삼키지 못한 근심과 함께 노을에 스러진다."
+    },
+    {
+      "id": 170,
+      "action": "",
+      "param": "",
+      "sentence": "떠오르는 상념을 애써 무시하며 멍하니 발걸음을 옮기고 있을 때."
+    },
+    {
+      "id": 171,
+      "action": "",
+      "param": "",
+      "sentence": "[구두 소리]"
+    },
+    {
+      "id": 172,
+      "action": "",
+      "param": "",
+      "sentence": "누군가의 구두 소리가 등 뒤에서 울려 퍼졌다."
+    },
+    {
+      "id": 173,
+      "action": "",
+      "param": "",
+      "sentence": "[구두 소리]"
+    },
+    {
+      "id": 174,
+      "action": "",
+      "param": "",
+      "sentence": "내가 멈추면 구두 소리도 멈췄고, 내가 걸음을 옮기면 구두 소리 또한 내 걸음에 맞춰 울려 퍼졌다."
+    },
+    {
+      "id": 175,
+      "action": "",
+      "param": "",
+      "sentence": "미행인가? 혹시 괴한의 습격?"
+    },
+    {
+      "id": 176,
+      "action": "",
+      "param": "",
+      "sentence": "식은땀이 등골을 타고 흐르는 것이 느껴진다."
+    },
+    {
+      "id": 177,
+      "action": "",
+      "param": "",
+      "sentence": "정황상, 등 뒤의 누군가가 나를 쫓아오는 것이 분명한 상황."
+    },
+    {
+      "id": 178,
+      "action": "",
+      "param": "",
+      "sentence": "먼저 덮쳐야 할까? 아니면 원래 목적지였던 꽃집으로 달려, 누나에게 도움을 청해야 할까. "
+    },
+    {
+      "id": 179,
+      "action": "",
+      "param": "",
+      "sentence": "아냐, 누나가 도리어 위험에 처할 수 있어."
+    },
+    {
+      "id": 180,
+      "action": "",
+      "param": "",
+      "sentence": "먼저 덮치자. 괴한을 성공적으로 제압한다면 정보를 캐낼 수도 있을 것이다."
+    },
+    {
+      "id": 181,
+      "action": "",
+      "param": "",
+      "sentence": "할 수 있을까? 아니, 해내야만 해."
+    },
+    {
+      "id": 182,
+      "action": "",
+      "param": "",
+      "sentence": "최대한 자연스럽게. 미행을 눈치채지 못한 척, 앞을 보며 걷다가 눈앞의 갈림길에서 오른쪽으로 꺾어 사각지대에서 대기했다."
+    },
+    {
+      "id": 183,
+      "action": "",
+      "param": "",
+      "sentence": "언제라도 튀어 나갈 수 있게 온몸의 근육을 긴장시키고."
+    },
+    {
+      "id": 184,
+      "action": "",
+      "param": "",
+      "sentence": "다급해진 구두 소리가 가까워진 지금."
+    },
+    {
+      "id": 185,
+      "action": "",
+      "param": "",
+      "sentence": "[화면 흔들림]"
+    },
+    {
+      "id": 186,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 꺄앗?! "
+    },
+    {
+      "id": 187,
+      "action": "",
+      "param": "",
+      "sentence": "아저씨에게 배운 대로 괴한을 넘어뜨리고, 손목을 잡아 등 뒤로 꺾어 움직이지 못하게 체중을 실어 눌렀다. "
+    },
+    {
+      "id": 188,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 당신 누구야. 무슨 목적으로 날 미행한 거지?"
+    },
+    {
+      "id": 189,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 오… 오빠! 저예요! "
+    },
+    {
+      "id": 190,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 난 당신 같은 사람 모르는데."
+    },
+    {
+      "id": 191,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 채린이요! 유채린!"
+    },
+    {
+      "id": 192,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 유채린…?"
+    },
+    {
+      "id": 193,
+      "action": "",
+      "param": "",
+      "sentence": "뇌리를 스치는 어린 날의 기억."
+    },
+    {
+      "id": 194,
+      "action": "",
+      "param": "",
+      "sentence": "어머니를 잃고 실의에 빠졌었던 내가, 일방적으로 끊어버린 소중한 인연."
+    },
+    {
+      "id": 195,
+      "action": "",
+      "param": "",
+      "sentence": "끝내 삭이지 못한 미련. 유채린이 내 아래에서 바둥대고 있었다."
+    },
+    {
+      "id": 196,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 미안!"
+    },
+    {
+      "id": 197,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 으… 아파라."
+    },
+    {
+      "id": 198,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오랜만에 만났는데… 어마어마한 환대를 받았네요. 그렇죠? 성호 오빠."
+    },
+    {
+      "id": 199,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 죄송합니다…"
+    },
+    {
+      "id": 200,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 흐응… 뭐. 반성하고 있으신 것 같으니, 이쯤에서 용서해드릴게요."
+    },
+    {
+      "id": 201,
+      "action": "",
+      "param": "",
+      "sentence": "금으로 수놓은 듯 반짝이는 금발."
+    },
+    {
+      "id": 202,
+      "action": "",
+      "param": "",
+      "sentence": "외롭고 어딘가 불안해 보였던 기억 속 소녀의 초상은 찾아보기 힘들 정도로, 성장한 그녀의 모습은 눈부셨다."
+    },
+    {
+      "id": 203,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 된바람 시린 겨울에도 늘 푸른 소나무처럼, 오빠는 변한 게 없네요. 다행이에요."
+    },
+    {
+      "id": 204,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : …그러니? 난 잘 모르겠는데."
+    },
+    {
+      "id": 205,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 헤헤… 그럼요."
+    },
+    {
+      "id": 206,
+      "action": "",
+      "param": "",
+      "sentence": "과거에 얽매여 멈춰 있는 것이 다행인 일인 걸까."
+    },
+    {
+      "id": 207,
+      "action": "",
+      "param": "",
+      "sentence": "미련과 후회로 점철된 나의 과거는 회상하고 싶지 않은 순간들로 가득하다."
+    },
+    {
+      "id": 208,
+      "action": "",
+      "param": "",
+      "sentence": "무언가를 선택하는 법을 잊어버려 도피와 합리화를 거듭해왔고, 그것을 후회하고 있음에도 바뀔 의지가 없는 멍청이."
+    },
+    {
+      "id": 209,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 음… 오랜만에 만났는데. 좀 걸으면서 이야기라도 좀 할까요?"
+    },
+    {
+      "id": 210,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 좋지."
+    },
+    {
+      "id": 211,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오빠는 헤어진 이후로 어떻게 지내셨어요?"
+    },
+    {
+      "id": 212,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 나…야 뭐 잘 지냈어. 이사 가서 새 친구들도 사귀고. 정신없이 살다가, 천문학이 배우고 싶어서 대학도 이쪽으로 왔지."
+    },
+    {
+      "id": 213,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 하긴, 오빠는 어렸을 때도 별 보는 거 좋아하셨죠. 구부러진 쑥도 삼밭에선 곧게 자라듯이, 무언가를 동경하고 가까이하면 그것을 좇게 되고 결국 닮아가는 법인가 봐요."
+    },
+    {
+      "id": 214,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그건 아니야."
+    },
+    {
+      "id": 215,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 엥? 별 좋아하시잖아요."
+    },
+    {
+      "id": 216,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 예전엔 그랬는데… 지금은 아니거든."
+    },
+    {
+      "id": 217,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 그럼 왜 천문학에 관심을 갖게 되신거에요?"
+    },
+    {
+      "id": 218,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 미련이 남아서일까. 아무튼, 이 얘기는 여기까지 하고. 너는 어떻게 지냈어?"
+    },
+    {
+      "id": 219,
+      "action": "",
+      "param": "",
+      "sentence": "채린이는 갑작스레 건네진 질문에 당황했는지, 우물쭈물하며 대답을 망설였다."
+    },
+    {
+      "id": 220,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 저도 잘 지냈어요. 오빠가 사라지고 나서도 그 누구보다 행복하게요."
+    },
+    {
+      "id": 221,
+      "action": "",
+      "param": "",
+      "sentence": "채린이는 말을 마치고는 텅 빈 눈으로 멍하니 먼 곳을 응시하고 있었다."
+    },
+    {
+      "id": 222,
+      "action": "",
+      "param": "",
+      "sentence": "그녀의 얼굴이 구슬퍼 보여, 무언가 말을 건네려 해도 입술이 떨어지지 않았다."
+    },
+    {
+      "id": 223,
+      "action": "",
+      "param": "",
+      "sentence": "자격이 없으니까. "
+    },
+    {
+      "id": 224,
+      "action": "",
+      "param": "",
+      "sentence": "근심을 덜어주기엔, 가장 힘들었을 때 옆에 있어 주지 못했으니까. 라고 합리화를 하고 싶지만."
+    },
+    {
+      "id": 225,
+      "action": "",
+      "param": "",
+      "sentence": "그녀의 근심까지 같이 짊어져 주기엔 이미 나도 감당하기 힘든 무게의 짐을 지고 있다는 이유가 더 클 것이다."
+    },
+    {
+      "id": 226,
+      "action": "",
+      "param": "",
+      "sentence": "지독한 이기심에 치밀어오르는 자기혐오를 삼켜내며 억지로 미소를 그려냈다."
+    },
+    {
+      "id": 227,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 왜 그리 표정이 어두워. 무슨 안 좋은 일 있어?"
+    },
+    {
+      "id": 228,
+      "action": "",
+      "param": "",
+      "sentence": "그녀 역시 얼굴에 미소를 그려내며 내게 되물었다. "
+    },
+    {
+      "id": 229,
+      "action": "",
+      "param": "",
+      "sentence": "지금 거울을 본다면 그녀와 똑같은 미소가 내 얼굴에도 그려져 있겠지."
+    },
+    {
+      "id": 230,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 그러는 오빠야말로 왜 그렇게 우중충한 얼굴이에요. 오랜만에 만났는데 기쁘지 않아요?"
+    },
+    {
+      "id": 231,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 아니야. 기쁘지. 그냥 미안해서 그래."
+    },
+    {
+      "id": 232,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 이잉? 뭐가요? 아까의 일이라면 괜찮다니까요."
+    },
+    {
+      "id": 233,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 어렸을 때, 아무 말도 없이 연락을 끊은 건 결국 내 잘못이니까."
+    },
+    {
+      "id": 234,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 히- 그래도 미안한 줄은 아시네요?"
+    },
+    {
+      "id": 235,
+      "action": "",
+      "param": "",
+      "sentence": "그녀는 눈을 감고 생각에 잠겼다."
+    },
+    {
+      "id": 236,
+      "action": "",
+      "param": "",
+      "sentence": "그녀가 눈을 뜨고 나를 바라봤다."
+    },
+    {
+      "id": 237,
+      "action": "",
+      "param": "",
+      "sentence": "그리고 그녀가 웃었다."
+    },
+    {
+      "id": 238,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 어렸을 때, 기억하시나요?"
+    },
+    {
+      "id": 239,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오빠가 제게 장수풍뎅이를 건넨 일. 그때는 너무 무서워서 눈물이 날 뻔했었죠."
+    },
+    {
+      "id": 240,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오빠가 집에 초대해줬던 일은요? 누군가를 생각하는 마음이 가득 담긴 밥은 제 가슴을 뭉클하게 만들었어요."
+    },
+    {
+      "id": 241,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 그리고.’.. 오빠가 보여주셨던 그 유채꽃의 물결. 그때, 처음으로 신께 감사드렸어요. 태어나게 해주셔서 감사하다고."
+    },
+    {
+      "id": 242,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오빠가 없던 시절의 저는 회색빛이었어요. 칙칙한 세상 속에서 슬픔을 억누르던."
+    },
+    {
+      "id": 243,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오빠가 제게 색을 입혀주신 거예요. 네, 맞아요. 다름 아닌 오빠가요. 그러니…"
+    },
+    {
+      "id": 244,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오빠가 슬퍼하지 않았으면 좋겠어요. 그 어떤 시련이 오더라도. 부디 제가 이 빚을 갚을 수 있게."
+    },
+    {
+      "id": 245,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 드디어, 이 말을 할 수 있게 되어서… 너무 기뻐요."
+    },
+    {
+      "id": 246,
+      "action": "",
+      "param": "",
+      "sentence": "그녀가 울고 있었다."
+    },
+    {
+      "id": 247,
+      "action": "",
+      "param": "",
+      "sentence": "나도 누군가에게 행복한 기억을 남겨줄 수 있는 사람이었구나."
+    },
+    {
+      "id": 248,
+      "action": "",
+      "param": "",
+      "sentence": "가슴 한구석이 몽글몽글해지는 기분이다. 미소가 절로 그려진다."
+    },
+    {
+      "id": 249,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 고마워. 덕분에 힘이 좀 나는 것 같아."
+    },
+    {
+      "id": 250,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 다…다행이네요! 벼…별이 참 예쁘죠?"
+    },
+    {
+      "id": 251,
+      "action": "",
+      "param": "",
+      "sentence": "고개를 들어 하늘을 보았다."
+    },
+    {
+      "id": 252,
+      "action": "",
+      "param": "",
+      "sentence": "어느새 어둑해진 하늘은 별이 슬금슬금 고개를 내밀고 반갑다며 내게 인사하고 있었다."
+    },
+    {
+      "id": 253,
+      "action": "",
+      "param": "",
+      "sentence": "원망스러운 별이었을 텐데, 오늘만큼은 아름답게 반짝이는구나."
+    },
+    {
+      "id": 254,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 응."
+    },
+    {
+      "id": 255,
+      "action": "",
+      "param": "",
+      "sentence": "얼키설키 꼬여있던 후회라는 이름의 실 하나가 툭 하고 풀리는, 그런 기분이 들었다."
+    },
+    {
+      "id": 256,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 참 예쁘네."
+    },
+    {
+      "id": 257,
+      "action": "",
+      "param": "",
+      "sentence": "— —"
+    },
+    {
+      "id": 258,
+      "action": "",
+      "param": "",
+      "sentence": "채린이의 집 앞."
+    },
+    {
+      "id": 259,
+      "action": "",
+      "param": "",
+      "sentence": "선선했던 날씨는 밤이 되자 스산한 바람이 불어오기 시작했다."
+    },
+    {
+      "id": 260,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 만나서 즐거웠어요. 이사 왔으니 이제 자주 보겠네요."
+    },
+    {
+      "id": 261,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 응. 날이 차니까 몸 조심히 들어가. 번호 알려줬으니까 언제든지 연락하고. "
+    },
+    {
+      "id": 262,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 네, 오빠."
+    },
+    {
+      "id": 263,
+      "action": "",
+      "param": "",
+      "sentence": "벌써 시간이 이렇게 됐나. 누나가 기다릴 텐데…"
+    },
+    {
+      "id": 264,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 나도 이제 슬슬 들어가 볼게. 다음에 또 보자."
+    },
+    {
+      "id": 265,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 오… 오빠!"
+    },
+    {
+      "id": 266,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 응?"
+    },
+    {
+      "id": 267,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 어둠이 내려 아득하고 캄캄할 때, 별을 따라가세요."
+    },
+    {
+      "id": 268,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그게 무슨…"
+    },
+    {
+      "id": 269,
+      "action": "",
+      "param": "",
+      "sentence": "유채린 : 부디… 시들지 말아주세요."
+    },
+    {
+      "id": 270,
+      "action": "",
+      "param": "",
+      "sentence": "채린이는 그 말을 남기고 집 안으로 도망치듯 들어갔다."
+    },
+    {
+      "id": 271,
+      "action": "",
+      "param": "",
+      "sentence": "왜 그렇게 슬픈 눈으로 나를 바라본 걸까."
+    },
+    {
+      "id": 272,
+      "action": "",
+      "param": "",
+      "sentence": "마지막 말은 무슨 의미일까."
+    },
+    {
+      "id": 273,
+      "action": "",
+      "param": "",
+      "sentence": "왠지 모를 기시감을 품고 누나가 기다리는 꽃집으로 향했다."
+    },
+    {
+      "id": 274,
+      "action": "",
+      "param": "",
+      "sentence": "— —"
+    },
+    {
+      "id": 275,
+      "action": "",
+      "param": "",
+      "sentence": "딸랑 -"
+    },
+    {
+      "id": 276,
+      "action": "",
+      "param": "",
+      "sentence": "꽃집에 들어서자 보이는 건 묘령의 여인.  "
+    },
+    {
+      "id": 277,
+      "action": "",
+      "param": "",
+      "sentence": "누나의 안개꽃을 닮은 흰 머리가 꽃에 물을 줄 때마다 하늘하늘 흔들렸다."
+    },
+    {
+      "id": 278,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 어머. 오늘은 좀 늦었네?"
+    },
+    {
+      "id": 279,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 미안해. 다은이 누나. 좀 더 일찍 와서 도와줬어야 했는데."
+    },
+    {
+      "id": 280,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 흐흥. 우리 성호 다 컸네? 기특한 생각도 하고."
+    },
+    {
+      "id": 281,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 이만하면 다 컸지. 그래서 뭐 도와줄 건 있어?"
+    },
+    {
+      "id": 282,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 꽃은 내가 마무리할 테니, 거기에 있는 책 좀 정리해줄래?"
+    },
+    {
+      "id": 283,
+      "action": "",
+      "param": "",
+      "sentence": "다은이 누나가 테이블에 놓여있는 책 무더기를 가리키며 말했다."
+    },
+    {
+      "id": 284,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 응."
+    },
+    {
+      "id": 285,
+      "action": "",
+      "param": "",
+      "sentence": "테이블 위에는 원예 관련 잡지, 책 따위가 어지럽게 흩어져있었다."
+    },
+    {
+      "id": 286,
+      "action": "",
+      "param": "",
+      "sentence": "그 속 유달리 눈에 띄는 낡아서 책 귀퉁이가 해진 데미안 한 권."
+    },
+    {
+      "id": 287,
+      "action": "",
+      "param": "",
+      "sentence": "고등학교 때 선물해줬던 책인데. 아직도 갖고 있구나."
+    },
+    {
+      "id": 288,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 누나, 이거 새로 한 권 사줄까? 너무 낡았는데."
+    },
+    {
+      "id": 289,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 아냐. 그 책이 좋아."
+    },
+    {
+      "id": 290,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그래? 누나 진짜 데미안 좋아하는구나. "
+    },
+    {
+      "id": 291,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 뭐… 그렇지."
+    },
+    {
+      "id": 292,
+      "action": "",
+      "param": "",
+      "sentence": "데미안이라…"
+    },
+    {
+      "id": 293,
+      "action": "",
+      "param": "",
+      "sentence": "책을 열어 페이지를 넘기던 중 보인 유난히 닳아있는 페이지."
+    },
+    {
+      "id": 294,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 다른 사람은 내가 원하는 걸 생각할 수 없고, 내가 원하는 것을 타인이 생각하도록 만들 수도 없어."
+    },
+    {
+      "id": 295,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 하지만 누군가를 자세히 관찰해보면 그 사람이 무슨 생각을 하고 있는지, 무엇을 느끼고 있는지는 가끔 짐작할 수 있지."
+    },
+    {
+      "id": 296,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 좋아하는 구절이야?"
+    },
+    {
+      "id": 297,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 낭만적이잖아. 안 그래?"
+    },
+    {
+      "id": 298,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그렇긴 하지."
+    },
+    {
+      "id": 299,
+      "action": "",
+      "param": "",
+      "sentence": "테이블 위에 흩어져 있는 책과 잡지를 집어 차곡차곡 책장에 쌓았다."
+    },
+    {
+      "id": 300,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 성호야, 다 했니?"
+    },
+    {
+      "id": 301,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 나야 진작 끝났지."
+    },
+    {
+      "id": 302,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 흐흥. 그럼 슬슬 들어가자."
+    },
+    {
+      "id": 303,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 그래."
+    },
+    {
+      "id": 304,
+      "action": "",
+      "param": "",
+      "sentence": "딸랑-"
+    },
+    {
+      "id": 305,
+      "action": "",
+      "param": "",
+      "sentence": "가게 밖은 겨울이 다가오고 있음을 알리듯 싸늘한 밤바람이 불어오고 있었다."
+    },
+    {
+      "id": 306,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 누나, 안 추워?"
+    },
+    {
+      "id": 307,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 어머. 혹시 춥니? 잠깐만 기다려보렴."
+    },
+    {
+      "id": 308,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 아냐 아냐. 안 그…"
+    },
+    {
+      "id": 309,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 입어. 누나는 괜찮아."
+    },
+    {
+      "id": 310,
+      "action": "",
+      "param": "",
+      "sentence": "안 그래도 괜찮은데…"
+    },
+    {
+      "id": 311,
+      "action": "",
+      "param": "",
+      "sentence": "그래도, 내게 목도리를 둘러주는 누나의 마음이 전해지는 것 같았다."
+    },
+    {
+      "id": 312,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 성호야, 밥은 챙겨 먹었니? 요즘 날이 갈수록 마르는 것 같아서 걱정이야."
+    },
+    {
+      "id": 313,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 걱정 안 해도 돼. 내가 애도 아니고."
+    },
+    {
+      "id": 314,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 꽃은 제때 물을 주지 않으면 금세 말라 죽어버린단다. 누나는 우리 성호가 그런 꽃 같아 보여."
+    },
+    {
+      "id": 315,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : …난 괜찮아 누나. 정말로."
+    },
+    {
+      "id": 316,
+      "action": "",
+      "param": "",
+      "sentence": "김다은 : 그래… 알겠어."
+    },
+    {
+      "id": 317,
+      "action": "",
+      "param": "",
+      "sentence": "걱정스레 쳐다보는 누나의 눈을 피해 고개를 돌렸다."
+    },
+    {
+      "id": 318,
+      "action": "",
+      "param": "",
+      "sentence": "아저씨에게도 죄송한 일을 했는데, 누나에게까지 미안한 일을 만들고 싶지 않다."
+    },
+    {
+      "id": 319,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 누나 춥겠다. 얼른 들어가자."
+    },
+    {
+      "id": 320,
+      "action": "",
+      "param": "",
+      "sentence": "만약, 신이 있다면 부디. 내가 실패하더라도 이 불행이 내 소중한 사람들은 피해 가게 해주시길."
+    },
+    {
+      "id": 321,
+      "action": "",
+      "param": "",
+      "sentence": "어머니를 잃은 그날, 당신을 원망했던 일은 저승에서 사죄드리겠다고."
+    },
+    {
+      "id": 322,
+      "action": "",
+      "param": "",
+      "sentence": "그렇게 별을 보며 기도했다."
+    },
+    {
+      "id": 323,
+      "action": "",
+      "param": "",
+      "sentence": "오늘 밤은 쉬이 잠들지 못할 것 같은 그런 기분이 든다. "
+    },
+    {
+      "id": 324,
+      "action": "",
+      "param": "",
+      "sentence": "— —"
+    },
+    {
+      "id": 325,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 일어나거라."
+    },
+    {
+      "id": 326,
+      "action": "",
+      "param": "",
+      "sentence": "눈을 뜨니 보이는 건 칠흑 같은 어둠 속에서 오연히 서 있는 노란 옷의 괴인."
+    },
+    {
+      "id": 327,
+      "action": "",
+      "param": "",
+      "sentence": "침대에서 뒤척이다가 겨우 잠이 들었을 텐데. 그럼 꿈인 건가. "
+    },
+    {
+      "id": 328,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 참으로 우습구나. 알량한 과거, 단 하나 때문에 그리 주저하는 것이더냐?"
+    },
+    {
+      "id": 329,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 당신이 뭘 안다고!"
+    },
+    {
+      "id": 330,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 함부로 입을 놀리지 말거라."
+    },
+    {
+      "id": 331,
+      "action": "",
+      "param": "",
+      "sentence": "한 걸음, 두 걸음, 세 걸음."
+    },
+    {
+      "id": 332,
+      "action": "",
+      "param": "",
+      "sentence": "천천히 다가오는 그 모습에 서늘한 공포를 느꼈다."
+    },
+    {
+      "id": 333,
+      "action": "",
+      "param": "",
+      "sentence": "아니, 느낀다. 노란 로브 아래로 꿈틀거리는 "
+    },
+    {
+      "id": 334,
+      "action": "GeneralDialogue | ForceToNextDialogue",
+      "param": "",
+      "sentence": "<size=110%><color=#FF0000><b>[촉수가너무나아름답고숨이막혀서눈물이피가흘러서새빨간피가빨갛게꽃처럼피어나고있어도와줘누나아저씨너무아파괴로워광인의광기는범인의그것보다오래갈뿐다른것은없다.]</b></color></size>"
+    },
+    {
+      "id": 335,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 자애 속의 교소. 고독 속의 가소. 형제를 기망하는 조소. 허상뿐인 천륜 속의 비애."
+    },
+    {
+      "id": 336,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 그리고 여기. 처지를 자각하지 못한 천치."
+    },
+    {
+      "id": 337,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 마지막 기회다. "
+    },
+    {
+      "id": 338,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 우욱…"
+    },
+    {
+      "id": 339,
+      "action": "",
+      "param": "",
+      "sentence": "머릿속에 지네가 기어 다니는 듯한 감각에 치밀어오르는 토기를 참지 못하고 게워내 버렸다."
+    },
+    {
+      "id": 340,
+      "action": "",
+      "param": "",
+      "sentence": "방금 입으로 뱉어낸 활자의 덩어리가 광인의 그것과도 같아서, 망가져 버린 미래의 나를 보는 것 같아서."
+    },
+    {
+      "id": 341,
+      "action": "",
+      "param": "",
+      "sentence": "그것이 너무나도 소름 끼쳐서 당장이라도 혀를 깨물고 싶은 느낌이다.  "
+    },
+    {
+      "id": 342,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 너에게 도래할 미래는 너에게만 국한된 것이 아니다."
+    },
+    {
+      "id": 343,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 교살, 간살, 납살, 축살, 갱살, 분살, 구살, 유살, 독살."
+    },
+    {
+      "id": 344,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 타인, 지인, 그리고 네가 소중하게 생각하는 이들이 겪게 될 미래의 일부다."
+    },
+    {
+      "id": 345,
+      "action": "",
+      "param": "",
+      "sentence": "이성호 : 하지마… 제발… 그 사람들은 건드리지 말아줘…"
+    },
+    {
+      "id": 346,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 내게 간청해봐야 달라지는 것은 없다."
+    },
+    {
+      "id": 347,
+      "action": "",
+      "param": "",
+      "sentence": "따악-"
+    },
+    {
+      "id": 348,
+      "action": "",
+      "param": "",
+      "sentence": "괴인이 손가락을 튕기자, 의식이 희미해지는 것을 느꼈다."
+    },
+    {
+      "id": 349,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 알량한 과거, 자존심은 버려두거라."
+    },
+    {
+      "id": 350,
+      "action": "",
+      "param": "",
+      "sentence": "??? : 일단 살려야 하지 않겠느냐?"
+    },
+    {
+      "id": 351,
+      "action": "",
+      "param": "",
+      "sentence": "가면 속에 가려져 있어 볼 수 없었음에도, 왠지 그가 웃고 있다는 느낌을 지울 수 없었다."
+    },
+    {
+      "id": 352,
+      "action": "",
+      "param": "",
+      "sentence": "그가 누구인지, 무엇을 원하는지, 왜 하필 나인 건지."
+    },
+    {
+      "id": 353,
+      "action": "",
+      "param": "",
+      "sentence": "물어보고 싶은 게 많았지만 몰려오는 수마 탓에 그만 정신을 잃고 말았다."
+    }
+  ]
 }

@@ -172,6 +172,11 @@ namespace Dialogue
         
         public IEnumerator InvokeIfGotSpace()
         {
+            if (false)
+            {
+
+            }
+
             if (!isExecuting && InputManager.inst.GetInputNextText())
             {
 
