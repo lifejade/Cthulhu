@@ -73,10 +73,7 @@ public class Setting : MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+
 
     public void SaveSettings()
     {

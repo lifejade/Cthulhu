@@ -49,7 +49,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.F12))
+            ChangeFullscreen();
     }
 
 
@@ -157,4 +158,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ChangeFullscreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 }
