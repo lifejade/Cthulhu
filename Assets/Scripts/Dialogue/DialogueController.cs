@@ -37,7 +37,7 @@ namespace Dialogue
             if(!Managers.PlayerData.Clear_MainChapter.ContainsKey(1))
                 Managers.PlayerData.Clear_MainChapter.Add(1, true);
 
-            SceneChanger.instance.ChangeScene("Lobby 2");
+            SceneChanger.instance.ChangeScene("Lobby");
         }
 
     }
