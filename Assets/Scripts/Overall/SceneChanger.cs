@@ -23,6 +23,7 @@ public class SceneChanger : MonoBehaviour
                 {
                     canvas = GameObject.Find("Canvas");
                     GameManager.loadedResources = new Dictionary<string, UnityEngine.Object>();
+                    Managers.PlayerData.lastSceneName = scene.name;
                 };
             }
         }
@@ -56,7 +57,8 @@ public class SceneChanger : MonoBehaviour
 
     public void ChangeScene(string sceneName)
     {
-            StartCoroutine(fadeOutScene(sceneName));
+        StartCoroutine(fadeOutScene(sceneName));
+
     }
 
     public void LoadScene(string effectName = "FadeInScene")

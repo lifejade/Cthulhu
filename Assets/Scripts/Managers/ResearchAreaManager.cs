@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static ResearchAreaUI;
 
 public class ResearchAreaManager : MonoBehaviour, EManager
 {
@@ -77,7 +76,7 @@ public class ResearchAreaManager : MonoBehaviour, EManager
                     {
                         Managers.PlayerData.HaveItem[listener.id] = true;
                     }
-                    
+                    Managers.PlayerData.savePlayerData();
                 }
             }
         }

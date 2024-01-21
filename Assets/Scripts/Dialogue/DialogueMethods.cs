@@ -11,7 +11,7 @@ namespace Dialogue
 {
     public class DialogueMethods : MonoBehaviour
     {
-
+       
         //Dictionary to save a coroutines that might be stopped
         private Dictionary<string, IEnumerator> coroutineDict = new Dictionary<string, IEnumerator>();
 
@@ -21,6 +21,7 @@ namespace Dialogue
         protected DialogueUnits dialogues;
 
         public static DialogueMethods instance;
+        
 
         private void Awake()
         {
@@ -38,6 +39,11 @@ namespace Dialogue
         public void ExecutePerFrame()
         {
             StartCoroutine(dialogues.InvokeIfGotSpace());
+        }
+
+        public void MoveDialogue(int idx)
+        {
+            dialogues.SetDialogue(idx);
         }
 
         public IEnumerator PlayAudio(DialogueUnit unit)

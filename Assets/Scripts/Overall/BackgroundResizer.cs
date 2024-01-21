@@ -42,7 +42,7 @@ public class BackgroundResizer : MonoBehaviour
         (GameManager.instance.screenTopRightInWorld.y - GameManager.instance.screenBottomLeftInWorld.y) * 100;
 
         Resolution curResol = Screen.currentResolution;
-
+        /*
         Debug.Log("resolWidth" + curResol.width);
         Debug.Log("\n");
         Debug.Log("resolHeight" + curResol.height);
@@ -54,7 +54,7 @@ public class BackgroundResizer : MonoBehaviour
         Debug.Log("camerawidth" + GameManager.instance.cameraWidth);
         Debug.Log("\n");
         Debug.Log("cameraheight" + GameManager.instance.cameraHeight);
-        Debug.Log("\n");
+        Debug.Log("\n");*/
         return;
     }
 

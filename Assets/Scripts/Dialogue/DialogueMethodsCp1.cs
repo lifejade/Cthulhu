@@ -49,7 +49,7 @@ namespace Dialogue
             corDict.Add("ControlCharacter2", ControlCharacter2);
             corDict.Add("DisappearCharacter", DisappearCharacter);
 
-            dialogues = JsonConvert.DeserializeObject<DialogueUnits>(GameManager.LoadResource<TextAsset>("Dialogues/" + "DialogueCp1json").text);
+            dialogues = JsonConvert.DeserializeObject<DialogueUnits>(GameManager.LoadResource<TextAsset>("Dialogues/" + "dialogue1").text);
             
             dialogues.GetReadyToUse(corDict);
         }

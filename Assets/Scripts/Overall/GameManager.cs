@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Text;
 using UnityEditor;
+using Newtonsoft.Json;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,7 +50,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
+
     }
+
 
 
 
@@ -158,6 +162,7 @@ public class GameManager : MonoBehaviour
 
     public void ExitGame()
     {
+        Managers.PlayerData.savePlayerData();
         Application.Quit();
     }
 

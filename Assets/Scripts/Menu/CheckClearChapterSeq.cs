@@ -11,7 +11,7 @@ public class CheckClearChapterSeq : MonoBehaviour
     {
         
         Dictionary<int, bool> check;
-        int maxCleared = -1;
+        int maxCleared = 0;
         if (isMain)
         {
             check = Managers.PlayerData.Clear_MainChapter;
@@ -24,9 +24,10 @@ public class CheckClearChapterSeq : MonoBehaviour
         {
             if (it.Key > maxCleared && it.Value)
                 maxCleared = it.Key;
+
             if (chapter_blackout.Count > it.Key && chapter_blackout[it.Key] != null)
-                chapter_blackout[it.Key].SetActive(!it.Value);
+                chapter_blackout[it.Key - 1].SetActive(!it.Value);
         }
-        chapter_blackout[maxCleared+1].SetActive(false);
+        chapter_blackout[maxCleared].SetActive(false);
     }
 }

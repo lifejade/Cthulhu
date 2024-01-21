@@ -6,6 +6,7 @@ using System;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 namespace Dialogue
 {
@@ -188,6 +189,8 @@ namespace Dialogue
                 }
                 else
                 {
+                    Managers.PlayerData.lastStoryIdx = (int)(prNode.Value.id);
+
                     Debug.Log("trued--------");
                     Debug.Log(prUnit);
                     isExecuting = true;
@@ -200,6 +203,7 @@ namespace Dialogue
                     Debug.Log("all coroutine completed");
                     Debug.Log("isExecuting : " + isExecuting);//왜 4번끝나고 falsed
                 }
+                
             }
             yield break;
         }
@@ -220,7 +224,7 @@ namespace Dialogue
             if (prUnit.CorList.Count == ++prUnit.dialogueCorCompCount)
             {//왜 id 4번 falsed 출력안됬는가
                 this.isExecuting = false;
-                // Debug.Log("falsed");
+                //Debug.Log("falsed");
                 // Debug.Log(this.isExecuting);
                 prUnit.dialogueCorCompCount = 0;
                 prNode = prNode.Next;
@@ -236,9 +240,28 @@ namespace Dialogue
                 }
             }
         }
+        
+        public void SetDialogue(int idx)
+        {
+            LinkedListNode<DialogueUnit> it = uList.First;
+
+            for (int i = 0; i < uList.Count;i++)
+            {
+                if (it.Value.id == idx)
+                {
+                    prUnit = it.Value;
+                    prNode = it;
 
 
-        public void GetReadyToUse(Dictionary<string, Func<DialogueUnit, IEnumerator>> cDictToUse)
+
+                    return;
+                }
+                it.Value.dialogueCorCompCount = 0;
+                it = it.Next;
+            }
+        }
+
+        public void GetReadyToUse(Dictionary<string, Func<DialogueUnit, IEnumerator>> cDictToUse, int startidx = -1)
         {
             /*
             cDictToUse : coroutine dictionary to use in this DialogueUnits.

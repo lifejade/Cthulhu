@@ -8,6 +8,9 @@ namespace Dialogue
     public class DialogueController : MonoBehaviour
     {
         public static DialogueController instance;
+
+        public List<DialogueMethods> methodlist;
+
         public DialogueMethods Methods;
         void Awake()
         {
@@ -23,6 +26,7 @@ namespace Dialogue
         // Start is called before the first frame update
         void Start()
         {
+            Managers.PlayerData.syncLoadData = true;
             AudioManager.instance.ChangeBgm("Dialogue/1번_theme_48-24");
             SceneChanger.instance.LoadScene("BloodFilled");
             Methods = DialogueMethodsCp1.instance;
@@ -38,6 +42,12 @@ namespace Dialogue
                 Managers.PlayerData.Clear_MainChapter.Add(1, true);
 
             SceneChanger.instance.ChangeScene("Lobby");
+        }
+
+        //자주 사용하지 말것
+        public void MoveDialogue(int idx)
+        {
+            Methods.MoveDialogue(idx);
         }
 
     }
