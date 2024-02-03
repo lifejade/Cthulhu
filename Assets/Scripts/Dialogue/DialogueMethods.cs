@@ -6,6 +6,8 @@ using System;
 using Cinemachine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Newtonsoft.Json;
+using System.Linq;
 
 namespace Dialogue
 {
@@ -17,6 +19,8 @@ namespace Dialogue
 
         protected DialogueController controller;
         protected bool isDWrapperEnabled = false;
+        
+        public Dictionary<string, Func<DialogueUnit, IEnumerator>> corDict = new Dictionary<string, Func<DialogueUnit, IEnumerator>>();
 
         protected DialogueUnits dialogues;
 
@@ -34,7 +38,181 @@ namespace Dialogue
                 Destroy(gameObject);
             }
         }
-        
+
+        protected void JsonToDicts(string name)
+        {
+            DialogueParsing parsing = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "test").text);
+            dialogues = new DialogueUnits();
+
+            dialogues.name = name;
+            dialogues.uList = new LinkedList<DialogueUnit>();
+
+            foreach(DialogueParsing.StringTalk it in parsing.stringTalk)
+            {
+                DialogueUnit unit = new DialogueUnit();
+                unit.id = it.id;
+                unit.action = it.action;
+                unit.param = it.param;
+
+                //sentence
+                if(it.script != "")
+                {
+                    DialogueParsing.LocalTable localTable = parsing.localTable.Find(value => value.key == it.script);
+                    //만일 한국어, 경우 넣을것
+                    if(localTable != null)
+                        unit.sentence = localTable.ko;
+                }
+
+                //speaker
+                if (it.speaker != "")
+                {
+                    DialogueParsing.LocalTable localTable = parsing.localTable.Find(value => value.key == it.speaker);
+                    //만일 한국어, 경우 넣을것
+                    if (localTable != null)
+                        unit.speaker = localTable.ko;
+                }
+                else
+                    unit.speaker = it.speaker;
+
+                //cg
+                if(it.cg1 != "")
+                {
+                    DialogueParsing.GraphicResources path = parsing.graphicResources.Find(value => value.key == it.cg1);
+                    if (path != null)
+                    {
+                        if (unit.action != "")
+                            unit.action += " | ";
+                        unit.action += "%ControlCharacter1";
+                        if (unit.param != "")
+                            unit.param += " | ";
+
+                        unit.param += $"ControlCharacter1 : ControlCharacter : {"Seongho"}, {"Smile"}, {""}, -4, -1, true";
+                    }
+                }
+
+                if (it.cg2 != "")
+                {
+                    DialogueParsing.GraphicResources path = parsing.graphicResources.Find(value => value.key == it.cg2);
+                    if (path != null)
+                    {
+                        if (unit.action != "")
+                            unit.action += " | ";
+                        unit.action += "%ControlCharacter1";
+                        if (unit.param != "")
+                            unit.param += " | ";
+                        unit.param += $"ControlCharacter1 : ControlCharacter : {"Seongho"}, {"Smile"},{""}, 0, -1, true";
+                    }
+                }
+
+                if (it.cg3 != "")
+                {
+                    DialogueParsing.GraphicResources path = parsing.graphicResources.Find(value => value.key == it.cg3);
+                    if (path != null)
+                    {
+                        if (unit.action != "")
+                            unit.action += " | ";
+                        unit.action += "%ControlCharacter1";
+                        if (unit.param != "")
+                            unit.param += " | ";
+                        unit.param += $"ControlCharacter1 : ControlCharacter : {"Seongho"}, {"Smile"}, {""}, 4, -1, true";
+                    }
+                }
+
+                if(it.sound1 != "")
+                {
+                    DialogueParsing.SoundResource path = parsing.soundResource.Find(value => value.key == it.sound1);
+                    if(path != null)
+                    {
+                        if (unit.action != "")
+                            unit.action += " | ";
+                        unit.action += "PlayAudio";
+                        if (unit.param != "")
+                            unit.param += " | ";
+                        unit.param += $"AudioName : string : {path.sound_path}";
+                    }
+                }
+
+                if(it.sound1 == "" && it.sound2 != "")
+                {
+                    DialogueParsing.SoundResource path = parsing.soundResource.Find(value => value.key == it.sound2);
+                    if (path != null)
+                    {
+                        if (unit.action != "")
+                            unit.action += " | ";
+                        unit.action += "PlayAudio";
+                        if (unit.param != "")
+                            unit.param += " | ";
+                        unit.param += $"AudioName : string : {path.sound_path}";
+                    }
+                }
+
+
+                dialogues.uList.AddLast(unit);
+            }
+        }
+
+        protected class DialogueParsing
+        {
+            [JsonProperty("StringTalk")]
+            public List<StringTalk> stringTalk;
+
+            [JsonProperty("SoundResources")]
+            public List<SoundResource> soundResource;
+
+            [JsonProperty("Select")]
+            public List<Select> select;
+
+            [JsonProperty("LocalTable")]
+            public List<LocalTable> localTable;
+
+            [JsonProperty("GraphicResources")]
+            public List<GraphicResources> graphicResources;
+
+
+            public class StringTalk
+            {
+                public int id;
+                public string cg1;
+                public string cg2;
+                public string cg3;
+                
+                public string sound1;
+                public string sound2;
+
+                public string action;
+                public string param;
+                public string select;
+                public string speaker;
+                public string script;
+            }
+            public class SoundResource
+            {
+                public string key;
+                public string sound_path;
+            }
+            public class Select
+            {
+                public string key;
+                public string select_1;
+                public string select_2;
+                public string select_3;
+                public string select_1_script;
+                public string select_2_script;
+                public string select_3_script;
+            }
+            public class LocalTable
+            {
+                public string key;
+                public string ko;
+                public string en;
+            }
+            public class GraphicResources
+            {
+                public string key;
+                public string image_path;
+            }
+        }
+
 
         public void ExecutePerFrame()
         {

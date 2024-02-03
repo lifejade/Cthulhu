@@ -17,14 +17,12 @@ namespace Dialogue
     public class DialogueMethodsCp1 : DialogueMethods
     {
         //List of coroutines using in this chapter.
-        public Dictionary<string, Func<DialogueUnit, IEnumerator>> corDict;
         public AnimationCurve animCurve;
         public AnimationCurve animCurve2;
 
         // Start is called before the first frame update
         private void Start()
         {
-            corDict = new Dictionary<string, Func<DialogueUnit, IEnumerator>>();
             controller = DialogueController.instance;
 
             corDict.Add("SuckIntoOtherSpace", SuckIntoOtherSpace);
@@ -48,9 +46,9 @@ namespace Dialogue
             corDict.Add("ControlCharacter1", ControlCharacter1);
             corDict.Add("ControlCharacter2", ControlCharacter2);
             corDict.Add("DisappearCharacter", DisappearCharacter);
-
-            dialogues = JsonConvert.DeserializeObject<DialogueUnits>(GameManager.LoadResource<TextAsset>("Dialogues/" + "dialogue1").text);
             
+            JsonToDicts("dd");
+            //dialogues = JsonConvert.DeserializeObject<DialogueUnits>(GameManager.LoadResource<TextAsset>("Dialogues/" + "dialogue1").text);
             dialogues.GetReadyToUse(corDict);
         }
 

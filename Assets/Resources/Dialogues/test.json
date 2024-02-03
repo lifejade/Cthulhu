@@ -1,85 +1,6223 @@
 {
-    "name" : "Chapter1 Dialogue Unit List",
-    "uList": [
-        {
-            "id": 0,
-            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-            "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1",
-            "sentence": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다."
-        },
+    "StringTalk": [
         {
             "id": 1,
-            "action": "",
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "CenterTextBox|ForceToNextDialogue",
             "param": "",
-            "sentence": "??? : <size=140%><b>꼬맹아!</b></size>"
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_1"
         },
         {
             "id": 2,
-            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-            "param": "ControlCharacter1 : ControlCharacter : Shinoh, Smile, , -4, -1",
-            "sentence": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다."
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "GeneralDialogue | DisableDialogueCircle | EnableGlitch14 | ChangeBackGround | EnableDialogueCircle",
+            "param": "BackgroundImage : string : Dialogue/bizarrecity",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_2"
         },
-        {
-            "id": 3,
-            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-            "sentence": "이성호 : 저 왔어요. 우리 박신오 교수님."
-        },
+      {
+        "id": 3,
+        "cg1": "",
+        "cg2": "",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "GeneralDialogue | DisableDialogueWrapper | ShakeCamera | WaitForSec | SuckIntoOtherSpace",
+        "param": "WaitForSeconds : float : 1 | AudioName : string : Dialogue/Swoosh | BackgroundImage : string : Dialogue/Hastur",
+        "select": "",
+        "speaker": "",
+        "script": "Character_Script_3"
+      },
         {
             "id": 4,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
             "action": "",
             "param": "",
-            "sentence": "박신오 : 왜 이렇게 늦어? 커피 다 식겠다.",
-            "choices": [
-                {
-                    "name" : "choice1 unit list",
-                    "sentence" : "선택지 1을 선택한다.",
-                    "uList": [
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice1"
-                        },
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice1"
-                        }
-                    ]
-                },
-                {
-                    "name" : "choice2 unit list",
-                    "sentence" : "선택지 2을 선택한다.",
-                    "uList": [
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice2"
-                        },
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice2"
-                        }
-                    ]
-                },
-                {
-                    "name" : "choice3 unit list",
-                    "sentence" : "선택지 3을 선택한다.",
-                    "uList": [
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "choice3"
-                        },
-                        {
-                            "action": "%ControlCharacter1 | GeneralDialogue | EnableDialogueCircle",
-                            "param": "ControlCharacter1 : ControlCharacter : Seongho, Smile, , 4, -1, true",
-                            "sentence": "chooice3"
-                        }
-                    ]
-                }
-            ]
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_4"
+        },
+        {
+            "id": 5,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_5"
+        },
+        {
+            "id": 6,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_6"
+        },
+        {
+            "id": 7,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_7"
+        },
+        {
+            "id": 8,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_8"
+        },
+        {
+            "id": 9,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_9"
+        },
+        {
+            "id": 10,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_10"
+        },
+        {
+            "id": 11,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_11"
+        },
+        {
+            "id": 12,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_12"
+        },
+        {
+            "id": 13,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_13"
+        },
+        {
+            "id": 14,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_14"
+        },
+        {
+            "id": 15,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_15"
+        },
+        {
+            "id": 16,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_16"
+        },
+        {
+            "id": 17,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_17"
+        },
+        {
+            "id": 18,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_18"
+        },
+      {
+        "id": 19,
+        "cg1": "",
+        "cg2": "",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "s_test_2",
+        "action": "ShakeCamera | WaitForSec | SuckIntoOtherSpace",
+        "param": "WaitForSeconds : float : 1 | BackgroundImage : string : Background/WalkingTrails",
+        "select": "",
+        "speaker": "Character_name_01",
+        "script": "Character_Script_19"
+      },
+        {
+            "id": 20,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_20"
+        },
+        {
+            "id": 21,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_21"
+        },
+        {
+            "id": 22,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_22"
+        },
+        {
+            "id": 23,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_23"
+        },
+        {
+            "id": 24,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_24"
+        },
+        {
+            "id": 25,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_25"
+        },
+        {
+            "id": 26,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_26"
+        },
+        {
+            "id": 27,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_27"
+        },
+        {
+            "id": 28,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_28"
+        },
+        {
+            "id": 29,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_29"
+        },
+        {
+            "id": 30,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_30"
+        },
+        {
+            "id": 31,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_31"
+        },
+        {
+            "id": 32,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_32"
+        },
+        {
+            "id": 33,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_33"
+        },
+        {
+            "id": 34,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_34"
+        },
+        {
+            "id": 35,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_35"
+        },
+        {
+            "id": 36,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_36"
+        },
+        {
+            "id": 37,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_37"
+        },
+        {
+            "id": 38,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_38"
+        },
+        {
+            "id": 39,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_39"
+        },
+        {
+            "id": 40,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_40"
+        },
+        {
+            "id": 41,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_06",
+            "script": "Character_Script_41"
+        },
+        {
+            "id": 42,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_42"
+        },
+        {
+            "id": 43,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_43"
+        },
+        {
+            "id": 44,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_44"
+        },
+        {
+            "id": 45,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_45"
+        },
+        {
+            "id": 46,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_46"
+        },
+        {
+            "id": 47,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_47"
+        },
+        {
+            "id": 48,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_48"
+        },
+        {
+            "id": 49,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_49"
+        },
+        {
+            "id": 50,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_50"
+        },
+        {
+            "id": 51,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_51"
+        },
+        {
+            "id": 52,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_52"
+        },
+        {
+            "id": 53,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_53"
+        },
+        {
+            "id": 54,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_54"
+        },
+        {
+            "id": 55,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_55"
+        },
+        {
+            "id": 56,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_56"
+        },
+        {
+            "id": 57,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_57"
+        },
+        {
+            "id": 58,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_58"
+        },
+        {
+            "id": 59,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_59"
+        },
+        {
+            "id": 60,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_60"
+        },
+        {
+            "id": 61,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_61"
+        },
+        {
+            "id": 62,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_62"
+        },
+        {
+            "id": 63,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_63"
+        },
+        {
+            "id": 64,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_64"
+        },
+        {
+            "id": 65,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_65"
+        },
+        {
+            "id": 66,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_66"
+        },
+        {
+            "id": 67,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_67"
+        },
+        {
+            "id": 68,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_68"
+        },
+        {
+            "id": 69,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_69"
+        },
+        {
+            "id": 70,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_70"
+        },
+        {
+            "id": 71,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_71"
+        },
+        {
+            "id": 72,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_72"
+        },
+        {
+            "id": 73,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_73"
+        },
+        {
+            "id": 74,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_74"
+        },
+        {
+            "id": 75,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_75"
+        },
+        {
+            "id": 76,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_76"
+        },
+        {
+            "id": 77,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_77"
+        },
+        {
+            "id": 78,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_78"
+        },
+        {
+            "id": 79,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_79"
+        },
+        {
+            "id": 80,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_80"
+        },
+        {
+            "id": 81,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_81"
+        },
+        {
+            "id": 82,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_82"
+        },
+        {
+            "id": 83,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_83"
+        },
+        {
+            "id": 84,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_84"
+        },
+        {
+            "id": 85,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_85"
+        },
+        {
+            "id": 86,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_86"
+        },
+        {
+            "id": 87,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_87"
+        },
+        {
+            "id": 88,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_88"
+        },
+        {
+            "id": 89,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_89"
+        },
+        {
+            "id": 90,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_90"
+        },
+        {
+            "id": 91,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_91"
+        },
+        {
+            "id": 92,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_92"
+        },
+        {
+            "id": 93,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_93"
+        },
+        {
+            "id": 94,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_94"
+        },
+        {
+            "id": 95,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_95"
+        },
+        {
+            "id": 96,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_96"
+        },
+        {
+            "id": 97,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_97"
+        },
+        {
+            "id": 98,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_98"
+        },
+        {
+            "id": 99,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_99"
+        },
+        {
+            "id": 100,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_100"
+        },
+        {
+            "id": 101,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_101"
+        },
+        {
+            "id": 102,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_102"
+        },
+        {
+            "id": 103,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_103"
+        },
+        {
+            "id": 104,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_104"
+        },
+        {
+            "id": 105,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_105"
+        },
+        {
+            "id": 106,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_106"
+        },
+        {
+            "id": 107,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_107"
+        },
+        {
+            "id": 108,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_108"
+        },
+        {
+            "id": 109,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_109"
+        },
+        {
+            "id": 110,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_110"
+        },
+        {
+            "id": 111,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_111"
+        },
+        {
+            "id": 112,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_112"
+        },
+        {
+            "id": 113,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_113"
+        },
+        {
+            "id": 114,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_114"
+        },
+        {
+            "id": 115,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_115"
+        },
+        {
+            "id": 116,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_116"
+        },
+        {
+            "id": 117,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_117"
+        },
+        {
+            "id": 118,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_118"
+        },
+        {
+            "id": 119,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_119"
+        },
+        {
+            "id": 120,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_120"
+        },
+        {
+            "id": 121,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_121"
+        },
+        {
+            "id": 122,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_122"
+        },
+        {
+            "id": 123,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_123"
+        },
+        {
+            "id": 124,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_124"
+        },
+        {
+            "id": 125,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_125"
+        },
+        {
+            "id": 126,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_126"
+        },
+        {
+            "id": 127,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_127"
+        },
+        {
+            "id": 128,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_128"
+        },
+        {
+            "id": 129,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_129"
+        },
+        {
+            "id": 130,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_130"
+        },
+        {
+            "id": 131,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_131"
+        },
+        {
+            "id": 132,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_132"
+        },
+        {
+            "id": 133,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_133"
+        },
+        {
+            "id": 134,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_134"
+        },
+        {
+            "id": 135,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_135"
+        },
+        {
+            "id": 136,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_136"
+        },
+        {
+            "id": 137,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_137"
+        },
+        {
+            "id": 138,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_138"
+        },
+        {
+            "id": 139,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_139"
+        },
+        {
+            "id": 140,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_140"
+        },
+        {
+            "id": 141,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_141"
+        },
+        {
+            "id": 142,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_142"
+        },
+        {
+            "id": 143,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_143"
+        },
+        {
+            "id": 144,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_144"
+        },
+        {
+            "id": 145,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_145"
+        },
+        {
+            "id": 146,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_146"
+        },
+        {
+            "id": 147,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_147"
+        },
+        {
+            "id": 148,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_148"
+        },
+        {
+            "id": 149,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_149"
+        },
+        {
+            "id": 150,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_150"
+        },
+        {
+            "id": 151,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_151"
+        },
+        {
+            "id": 152,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_152"
+        },
+        {
+            "id": 153,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_153"
+        },
+        {
+            "id": 154,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_154"
+        },
+        {
+            "id": 155,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_155"
+        },
+        {
+            "id": 156,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_156"
+        },
+        {
+            "id": 157,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_157"
+        },
+        {
+            "id": 158,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_158"
+        },
+        {
+            "id": 159,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_159"
+        },
+        {
+            "id": 160,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_160"
+        },
+        {
+            "id": 161,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_161"
+        },
+        {
+            "id": 162,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_162"
+        },
+        {
+            "id": 163,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_163"
+        },
+        {
+            "id": 164,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_164"
+        },
+        {
+            "id": 165,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_165"
+        },
+        {
+            "id": 166,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_166"
+        },
+        {
+            "id": 167,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_167"
+        },
+        {
+            "id": 168,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_168"
+        },
+        {
+            "id": 169,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_169"
+        },
+        {
+            "id": 170,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_170"
+        },
+        {
+            "id": 171,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_171"
+        },
+        {
+            "id": 172,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_172"
+        },
+        {
+            "id": 173,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_173"
+        },
+        {
+            "id": 174,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_174"
+        },
+        {
+            "id": 175,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_175"
+        },
+        {
+            "id": 176,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_02",
+            "script": "Character_Script_176"
+        },
+        {
+            "id": 177,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_177"
+        },
+        {
+            "id": 178,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_178"
+        },
+        {
+            "id": 179,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_179"
+        },
+        {
+            "id": 180,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_180"
+        },
+        {
+            "id": 181,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_181"
+        },
+        {
+            "id": 182,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_182"
+        },
+        {
+            "id": 183,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_183"
+        },
+        {
+            "id": 184,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_184"
+        },
+        {
+            "id": 185,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_185"
+        },
+        {
+            "id": 186,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_186"
+        },
+        {
+            "id": 187,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_187"
+        },
+        {
+            "id": 188,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_188"
+        },
+        {
+            "id": 189,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_189"
+        },
+        {
+            "id": 190,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_190"
+        },
+        {
+            "id": 191,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_191"
+        },
+        {
+            "id": 192,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_192"
+        },
+        {
+            "id": 193,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_193"
+        },
+        {
+            "id": 194,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_194"
+        },
+        {
+            "id": 195,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_195"
+        },
+        {
+            "id": 196,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_196"
+        },
+        {
+            "id": 197,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_197"
+        },
+        {
+            "id": 198,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_198"
+        },
+        {
+            "id": 199,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_199"
+        },
+        {
+            "id": 200,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_200"
+        },
+        {
+            "id": 201,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_201"
+        },
+        {
+            "id": 202,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_202"
+        },
+        {
+            "id": 203,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_203"
+        },
+        {
+            "id": 204,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_204"
+        },
+        {
+            "id": 205,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_205"
+        },
+        {
+            "id": 206,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_206"
+        },
+        {
+            "id": 207,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_207"
+        },
+        {
+            "id": 208,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_208"
+        },
+        {
+            "id": 209,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_209"
+        },
+        {
+            "id": 210,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_210"
+        },
+        {
+            "id": 211,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_211"
+        },
+        {
+            "id": 212,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_212"
+        },
+        {
+            "id": 213,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_213"
+        },
+        {
+            "id": 214,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_214"
+        },
+        {
+            "id": 215,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_215"
+        },
+        {
+            "id": 216,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_216"
+        },
+        {
+            "id": 217,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_217"
+        },
+        {
+            "id": 218,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_218"
+        },
+        {
+            "id": 219,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_219"
+        },
+        {
+            "id": 220,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_220"
+        },
+        {
+            "id": 221,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_221"
+        },
+        {
+            "id": 222,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_222"
+        },
+        {
+            "id": 223,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_223"
+        },
+        {
+            "id": 224,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_224"
+        },
+        {
+            "id": 225,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_225"
+        },
+        {
+            "id": 226,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_226"
+        },
+        {
+            "id": 227,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_227"
+        },
+        {
+            "id": 228,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_228"
+        },
+        {
+            "id": 229,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_229"
+        },
+        {
+            "id": 230,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_230"
+        },
+        {
+            "id": 231,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_231"
+        },
+        {
+            "id": 232,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_232"
+        },
+        {
+            "id": 233,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_233"
+        },
+        {
+            "id": 234,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_234"
+        },
+        {
+            "id": 235,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_235"
+        },
+        {
+            "id": 236,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_236"
+        },
+        {
+            "id": 237,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_237"
+        },
+        {
+            "id": 238,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_238"
+        },
+        {
+            "id": 239,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_239"
+        },
+        {
+            "id": 240,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_240"
+        },
+        {
+            "id": 241,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_241"
+        },
+        {
+            "id": 242,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_242"
+        },
+        {
+            "id": 243,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_243"
+        },
+        {
+            "id": 244,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_244"
+        },
+        {
+            "id": 245,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_245"
+        },
+        {
+            "id": 246,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_246"
+        },
+        {
+            "id": 247,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_247"
+        },
+        {
+            "id": 248,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_248"
+        },
+        {
+            "id": 249,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_249"
+        },
+        {
+            "id": 250,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_250"
+        },
+        {
+            "id": 251,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_251"
+        },
+        {
+            "id": 252,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_252"
+        },
+        {
+            "id": 253,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_253"
+        },
+        {
+            "id": 254,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_254"
+        },
+        {
+            "id": 255,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_255"
+        },
+        {
+            "id": 256,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_256"
+        },
+        {
+            "id": 257,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_03",
+            "script": "Character_Script_257"
+        },
+        {
+            "id": 258,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_258"
+        },
+        {
+            "id": 259,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_259"
+        },
+        {
+            "id": 260,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_260"
+        },
+        {
+            "id": 261,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_261"
+        },
+        {
+            "id": 262,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_262"
+        },
+        {
+            "id": 263,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_263"
+        },
+        {
+            "id": 264,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_264"
+        },
+        {
+            "id": 265,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_265"
+        },
+        {
+            "id": 266,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_266"
+        },
+        {
+            "id": 267,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_267"
+        },
+        {
+            "id": 268,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_268"
+        },
+        {
+            "id": 269,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_269"
+        },
+        {
+            "id": 270,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_270"
+        },
+        {
+            "id": 271,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_271"
+        },
+        {
+            "id": 272,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_272"
+        },
+        {
+            "id": 273,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_273"
+        },
+        {
+            "id": 274,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_274"
+        },
+        {
+            "id": 275,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_275"
+        },
+        {
+            "id": 276,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_276"
+        },
+        {
+            "id": 277,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_277"
+        },
+        {
+            "id": 278,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_278"
+        },
+        {
+            "id": 279,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_279"
+        },
+        {
+            "id": 280,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_280"
+        },
+        {
+            "id": 281,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_281"
+        },
+        {
+            "id": 282,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_282"
+        },
+        {
+            "id": 283,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_283"
+        },
+        {
+            "id": 284,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_284"
+        },
+        {
+            "id": 285,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_285"
+        },
+        {
+            "id": 286,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_286"
+        },
+        {
+            "id": 287,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_287"
+        },
+        {
+            "id": 288,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_288"
+        },
+        {
+            "id": 289,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_289"
+        },
+        {
+            "id": 290,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_290"
+        },
+        {
+            "id": 291,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_291"
+        },
+        {
+            "id": 292,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_292"
+        },
+        {
+            "id": 293,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_293"
+        },
+        {
+            "id": 294,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_294"
+        },
+        {
+            "id": 295,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_295"
+        },
+        {
+            "id": 296,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_296"
+        },
+        {
+            "id": 297,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_297"
+        },
+        {
+            "id": 298,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_04",
+            "script": "Character_Script_298"
+        },
+        {
+            "id": 299,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_299"
+        },
+        {
+            "id": 300,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_300"
+        },
+        {
+            "id": 301,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_301"
+        },
+        {
+            "id": 302,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_302"
+        },
+        {
+            "id": 303,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_303"
+        },
+        {
+            "id": 304,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_304"
+        },
+        {
+            "id": 305,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_305"
+        },
+        {
+            "id": 306,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_306"
+        },
+        {
+            "id": 307,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_01",
+            "script": "Character_Script_307"
+        },
+        {
+            "id": 308,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_308"
+        },
+        {
+            "id": 309,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_309"
+        },
+        {
+            "id": 310,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_310"
+        },
+        {
+            "id": 311,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_311"
+        },
+        {
+            "id": 312,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_312"
+        },
+        {
+            "id": 313,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_313"
+        },
+        {
+            "id": 314,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_314"
+        },
+        {
+            "id": 315,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_315"
+        },
+        {
+            "id": 316,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_316"
+        },
+        {
+            "id": 317,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_317"
+        },
+        {
+            "id": 318,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_318"
+        },
+        {
+            "id": 319,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_319"
+        },
+        {
+            "id": 320,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_320"
+        },
+        {
+            "id": 321,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "s_test_2",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_321"
+        },
+        {
+            "id": 322,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_322"
+        },
+        {
+            "id": 323,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_323"
+        },
+        {
+            "id": 324,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "s_test_1",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_324"
+        },
+        {
+            "id": 325,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_325"
+        },
+        {
+            "id": 326,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_326"
+        },
+        {
+            "id": 327,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "select_00001",
+            "speaker": "Character_name_05",
+            "script": ""
+        },
+        {
+            "id": 328,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "select_00002",
+            "speaker": "Character_name_05",
+            "script": ""
+        },
+        {
+            "id": 329,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "select_00003",
+            "speaker": "Character_name_01",
+            "script": ""
+        },
+        {
+            "id": 330,
+            "cg1": "",
+            "cg2": "",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_322"
+        },
+        {
+            "id": 331,
+            "cg1": "",
+            "cg2": "cg_chaerin",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "Character_name_05",
+            "script": "Character_Script_323"
+        },
+        {
+            "id": 332,
+            "cg1": "",
+            "cg2": "cg_daeun",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_324"
+        },
+        {
+            "id": 333,
+            "cg1": "",
+            "cg2": "cg_seola",
+            "cg3": "",
+            "sound1": "",
+            "sound2": "",
+            "action": "",
+            "param": "",
+            "select": "",
+            "speaker": "",
+            "script": "Character_Script_325"
+        }
+    ],
+    "SoundResources": [
+      {
+        "key": "s_test_1",
+        "sound_path": "Dialogue/a_Introduce",
+        "비고": "테스트용1"
+      },
+      {
+        "key": "s_test_2",
+        "sound_path": "Dialogue/p_Introduce",
+        "비고": "테스트용2"
+      }
+    ],
+    "Select": [
+        {
+            "key": "select_00001",
+            "select_1": "Character_select_1",
+            "select_2": "",
+            "select_3": "",
+            "select_1_script": "Character_Script_68",
+            "select_2_script": "",
+            "select_3_script": ""
+        },
+        {
+            "key": "select_00002",
+            "select_1": "Character_select_2_1",
+            "select_2": "Character_select_2_2",
+            "select_3": "",
+            "select_1_script": "",
+            "select_2_script": "Character_Script_74",
+            "select_3_script": ""
+        },
+        {
+            "key": "select_00003",
+            "select_1": "Character_select_3_1",
+            "select_2": "Character_select_3_2",
+            "select_3": "Character_select_3_3",
+            "select_1_script": "",
+            "select_2_script": "",
+            "select_3_script": "Character_Script_78"
+        }
+    ],
+    "LocalTable": [
+        {
+            "key": "Character_name_01",
+            "ko": "이성호",
+            "en": ""
+        },
+        {
+            "key": "Character_name_02",
+            "ko": "한설아",
+            "en": ""
+        },
+        {
+            "key": "Character_name_03",
+            "ko": "유채린",
+            "en": ""
+        },
+        {
+            "key": "Character_name_04",
+            "ko": "김다은",
+            "en": ""
+        },
+        {
+            "key": "Character_name_05",
+            "ko": "???",
+            "en": ""
+        },
+        {
+            "key": "Character_name_06",
+            "ko": "박신오",
+            "en": ""
+        },
+        {
+            "key": "Character_select_1",
+            "ko": "선택지1을 선택했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_select_2",
+            "ko": "선택지2을 선택했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_select_3",
+            "ko": "선택지3을 선택했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_1",
+            "ko": "그것은 영원히 누워 있을 죽음이 아니며, 기이한 영겁 속에서 죽음은 죽음마저 소멸시킨다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_2",
+            "ko": "꿈을 꾸었다. 녹색의 돌로 이루어진 도시의 꿈을. 기하학적인 구조가 전부 어긋나있고 법칙과 원근감이 뒤틀려있어 바라만 봐도 사늘한 공포가 몸을 타고 기어오르는 듯한 도시였다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_3",
+            "ko": "도시의 중앙에는 거대한 첨탑이 있었다. 그것은 거대한 납골당이었다. 초월적인 존재가 꿈을 꾸며, 자신의 하수인들과 함께 깨어날 때를 기다리고 있는. 그들의 무덤이자 휴식처.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_4",
+            "ko": "잠들어있는 그들에게 다가가려 하자, 무언가가 나를 강하게 끌어당겼다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_5",
+            "ko": "이번엔 무저갱과도 같은 어둠으로 가득 찬 공간에 있었다. 아득한 어둠, 그곳에 노란 옷을 입은 누군가가 오연히 서 있었다. 발이 있어야 할 곳에는 고름이 흘러내리는 촉수. 가면 같은 무언가로 얼굴을 가리고 있음에도 나를 바라보고 있다는 느낌이 들었다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_6",
+            "ko": "기괴하고 두려운 외형에 정신이 나가버릴 정도로 끔찍한 모습이었지만, 어째서인지 나는 그것을 덤덤하게 바라볼 수 있었다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_7",
+            "ko": "여긴 어디고, 당신은 누구입니까?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_8",
+            "ko": "보았느냐? 우둔한 나의 형제, ㅡㅡㅡ를. 너, 별을 읽는 아이야. 너는 다가올 미래에 끔찍한 최후를 맞이하게 될 것이다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_9",
+            "ko": "사느냐, 죽느냐, 그것이 문제로다. 삶이란 그저 걸어가는 그림자일 뿐. 별이 아로새겨진 눈은 제단 위에 공양될 것이다. \n그 새빨간 피와 매끄러운 살갗 또한 제단을 수놓는 한 떨기 붉은 꽃, 한 필의 비단이 되겠지. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_10",
+            "ko": "허나, 네게는 행운이 따르는구나. 내 아버지의 눈에 들어, 그 끔찍한 운명에게서 발버둥칠 기회를 얻었으니 말이다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_11",
+            "ko": "걱정하지 말거라. 조력자가 있으니. 조력자는 네가 과업을 완수할 때까지 너를 도울 것이다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_12",
+            "ko": "도통 알아먹을 수 없는 이야기만 하는 괴인에게 다시금 질문을 하려는 그때.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_13",
+            "ko": "빛이 쇄도했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_14",
+            "ko": "흐아악!!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_15",
+            "ko": "꿈일 텐데, 꿈이어야만 하는데. 오른팔에서 느껴지는 격통이 꿈이 아니라고 울부짖는 듯 했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_16",
+            "ko": "흐억… 헉… 헉…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_17",
+            "ko": "이제 슬슬 깨어날 시간이다. 이성호. 부디 힘껏 발버둥 쳐다오.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_18",
+            "ko": "명심하라. 시간의 낫에 맞서는 것은 아무도 없으니, 격류에 이울지 말거라. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_19",
+            "ko": "흐아아악!!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_20",
+            "ko": "하아… 무슨 꿈이…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_21",
+            "ko": "식은땀으로 젖어 끈적이는 몸을 이끌고 화장실로 들어섰다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_22",
+            "ko": "거울에 비치는 오른팔에 새겨진 기이한 모양의 문신.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_23",
+            "ko": "꿈이… 아니었어…?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_24",
+            "ko": "기괴한 녹색도시, 노란 로브를 휘감고 있던 괴생명체의 예언. 평소였다면 늘 꾸는 악몽이라고 생각해 대수롭지 않게 넘겼을 터, \n그러나 거울에 비쳐 보이는 문신은 그것이 현실임을 증명하고 있었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_25",
+            "ko": "즉, 진짜로 그 꿈이 단순한 꿈이 아닌 예지몽이었다면. 나는 그가 예언했듯이 끔찍한 죽음을 맞이하게 될 운명인것이다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_26",
+            "ko": "하하…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_27",
+            "ko": "내가 무언가를 바꿀 수 있는 사람이 아니라는 건 이미 10년 전에 뼈저리게 느꼈던 사실. 사람들은 ‘모두가 인생의 주인공’이라 말한다. \n아쉽게도 내게 붙어있던 주인공이란 딱지는 어머니가 돌아가셨을 때 떼어진 지 오래다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_28",
+            "ko": "서서히 짓눌리는 숨. 불거진 손등의 핏줄. 갈라진 틈에서 흘러나오는 죄악. 무력감이 목을 조여오는 것이 느껴진다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_29",
+            "ko": "견뎌내야 한다. 어머니를 죽게 만든 그놈을 찾기 위해서. 돌아가신 어머니가 편히 눈감으실 수 있도록.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_30",
+            "ko": "물과 함께 식도를 타고 넘어가는 알약 두 개. 손등을 매만지며 차가워진 손을 덥히려 애썼다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_31",
+            "ko": "그러고 보니, 오늘이 그날이었나.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_32",
+            "ko": "우웅- 우웅-",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_33",
+            "ko": "여보세요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_34",
+            "ko": "날이 추우니까 따듯하게 입고와.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_35",
+            "ko": "네. 카페에서 뵈어요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_36",
+            "ko": "여태껏 그래왔듯이 흘러나오는 부정적인 감정들을 씹어 삼켰다. 아무 일도 없었던 것처럼.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_37",
+            "ko": "[카페 종 소리]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_38",
+            "ko": "꼬맹아!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_39",
+            "ko": "카페에 들어서니 늘 앉던 그 자리에서 손을 흔들고 계시는 아저씨가 보였다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_40",
+            "ko": "저 왔어요. 우리 박신오 교수님.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_41",
+            "ko": "왜 이렇게 늦어? 커피 다 식겠다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_42",
+            "ko": "시간 맞춰서 왔는데요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_43",
+            "ko": "인마. 나이도 먹을 대로 먹은 노친네를 기다리게 했으면 늦은거지. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_44",
+            "ko": "어휴…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_45",
+            "ko": "한숨 쉬면 복 나간다는 말 못 들어봤냐?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_46",
+            "ko": "에휴…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_47",
+            "ko": "이 자식이?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_48",
+            "ko": "장난스레 위협하는 아저씨를 보니 나도 모르게 실실 웃음이 나왔다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_49",
+            "ko": "이래서 아저씨를 놀리는 걸 멈출 수가 없다니까요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_50",
+            "ko": "야. 그거 노인 학대야. 이 자식아!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_51",
+            "ko": "아직도 정정하신 분이 노인은 무슨.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_52",
+            "ko": "정정하기는 개뿔. 나이가 드니까 몸이 안 아픈곳이 없어.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_53",
+            "ko": "투덜거리는 아저씨의 말을 흘려들으며 커피를 한 모금 입에 머금었다. 쌉싸름한 맛 뒤로 느껴지는 달큰한 풍미와 약간의 산미. 커피 한잔의 여유라고 했던가. 비강 깊숙이 느껴지는 커피의 향을 곱씹으며 혼란한 마음을 진정시키고 있을 때.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_54",
+            "ko": "그래서. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_55",
+            "ko": "낮게 깔린 목소리.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_56",
+            "ko": "의아함에 고개를 돌리자, 아저씨가 굳은 얼굴로 나를 보고 있었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_57",
+            "ko": "무슨 일 있냐?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_58",
+            "ko": "예? 딱히 별일 없어요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_59",
+            "ko": "성호야.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_60",
+            "ko": "네?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_61",
+            "ko": "말하기 힘든 일이야?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_62",
+            "ko": "말해도 될까? 괜한 걱정을 끼쳐드릴 수도 있다. 하지만 ‘그’가 말한 조력자에 가장 부합하는 사람은 아저씨일 것이다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_63",
+            "ko": "사실은..",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_64",
+            "ko": "아저씨에게 꿈의 내용에 대해 사실대로 털어놓았다. 기괴한 녹색도시, 그 속에 잠들어 있던 끔찍한 생물. 그리고 노란 로브의 괴인이 예언한 나의 죽음과 잠에서 깨고 나니 팔에 새겨져 있던 문신.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_65",
+            "ko": "흠… 팔에 문신이 생겼다고?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_66",
+            "ko": "네. 자고 나니까 오른팔에 생겼더라고요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_67",
+            "ko": "팔 좀 보여다오.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_68",
+            "ko": "음.. 안보이는데… ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_69",
+            "ko": "네 눈에만 보이는 것 같구나. 넌 어릴 적부터 특별했으니까.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_70",
+            "ko": "문신이 어떻게 생겼는지 묘사는 힘들고?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_71",
+            "ko": "뭐랄까.. 잊혀진 고대 문명에서 사용할 것 같은 문자라서 말로는 설명하기 힘들 것 같아요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_72",
+            "ko": "흠.. 그렇지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_73",
+            "ko": "[ 부스럭거리는 소리 ]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_74",
+            "ko": "자, 여기에 문신을 그려주렴.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_75",
+            "ko": "음.. 최대한 잘 그려볼게요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_76",
+            "ko": "하지 마.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_77",
+            "ko": "크윽?!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_78",
+            "ko": "펜을 종이에 댄 순간 머리가 찢어질 듯이 아파져 왔다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_79",
+            "ko": "[속삭이는 소리]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_80",
+            "ko": "머릿속을 헤집는 듯한 기분 나쁜 목소리. 끔찍한 두통에 결국 쥐고 있던 펜을 떨어뜨렸다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_81",
+            "ko": "그러자 머릿속을 헤집던 목소리는 언제 그랬냐는 듯이 두통과 함께 조용히 사그라들었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_82",
+            "ko": "성호야!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_83",
+            "ko": "후우… 후우…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_84",
+            "ko": "이제 좀 괜찮니?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_85",
+            "ko": "후… 네. 괜찮아진 것 같아요. 펜을 종이에 대고 그리려니까, 머리가 찢어질 듯이 아프더라고요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_86",
+            "ko": "미안하다, 성호야. 내가 더 도와줄 수 있는 부분은 없는 것 같구나. 도움을 줄 만한 사람을 알고 있어. 잠깐 전화 좀 하고 오마.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_87",
+            "ko": "괜한 말을 한 걸까. 아저씨도 요즘 힘들어하시던데. 미약한 후회가 커피잔을 쥔 손을 타고 흘러내린다. 다시금 피어오르는 부정적인 생각을 애써 \n털어내며 주변을 둘러보았다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_88",
+            "ko": "이 카페도 많이 달라졌구나. 예전에는 좀 더 낡고 허름한 느낌이었는데.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_89",
+            "ko": "어릴 적, 슬픈 일이 있을 때마다 이 카페로 나를 데려와 음료를 사주시며 위로와 응원을 보내주시던 아저씨. 아저씨는 오랜 시간이 흘렀음에도, 소나무처럼 늘 묵묵하게 나를 지탱해주고 계셨다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_90",
+            "ko": "그때 그 모습 그대로.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_91",
+            "ko": "오래 기다렸지? 그 사람이 이리로 오고 있다니까 그동안 이야기나 나누고 있자. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_92",
+            "ko": "그 사람이요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_93",
+            "ko": "도와줄 만한 사람 말이다. 젊은 놈이 벌써 그래서야 쯧쯧.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_94",
+            "ko": "그 분은 어떤 분이세요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_95",
+            "ko": "흠.. 특이한 사람이지. 그런쪽으로 해박한 지식을 갖고 있는 사람이니 믿어도 된다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_96",
+            "ko": "아저씨가 보증한 사람이라면 믿을 수 있다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_97",
+            "ko": "그래서 다은이는 요즘 어때? 잘 지내냐?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_98",
+            "ko": "제 걱정은 안 해주세요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_99",
+            "ko": "인마. 내가 시커먼 남정네를 걱정해서 뭐 하냐?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_100",
+            "ko": "우리는 시간 가는 줄 모르고 시시콜콜한 이야기를 나누었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_101",
+            "ko": "세상 돌아가는 이야기, 어제 있었던 일. 과거의 추억. 마음을 터놓고 이야기할 수 있는 상대가 있다는 것에서 느껴지는 편안한 기분.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_102",
+            "ko": "딸랑-",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_103",
+            "ko": "종이 딸랑이며 흔들리는 소리에 카페의 입구를 바라보자 눈에 들어오는 묘령의 여인. 단안경을 낀, 어딘가 건조하고 차가운 인상을 가진 훤칠한\n미녀였다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_104",
+            "ko": "아. 설아 씨, 이쪽이에요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_105",
+            "ko": "안녕하세요. 교수님. 그동안 강녕하셨죠?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_106",
+            "ko": "허허. 저야 늘 쌩쌩합니다. 아, 그렇지. 이쪽 꼬맹이는 이성호라고 합니다. 제 자식 같은 놈이죠.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_107",
+            "ko": "성호야. 이쪽은 한설아 씨란다. 고고학에 해박하신 분이니 도움을 주실 거야.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_108",
+            "ko": "아… 안녕하세요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_109",
+            "ko": "흐음..",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_110",
+            "ko": "감정이라곤 느껴지지 않는 차가운 눈으로 내 눈을 뚫어져라 바라보고 있는 설아 씨. 솔직히 엄청 부담스럽다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_111",
+            "ko": "어… 제 얼굴에 뭐라도 묻었나요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_112",
+            "ko": "아무것도 아니에요. 반가워요. 성호 씨. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_113",
+            "ko": "아. 저는 일이 있어서 슬슬 일어나야 할 것 같습니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_114",
+            "ko": "예? 아저씨 어디가세요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_115",
+            "ko": "야. 나도 먹고는 살아야지. 너 보려고 하던 업무도 내팽개치고 왔어.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_116",
+            "ko": "설아 씨. 그럼, 우리 성호 잘 부탁드립니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_117",
+            "ko": "예.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_118",
+            "ko": "아저씨는 옷매무새를 가다듬지도 않고 뛰어서 카페를 나가셨다. 진짜로 급하신가 보네. 어지간한 일로는 뛰지도 않으시는 분이.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_119",
+            "ko": "그래서 무슨 일이 있었는지 알 수 있을까요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_120",
+            "ko": "나는 설아 씨에게 자초지종을 설명했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_121",
+            "ko": "소설에나 나올법한 이야기네요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_122",
+            "ko": "믿기지 않으시겠지만, 그렇습니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_123",
+            "ko": "흠. 알겠어요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_124",
+            "ko": "…믿어주시는 건가요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_125",
+            "ko": "믿어요. 성호 씨, 미안한 말이지만 다시 한번 문신의 모양을 이 종이에 그려주세요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_126",
+            "ko": "윽.. 일단은 알겠습니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_127",
+            "ko": "나는 애써 펜을 쥐고, 떨리는 손으로 새하얀 종이에 가져다 댔다. 곧 다가올 고통을 견디기 위해 눈을 감고 이를 꽉 물었지만, 찾아왔어야 할 두통은 모습을 드러내지 않았다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_128",
+            "ko": "어째서? 아까 느꼈던 끔찍한 두통과 목소리는 내 착각이었던 건가? 아니야, 그럴 리 없어. 뭔가 다른 이유가 있을 거야. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_129",
+            "ko": "[종이에 그림 그리는 소리]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_130",
+            "ko": "다 그렸습니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_131",
+            "ko": "이건…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_132",
+            "ko": "뭔가 알고 계세요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_133",
+            "ko": "제가 잘 알고 있는 분야는 아닌지라 확답을 드리기는 어렵지만, 이누이트족의 언어 같네요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_134",
+            "ko": "이누이트족이라면… 알래스카에 살고 있다는 그 부족을 말씀하시는 건가요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_135",
+            "ko": "예. 자세한 건 이 분야를 연구하시는 학자분께 여쭤보거나, 관련 문헌을 참고해봐야 알 것 같아요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_136",
+            "ko": "그럼, 지금으로선 더 알 수 있는 정보는 없다는 거죠?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_137",
+            "ko": "이 그림으로 알 수 있는 건 그 정도가 끝이죠.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_138",
+            "ko": "이누이트족… 대체 그 노란 로브의 괴인과는 어떤 관련이 있는 걸까? 더 많은 정보를 듣지 못한 건 아쉽지만, 그래도 해결의 실마리를 얻었으니 감사한 일이겠지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_139",
+            "ko": "음… 정말 감사합니다. 큰 도움이 되었어요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_140",
+            "ko": "도움이 되었다면 다행이네요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_141",
+            "ko": "식사라도 대접하고 싶지만, 바쁘신 분인 것 같으니 다음에…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_142",
+            "ko": "아뇨. 그 식사 지금 대접해주시죠.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_143",
+            "ko": "어… 시간 괜찮으신가요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_144",
+            "ko": "예. 그리고 성호 씨에게 궁금한 것도 있고 말이죠.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_145",
+            "ko": "— —",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_146",
+            "ko": "카페를 나와 도착한 곳은 인근 파스타 식당. 이런 곳은 부담스럽지만, 대접하는 입장이니 어쩔 수 없지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_147",
+            "ko": "뇨끼? 라구? 비스크? 이게 대체 무슨 말이지? 태어나서 처음 보는 단어들의 향연에 정신이 아득해지는 것 같다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_148",
+            "ko": "저는 버섯 크림 뇨끼로 할게요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_149",
+            "ko": "아… 그럼 저도 같은 걸로.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_150",
+            "ko": "네, 주문받았습니다!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_151",
+            "ko": "성호 씨는 나이가 어떻게 되나요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_152",
+            "ko": "스물… 셋입니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_153",
+            "ko": "제가 연상이네요. 저희 말 편하게 할까요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_154",
+            "ko": "편하신 대로 하세요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_155",
+            "ko": "그래. 성호도 말 편하게 해.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_156",
+            "ko": "네. 설아 씨.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_157",
+            "ko": "말 편하게 하라고 했잖아요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_158",
+            "ko": "전 이게 편해요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_159",
+            "ko": "…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_160",
+            "ko": "…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_161",
+            "ko": "무슨 말을 꺼내야 할지 몰라 고개를 돌려 창밖을 바라봤다. 나뭇가지에 필사적으로 매달려 생을 부지하려는 붉게 물든 나뭇잎.\n삶에 마침표를 찍고 싶어 했던 과거와 대비되어 현재의 나를 조명하고 있는 듯하다.\n마침표가 아닌 쉼표를 찍으려 발버둥 치는 지금의 나는 자의로 움직이는가, 타의로 움직이는가.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_162",
+            "ko": "주문하신 음식 나왔습니다. 맛있게 드세요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_163",
+            "ko": "감사합니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_164",
+            "ko": "잘 먹을게.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_165",
+            "ko": "네. 맛있게 드세요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_166",
+            "ko": "[식기가 달그락거리는 소리]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_167",
+            "ko": "식기와 그릇이 맞닿아 달그락거리는 소리만이 테이블 위를 가득 채우고 있었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_168",
+            "ko": "밥이 코로 들어가는지 입으로 들어가는지 분간이 안될 때쯤, 오랜 정적을 깨고 설아 씨의 목소리가 들려왔다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_169",
+            "ko": "성호야. 별이 갖는 의미를 알고 있니?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_170",
+            "ko": "예?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_171",
+            "ko": "별은 역사 속에서 하나의 상징으로서 기능했어. 점성술사들은 별을 신과 인간을 이어주는, 예언적 장치이자 상징으로 사용했지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_172",
+            "ko": "신화 속의 영웅을 기리며 별을 엮어 별자리를 만들기도 하고, 항해사들은 별을 길잡이 삼아 짙푸른 바다를 누볐었어. 누군가에겐 신과 인간을 이어주는 통로. 또 다른 누군가에겐 길잡이 혹은 영웅.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_173",
+            "ko": "너에게 있어서 별은 어떤 의미일까. 길잡이? 신? 아니면 영웅? 아니면 그 반대일 수도 있겠네.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_174",
+            "ko": "…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_175",
+            "ko": "당장 답을 주지 않아도 괜찮아. 그저 궁금해서 이야기를 꺼냈을 뿐.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_176",
+            "ko": "만족스러운 식사였어. 조만간 연락할게. 그럼, 안녕.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_177",
+            "ko": "식사를 끝마친 뒤에도 나는 한참을 멍하니 앉아 있었다. 한설아가 던진 화두, 나에게 있어서 별이 갖는 의미. 무슨 의미였을까? 내 과거를 알고 있는 걸까? 어떻게? 아저씨도 모르는 사실일 텐데? 그녀가 그 괴인이 점지한 조력자인 걸까? 그것도 아니라면 내가 맞이할 죽음의 원인이 될 사람인 걸까.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_178",
+            "ko": "혹은, 별생각 없이 던진 화두에 내가 너무 과한 의미 부여를 하고 있나? 침잠했던 온갖 끔찍한 망상들이 수면위로 올라오기 시작했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_179",
+            "ko": "…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_180",
+            "ko": "목이 조여온다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_181",
+            "ko": "— —",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_182",
+            "ko": "땅거미가 내릴 무렵의 주택가. 소슬바람이 낙엽을 스치며 바스락거리는 소리가 적막함을 메우고 있었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_183",
+            "ko": "하아…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_184",
+            "ko": "한숨이 미처 삼키지 못한 근심과 함께 노을에 스러진다. 떠오르는 상념을 애써 무시하며 멍하니 발걸음을 옮기고 있을 때.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_185",
+            "ko": "[구두 소리]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_186",
+            "ko": "누군가의 구두 소리가 등 뒤에서 울려 퍼졌다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_187",
+            "ko": "[구두 소리]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_188",
+            "ko": "내가 멈추면 구두 소리도 멈췄고, 내가 걸음을 옮기면 구두 소리 또한 내 걸음에 맞춰 울려 퍼졌다. 미행인가? 혹시 괴한의 습격?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_189",
+            "ko": "식은땀이 등골을 타고 흐르는 것이 느껴진다. 정황상, 등 뒤의 누군가가 나를 쫓아오는 것이 분명한 상황.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_190",
+            "ko": "먼저 덮쳐야 할까? 아니면 원래 목적지였던 꽃집으로 달려, 누나에게 도움을 청해야 할까. 아냐, 누나가 도리어 위험에 처할 수 있어. 먼저 덮치자. 괴한을 성공적으로 제압한다면 정보를 캐낼 수도 있을 것이다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_191",
+            "ko": "할 수 있을까? 아니, 해 내야만 해.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_192",
+            "ko": "최대한 자연스럽게. 미행을 눈치채지 못한 척, 앞을 보며 걷다가 눈앞의 갈림길에서 오른쪽으로 꺾어 사각지대에서 대기했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_193",
+            "ko": "언제라도 튀어 나갈 수 있게 온몸의 근육을 긴장시키고. 다급해진 구두 소리가 가까워진 지금.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_194",
+            "ko": "꺄앗?! ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_195",
+            "ko": "아저씨에게 배운 대로 괴한을 넘어뜨리고, 손목을 잡아 등 뒤로 꺾어 움직이지 못하게 체중을 실어 눌렀다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_196",
+            "ko": "당신 누구야. 무슨 목적으로 날 미행한 거지?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_197",
+            "ko": "오… 오빠? ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_198",
+            "ko": "난 당신 같은 사람 모르는데.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_199",
+            "ko": "채린이요! 유채린!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_200",
+            "ko": "유채린…?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_201",
+            "ko": "뇌리를 스치는 어린 날의 기억. 어머니를 잃고 실의에 빠졌었던 내가, 일방적으로 끊어버린 소중한 인연. 끝내 삭이지 못한 미련. 유채린이\n내 아래에서 바둥대고 있었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_202",
+            "ko": "으… 아파. 놀랐잖아요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_203",
+            "ko": "미안해.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_204",
+            "ko": "오랜만에 만났는데… 어마어마한 환대를 받았네요. 그렇죠? 성호 오빠.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_205",
+            "ko": "죄송합니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_206",
+            "ko": "흐응… 뭐. 반성하고 있으신 것 같으니, 이쯤에서 용서해드릴게요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_207",
+            "ko": "금으로 수놓은 듯 반짝이는 금발. 외롭고 어딘가 불안해 보였던 기억 속 소녀의 초상은 찾아보기 힘들 정도로, 성장한 그녀의 모습은 눈부셨다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_208",
+            "ko": "시린 겨울에도 늘 푸르른 소나무처럼, 오빠는 변한 게 없네요. 다행이에요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_209",
+            "ko": "…그러니? 난 잘 모르겠는데.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_210",
+            "ko": "헤헤… 그럼요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_211",
+            "ko": "과거에 얽매여 멈춰 있는 것이 다행인 일인 걸까. 미련과 후회로 점철된 나의 과거는 회상하고 싶지 않은 순간들로 가득하다. 무언가를 선택하는 법을 잊어버려 도피와 합리화를 거듭해왔고, 그것을 후회하고 있음에도 바뀔 의지가 없는 멍청이.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_212",
+            "ko": "음… 오랜만에 만났는데. 좀 걸으면서 이야기라도 좀 할까요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_213",
+            "ko": "좋지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_214",
+            "ko": "오빠는 헤어진 이후로 어떻게 지내셨어요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_215",
+            "ko": "나…야 뭐 잘 지냈어. 이사 가서 새 친구들도 사귀고. 정신없이 살다가, 천문학이 배우고 싶어서 대학도 이쪽으로 왔지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_216",
+            "ko": "하긴, 오빠는 어렸을 때도 별 보는 거 좋아하셨죠. 구부러진 쑥도 삼밭에선 곧게 자라듯이, 무언가를 동경하고 가까이하면 그것을 좇게 되고 \n결국 닮아가는 법인가 봐요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_217",
+            "ko": "그건 아니야.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_218",
+            "ko": "엥? 별 좋아하시잖아요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_219",
+            "ko": "예전엔 그랬는데… 지금은 아니거든.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_220",
+            "ko": "그럼 왜 천문학에 관심을 갖게 되신거에요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_221",
+            "ko": "미련이 남아서일까. 아무튼, 이 얘기는 여기까지 하고. 너는 어떻게 지냈어?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_222",
+            "ko": "채린이는 갑작스레 건네진 질문에 당황했는지, 우물쭈물하며 대답을 망설였다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_223",
+            "ko": "저도 잘 지냈어요. 오빠가 사라지고 나서도 그 누구보다 행복하게요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_224",
+            "ko": "채린이는 말을 마치고는 텅 빈 눈으로 멍하니 먼 곳을 응시하고 있었다. 그녀가 내보이는 침적한 분위기에 무언가 말을 건네려 해도 입술이 떨어지지 않았다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_225",
+            "ko": "자격이 없으니까. 가장 힘들었을 때 옆에 있어 주지 못했으니까. 라고 합리화를 하고 싶지만. 그녀의 근심까지 같이 짊어져 주기엔 이미 나도 \n감당하기 힘든 무게의 짐을 지고 있다는 이유가 더 클 것이다. 지독한 이기심에 치밀어오르는 자기혐오를 삼켜내며 억지로 미소를 그려냈다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_226",
+            "ko": "왜 그리 표정이 어두워. 무슨 안 좋은 일 있어?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_227",
+            "ko": "그녀 역시 얼굴에 미소를 그려내며 내게 되물었다. 지금 거울을 본다면 그녀와 똑같은 미소가 내 얼굴에도 그려져 있겠지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_228",
+            "ko": "그러는 오빠야말로 왜 그렇게 우중충한 얼굴이에요. 오랜만에 만났는데 기쁘지 않아요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_229",
+            "ko": "아니야. 기쁘지. 그냥 미안해서 그래.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_230",
+            "ko": "이잉? 뭐가요? 아까의 일이라면 괜찮다니까요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_231",
+            "ko": "아무 말도 없이 연락을 끊은 건 결국 내 잘못이니까.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_232",
+            "ko": "히- 그래도 미안한 줄은 아시네요?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_233",
+            "ko": "그녀는 눈을 감고 생각에 잠겼다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_234",
+            "ko": "그녀가 눈을 뜨고 나를 바라봤다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_235",
+            "ko": "그리고 그녀가 웃었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_236",
+            "ko": "어렸을 때, 기억해요? 오빠가 제게 장수풍뎅이를 건넨 일. 그때는 너무 무서워서 눈물이 날 뻔했었죠. 집에 초대해줬던 일은요? 제가 다른 사람 집에 놀러간 게 그때가 처음인 거 알아요? 그리고... 오빠가 보여주셨던 그 유채꽃의 물결. 그때, 처음으로 신께 감사드렸어요. 태어나게 해주셔서 감사하다고.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_237",
+            "ko": "오빠가 없던 시절의 저는 회색빛이었어요. 칙칙한 세상 속에서 슬픔을 억누르던. 제게 색을 입혀주신 거예요. 네, 맞아요. 다름 아닌 오빠가요. 그러니… 슬퍼하지 않았으면 좋겠어요. 그 어떤 시련이 오더라도. 부디 제가 이 빚을 갚을 수 있게.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_238",
+            "ko": "그녀의 예상치 못한 말에 잠깐이지만 당황했다. 나도 누군가에게 행복한 기억을 남겨줄 수 있는 사람이었구나. 가슴 한구석이 몽글몽글해지는\n기분이다. 미소가 절로 그려진다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_239",
+            "ko": "고마워. 덕분에 힘이 좀 나는 것 같아.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_240",
+            "ko": "다…다행이네요! 벼…별이 참 예쁘죠?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_241",
+            "ko": "고개를 들어 하늘을 보았다. 어느새 어둑해진 하늘은 별이 슬금슬금 고개를 내밀고 반갑다며 내게 인사하고 있었다. 원망스러운 별이었을 텐데, 오늘만큼은 아름답게 반짝이는구나.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_242",
+            "ko": "응.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_243",
+            "ko": "얼키설키 꼬여있던 후회라는 이름의 실 하나가 툭 하고 풀리는, 그런 기분이 들었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_244",
+            "ko": "참 예쁘네.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_245",
+            "ko": "— —",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_246",
+            "ko": "채린이의 집 앞.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_247",
+            "ko": "선선했던 날씨는 밤이 되자 스산한 바람이 불어오기 시작했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_248",
+            "ko": "만나서 즐거웠어요. 이사 왔으니 이제 자주 보겠네요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_249",
+            "ko": "응. 날이 차니까 몸 조심히 들어가. 번호 알려줬으니까 언제든지 연락하고. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_250",
+            "ko": "네, 오빠.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_251",
+            "ko": "벌써 시간이 이렇게 됐나. 누나가 기다릴 텐데…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_252",
+            "ko": "나도 이제 슬슬 들어가 볼게. 다음에 또 보자.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_253",
+            "ko": "오… 오빠!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_254",
+            "ko": "응?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_255",
+            "ko": "어둠이 내려 아득하고 캄캄할 때, 별을 따라가세요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_256",
+            "ko": "그게 무슨…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_257",
+            "ko": "부디 시들지 말아주세요.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_258",
+            "ko": "채린이는 그 말을 남기고 집 안으로 도망치듯 들어갔다. 왜 그렇게 슬픈 눈으로 나를 바라본 걸까. 마지막 말은 무슨 의미일까.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_259",
+            "ko": "왠지 모를 기시감을 품고 누나가 기다리는 꽃집으로 향했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_260",
+            "ko": "— —",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_261",
+            "ko": "딸랑 -",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_262",
+            "ko": "꽃집에 들어서자 보이는 건 묘령의 여인. 안개꽃을 닮은 흰 머리가 꽃에 물을 줄 때마다 하늘하늘 흔들렸다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_263",
+            "ko": "어머. 오늘은 좀 늦었네?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_264",
+            "ko": "미안해. 다은 누나. 좀 더 일찍 와서 도와줬어야 했는데.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_265",
+            "ko": "흐흥. 우리 성호 다 컸네? 기특한 생각도 하고.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_266",
+            "ko": "이만하면 다 컸지. 그래서 뭐 도와줄 건 있어?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_267",
+            "ko": "꽃은 내가 마무리할 테니, 거기에 있는 책 좀 정리해줄래?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_268",
+            "ko": "누나가 테이블에 놓여있는 책 무더기를 가리키며 말했다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_269",
+            "ko": "응.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_270",
+            "ko": "테이블 위에는 원예 관련 잡지, 책 따위가 어지럽게 흩어져있었다. 그 속 유달리 눈에 띄는 낡아서 책 귀퉁이가 해진 데미안 한 권. 고등학교 때 \n선물해줬던 책인데. 아직도 갖고 있었구나.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_271",
+            "ko": "이거 새로 한 권 사줄까? 너무 낡았는데.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_272",
+            "ko": "아냐. 그 책이 좋아.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_273",
+            "ko": "그래? 누나 진짜 데미안 좋아하는구나. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_274",
+            "ko": "뭐… 그렇지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_275",
+            "ko": "데미안이라…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_276",
+            "ko": "책을 열어 페이지를 넘기던 중 보인 유난히 닳아있는 페이지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_277",
+            "ko": "다른 사람은 내가 원하는 걸 생각할 수 없고, 내가 원하는 것을 타인이 생각하도록 만들 수도 없어. 하지만 누군가를 자세히 관찰해보면\n 그 사람이 무슨 생각을 하고 있는지, 무엇을 느끼고 있는지는 가끔 짐작할 수 있지. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_278",
+            "ko": "좋아하는 구절이야?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_279",
+            "ko": "낭만적이잖아. 그렇지 않니?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_280",
+            "ko": "그렇긴 하지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_281",
+            "ko": "테이블 위에 흩어져 있는 책과 잡지를 집어 차곡차곡 책장에 쌓았다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_282",
+            "ko": "성호야, 다 했니?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_283",
+            "ko": "나야 진작 끝났지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_284",
+            "ko": "흐흥. 그럼 슬슬 들어가자.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_285",
+            "ko": "그래.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_286",
+            "ko": "딸랑-",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_287",
+            "ko": "가게 밖은 겨울이 다가오고 있음을 알리듯 싸늘한 밤바람이 불어오고 있었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_288",
+            "ko": "누나, 안 추워?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_289",
+            "ko": "어머. 혹시 춥니? 잠깐만 기다려보렴.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_290",
+            "ko": "아냐 아냐. 안 그…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_291",
+            "ko": "입어. 누나는 괜찮아.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_292",
+            "ko": "괜찮다니까…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_293",
+            "ko": "내게 목도리를 둘러주는 누나의 마음이 전해지는 것 같았다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_294",
+            "ko": "성호야, 밥은 챙겨 먹었니? 날이 갈수록 마르는 것 같아서 걱정이야.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_295",
+            "ko": "걱정 안 해도 돼. 내가 애도 아니고.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_296",
+            "ko": "꽃은 제때 물을 주지 않으면 금세 말라 죽어버린단다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_297",
+            "ko": "…내가 꽃이야?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_298",
+            "ko": "몰랐니? 우리 성호는 누나한테 항상 꽃이었단다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_299",
+            "ko": "난 괜찮아.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_300",
+            "ko": "걱정스레 쳐다보는 누나의 눈을 피해 고개를 돌렸다. 아저씨에게도 죄송한 일을 했는데, 누나에게까지 미안한 일을 만들고 싶지 않다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_301",
+            "ko": "누나 춥겠다. 얼른 들어가자.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_302",
+            "ko": "오늘 밤은 쉬이 잠들지 못할 것 같은 그런 기분이 든다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_303",
+            "ko": "— —",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_304",
+            "ko": "일어나거라.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_305",
+            "ko": "눈을 뜨니 보이는 건 칠흑 같은 어둠 속에서 오연히 서 있는 노란 옷의 괴인. 뒤척이다가 겨우 잠이 들었을 텐데. 꿈인 건가.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_306",
+            "ko": "참으로 우습구나. 알량한 과거 때문에 그리도 주저하는 것이더냐?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_307",
+            "ko": "당신이 뭘 안다고!",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_308",
+            "ko": "함부로 입을 놀리지 말거라.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_309",
+            "ko": "한 걸음, 두 걸음, 세 걸음.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_310",
+            "ko": "천천히 다가오는 그 모습에 서늘한 공포를 느꼈다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_311",
+            "ko": "아니, 느낀다. 노란 로브 아래로 꿈틀거리는 ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_312",
+            "ko": "[아름답고숨이막혀서눈물이피가흘러서새빨간피가빨갛게꽃처럼피어나고있어도와줘누나아저씨너무아파괴로워광인의광기는범인의그것보다\n오래갈뿐다른것은없다.]",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_313",
+            "ko": "자애 속의 교소. 고독 속의 가소. 형제를 기망하는 조소. 허상뿐인 천륜 속의 비애.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_314",
+            "ko": "그리고 여기. 처지를 자각하지 못한 천치.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_315",
+            "ko": "마지막 기회다. ",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_316",
+            "ko": "우욱…",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_317",
+            "ko": "머릿속에 지네가 기어 다니는 듯한 감각에 치밀어오르는 구역질을 참지 못하고 게워내 버렸다. 방금 입으로 뱉어낸 활자의 덩어리가 광인의 그것과도 같아서, 망가져 버린 미래의 나를 보는 것 같아서. 그것이 너무나도 소름 끼쳐서 당장이라도 혀를 깨물고 싶었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_318",
+            "ko": "너에게 도래할 미래는 너에게만 국한된 것이 아니다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_319",
+            "ko": "기억하라. 비극은 네가 소중하게 생각하는 이들에게도 마땅히 도래할 것이다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_320",
+            "ko": "따악-",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_321",
+            "ko": "괴인이 손가락을 튕기자, 의식이 희미해지는 것을 느꼈다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_322",
+            "ko": "알량한 과거, 자존심은 버려두거라.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_323",
+            "ko": "일단 살려야 하지 않겠느냐?",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_324",
+            "ko": "가면 속에 가려져 있어 볼 수 없었음에도, 왠지 그가 웃고 있다는 느낌을 지울 수 없었다.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_325",
+            "ko": "그가 누구인지, 무엇을 원하는지.",
+            "en": ""
+        },
+        {
+            "key": "Character_Script_326",
+            "ko": "묻고 싶은 게 많았지만 몰려오는 수마 탓에 그만 정신을 잃고 말았다.",
+            "en": ""
+        }
+    ],
+    "GraphicResources": [
+        {
+            "key": "bg1",
+            "image_path": "",
+            "비고": ""
+        },
+        {
+            "key": "bg_alley_1",
+            "image_path": "Dialogue/bg_alley",
+            "비고": ""
+        },
+        {
+            "key": "bg_café_1",
+            "image_path": "Dialogue/bg_café",
+            "비고": ""
+        },
+        {
+            "key": "bg_cafe_2",
+            "image_path": "Dialogue/bg_cafe2",
+            "비고": ""
+        },
+        {
+            "key": "bg_cthlhu_1",
+            "image_path": "Dialogue/bg_cthlhu",
+            "비고": ""
+        },
+        {
+            "key": "bg_hastur_1",
+            "image_path": "Dialogue/bg_hastur",
+            "비고": ""
+        },
+        {
+            "key": "bg_land_1",
+            "image_path": "Dialogue/bg_land",
+            "비고": ""
+        },
+        {
+            "key": "bg_library_1",
+            "image_path": "Dialogue/bg_library",
+            "비고": ""
+        },
+        {
+            "key": "bg_library_2",
+            "image_path": "Dialogue/bg_library2",
+            "비고": ""
+        },
+        {
+            "key": "bg_library_3",
+            "image_path": "Dialogue/bg_library3",
+            "비고": ""
+        },
+        {
+            "key": "bg_library_4",
+            "image_path": "Dialogue/bg_library4",
+            "비고": ""
+        },
+        {
+            "key": "bg_library_5",
+            "image_path": "Dialogue/bg_library5",
+            "비고": ""
+        },
+        {
+            "key": "bg_nightsky_1",
+            "image_path": "Dialogue/bg_nightsky",
+            "비고": ""
+        },
+        {
+            "key": "bg_plaza_1",
+            "image_path": "Dialogue/bg_plaza",
+            "비고": ""
+        },
+        {
+            "key": "bg_plaza_2",
+            "image_path": "Dialogue/bg_plaza2",
+            "비고": ""
+        },
+        {
+            "key": "bg_room_1",
+            "image_path": "Dialogue/bg_room",
+            "비고": ""
+        },
+        {
+            "key": "bg_spire_1",
+            "image_path": "Dialogue/bg_spire",
+            "비고": ""
+        },
+        {
+            "key": "bg_tuto_1",
+            "image_path": "Dialogue/bg_tuto",
+            "비고": ""
+        },
+        {
+            "key": "bg_tuto_2",
+            "image_path": "Dialogue/bg_tuto2",
+            "비고": ""
+        },
+        {
+            "key": "cg_chaerin",
+            "image_path": "Dialogue/cg_chaerin",
+            "비고": "유채린(기본)"
+        },
+        {
+            "key": "cg_chaerinsmile",
+            "image_path": "Dialogue/cg_chaerinsmile",
+            "비고": "유채린(웃음)"
+        },
+        {
+            "key": "cg_chaerinsad",
+            "image_path": "Dialogue/cg_chaerinsad",
+            "비고": "유채린(슬픔)"
+        },
+        {
+            "key": "cg_chaerinanger",
+            "image_path": "Dialogue/cg_chaerinanger",
+            "비고": "유채린(분노)"
+        },
+        {
+            "key": "cg_chaerinupset",
+            "image_path": "Dialogue/cg_chaerinupset",
+            "비고": "유채린(당황)"
+        },
+        {
+            "key": "cg_daeun",
+            "image_path": "Dialogue/cg_daeun",
+            "비고": "김다은(기본)"
+        },
+        {
+            "key": "cg_daeunsmile",
+            "image_path": "Dialogue/cg_daeunsmile",
+            "비고": "김다은(웃음)"
+        },
+        {
+            "key": "cg_daeunsad",
+            "image_path": "Dialogue/cg_daeunsad",
+            "비고": "김다은(슬픔)"
+        },
+        {
+            "key": "cg_daeunanger",
+            "image_path": "Dialogue/cg_daeunanger",
+            "비고": "김다은(분노)"
+        },
+        {
+            "key": "cg_daeunupset",
+            "image_path": "Dialogue/cg_daeunupset",
+            "비고": "김다은(당황)"
+        },
+        {
+            "key": "cg_seola",
+            "image_path": "Dialogue/cg_seola",
+            "비고": "한설아(기본)"
+        },
+        {
+            "key": "cg_seolasmile",
+            "image_path": "Dialogue/cg_seolasmile",
+            "비고": "한설아(웃음)"
+        },
+        {
+            "key": "cg_seolasad",
+            "image_path": "Dialogue/cg_seolasad",
+            "비고": "한설아(슬픔)"
+        },
+        {
+            "key": "cg_seolaanger",
+            "image_path": "Dialogue/cg_seolaanger",
+            "비고": "한설아(분노)"
+        },
+        {
+            "key": "cg_seolaupset",
+            "image_path": "Dialogue/cg_seolaupset",
+            "비고": "한설아(당황)"
         }
     ]
 }
