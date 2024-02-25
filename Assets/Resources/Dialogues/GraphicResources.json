@@ -1,0 +1,140 @@
+{
+    "GraphicResources": [
+        {
+            "key": "bg1",
+            "image_path": ""
+        },
+        {
+            "key": "bg_alley_1",
+            "image_path": "Dialogue/bg_alley"
+        },
+        {
+            "key": "bg_café_1",
+            "image_path": "Dialogue/bg_café"
+        },
+        {
+            "key": "bg_cafe_2",
+            "image_path": "Dialogue/bg_cafe2"
+        },
+        {
+            "key": "bg_cthlhu_1",
+            "image_path": "Dialogue/bg_cthlhu"
+        },
+        {
+            "key": "bg_hastur_1",
+            "image_path": "Dialogue/bg_hastur"
+        },
+        {
+            "key": "bg_land_1",
+            "image_path": "Dialogue/bg_land"
+        },
+        {
+            "key": "bg_library_1",
+            "image_path": "Dialogue/bg_library"
+        },
+        {
+            "key": "bg_library_2",
+            "image_path": "Dialogue/bg_library2"
+        },
+        {
+            "key": "bg_library_3",
+            "image_path": "Dialogue/bg_library3"
+        },
+        {
+            "key": "bg_library_4",
+            "image_path": "Dialogue/bg_library4"
+        },
+        {
+            "key": "bg_library_5",
+            "image_path": "Dialogue/bg_library5"
+        },
+        {
+            "key": "bg_nightsky_1",
+            "image_path": "Dialogue/bg_nightsky"
+        },
+        {
+            "key": "bg_plaza_1",
+            "image_path": "Dialogue/bg_plaza"
+        },
+        {
+            "key": "bg_plaza_2",
+            "image_path": "Dialogue/bg_plaza2"
+        },
+        {
+            "key": "bg_room_1",
+            "image_path": "Dialogue/bg_room"
+        },
+        {
+            "key": "bg_spire_1",
+            "image_path": "Dialogue/bg_spire"
+        },
+        {
+            "key": "bg_tuto_1",
+            "image_path": "Dialogue/bg_tuto"
+        },
+        {
+            "key": "bg_tuto_2",
+            "image_path": "Dialogue/bg_tuto2"
+        },
+        {
+            "key": "cg_chaerin",
+            "image_path": "Dialogue/cg_chaerin"
+        },
+        {
+            "key": "cg_chaerinsmile",
+            "image_path": "Dialogue/cg_chaerinsmile"
+        },
+        {
+            "key": "cg_chaerinsad",
+            "image_path": "Dialogue/cg_chaerinsad"
+        },
+        {
+            "key": "cg_chaerinanger",
+            "image_path": "Dialogue/cg_chaerinanger"
+        },
+        {
+            "key": "cg_chaerinupset",
+            "image_path": "Dialogue/cg_chaerinupset"
+        },
+        {
+            "key": "cg_daeun",
+            "image_path": "Dialogue/cg_daeun"
+        },
+        {
+            "key": "cg_daeunsmile",
+            "image_path": "Dialogue/cg_daeunsmile"
+        },
+        {
+            "key": "cg_daeunsad",
+            "image_path": "Dialogue/cg_daeunsad"
+        },
+        {
+            "key": "cg_daeunanger",
+            "image_path": "Dialogue/cg_daeunanger"
+        },
+        {
+            "key": "cg_daeunupset",
+            "image_path": "Dialogue/cg_daeunupset"
+        },
+        {
+            "key": "cg_seola",
+            "image_path": "Dialogue/cg_seola"
+        },
+        {
+            "key": "cg_seolasmile",
+            "image_path": "Dialogue/cg_seolasmile"
+        },
+        {
+            "key": "cg_seolasad",
+            "image_path": "Dialogue/cg_seolasad"
+        },
+        {
+            "key": "cg_seolaanger",
+            "image_path": "Dialogue/cg_seolaanger"
+        },
+        {
+            "key": "cg_seolaupset",
+            "image_path": "Dialogue/cg_seolaupset"
+        }
+    ]
+}

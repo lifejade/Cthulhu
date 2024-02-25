@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public bool matchToWidth;
     [HideInInspector]
     public Vector2 screenBottomLeftInWorld, screenTopRightInWorld;
+    [HideInInspector]
+    public float TextSpeed;
 
     private void Awake()
     {
@@ -41,6 +43,8 @@ public class GameManager : MonoBehaviour
             cameraHeight = (screenTopRightInWorld.y - screenBottomLeftInWorld.y) * 100;
 
             coroutineDict = new Dictionary<string, IEnumerator>();
+
+            //Screen.SetResolution(1920, 1080, true);
         }
         else if (instance != this)
         {
@@ -100,6 +104,16 @@ public class GameManager : MonoBehaviour
     public static Sprite LoadImage(string filename)
     {
         Sprite sprite = Resources.Load<Sprite>("Images/" + filename);
+        if (sprite == null)
+        {
+            throw new Exception(filename + " not found");
+        }
+        return sprite;
+    }
+
+    public static Sprite LoadGraphicResources(string filename)
+    {
+        Sprite sprite = Resources.Load<Sprite>("GraphicResources/" + filename);
         if (sprite == null)
         {
             throw new Exception(filename + " not found");

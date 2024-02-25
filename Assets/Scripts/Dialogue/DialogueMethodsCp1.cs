@@ -46,8 +46,14 @@ namespace Dialogue
             corDict.Add("ControlCharacter1", ControlCharacter1);
             corDict.Add("ControlCharacter2", ControlCharacter2);
             corDict.Add("DisappearCharacter", DisappearCharacter);
-            
-            JsonToDicts("dd");
+
+            corDict.Add("Sound1", Sound1);
+            corDict.Add("Sound2", Sound2);
+            corDict.Add("CG1", CG1);
+            corDict.Add("CG2", CG2);
+            corDict.Add("CG3", CG3);
+
+            JsonToDicts("Chapter1");
             //dialogues = JsonConvert.DeserializeObject<DialogueUnits>(GameManager.LoadResource<TextAsset>("Dialogues/" + "dialogue1").text);
             dialogues.GetReadyToUse(corDict);
         }

@@ -446,7 +446,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1392,7 +1392,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &178943984
@@ -1772,10 +1772,10 @@ RectTransform:
   m_Father: {fileID: 1438407801}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1762, y: -666}
-  m_SizeDelta: {x: 135, y: 60}
+  m_SizeDelta: {x: -1785, y: -1020}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &235462740
 MonoBehaviour:
@@ -2173,6 +2173,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259619255}
   m_CullTransparentMesh: 1
+--- !u!1 &264925273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 264925275}
+  - component: {fileID: 264925274}
+  m_Layer: 0
+  m_Name: VoiceSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &264925274
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264925273}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 545751a372aa628469a3a50ff11456a2, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &264925275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264925273}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8989023061261899812}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276658922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,10 +2869,10 @@ RectTransform:
   m_Father: {fileID: 1438407801}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1762, y: -818}
-  m_SizeDelta: {x: 135, y: 60}
+  m_SizeDelta: {x: -1785, y: -1020}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &353219282
 MonoBehaviour:
@@ -3354,7 +3482,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3890,12 +4018,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 505007600}
   m_HandleRect: {fileID: 505007599}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange_CharNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 449857304}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Scrollbar, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &449857305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4139,7 +4291,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4906,12 +5058,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1041855271}
   m_HandleRect: {fileID: 1041855270}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange_CharNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 642690530}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Scrollbar, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &642690531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6718,10 +6894,10 @@ RectTransform:
   m_Father: {fileID: 1438407801}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1762, y: -970}
-  m_SizeDelta: {x: 135, y: 60}
+  m_SizeDelta: {x: -1785, y: -1020}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1007893033
 MonoBehaviour:
@@ -7018,7 +7194,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7170,7 +7346,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8164,7 +8340,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8705,10 +8881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -9882,12 +10058,24 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2121010866}
   m_HandleRect: {fileID: 2121010865}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: AudioScrollChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1325992073}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Scrollbar, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1325992074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11020,12 +11208,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1025874663}
   m_HandleRect: {fileID: 1025874662}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange_CharNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1492038252}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Scrollbar, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1492038253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11288,10 +11500,10 @@ RectTransform:
   m_Father: {fileID: 1438407801}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1762, y: -894}
-  m_SizeDelta: {x: 135, y: 60}
+  m_SizeDelta: {x: -1785, y: -1020}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1566291135
 MonoBehaviour:
@@ -11579,12 +11791,24 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 67471211}
   m_HandleRect: {fileID: 67471210}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1604861046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11707,12 +11931,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1129503525}
   m_HandleRect: {fileID: 1129503524}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange_CharNum
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: VoiceScrollChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1623664426}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Scrollbar, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1623664427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11784,10 +12032,10 @@ RectTransform:
   m_Father: {fileID: 1438407801}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 582, y: -564}
-  m_SizeDelta: {x: 756, y: 48}
+  m_SizeDelta: {x: -1164, y: -1032}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1637475694
 MonoBehaviour:
@@ -11971,12 +12219,24 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 405338302}
   m_HandleRect: {fileID: 405338301}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769583572}
+        m_TargetAssemblyTypeName: SettingScript, Assembly-CSharp
+        m_MethodName: BGMScrollChange
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1641595632}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Scrollbar, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1641595633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12627,10 +12887,10 @@ RectTransform:
   m_Father: {fileID: 1438407801}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1762, y: -742}
-  m_SizeDelta: {x: 135, y: 60}
+  m_SizeDelta: {x: -1785, y: -1020}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1711086542
 MonoBehaviour:
@@ -13102,13 +13362,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1769583571}
+  - component: {fileID: 1769583572}
   m_Layer: 5
   m_Name: SettingUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1769583571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13136,6 +13397,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1769583572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769583570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e27e6e2c0a812458a75907293ee40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1775910076 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2783123245217147583, guid: 8bc744510e78fb2448bf291ae68ebf7e, type: 3}
@@ -15568,10 +15841,10 @@ RectTransform:
   m_Father: {fileID: 1438407801}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 378, y: -210}
-  m_SizeDelta: {x: 1167, y: 530}
+  m_SizeDelta: {x: -753, y: -550}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2081495563
 MonoBehaviour:
@@ -15771,7 +16044,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16020,6 +16293,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775910076}
     - target: {fileID: 8989023062166396146, guid: 8bc744510e78fb2448bf291ae68ebf7e, type: 3}
+      propertyPath: voiceSource
+      value: 
+      objectReference: {fileID: 264925274}
+    - target: {fileID: 8989023062166396146, guid: 8bc744510e78fb2448bf291ae68ebf7e, type: 3}
       propertyPath: bgmAudioSource
       value: 
       objectReference: {fileID: 1997740549}
@@ -16073,3 +16350,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc744510e78fb2448bf291ae68ebf7e, type: 3}
+--- !u!4 &8989023061261899812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8989023062166396150, guid: 8bc744510e78fb2448bf291ae68ebf7e, type: 3}
+  m_PrefabInstance: {fileID: 8989023061261899811}
+  m_PrefabAsset: {fileID: 0}

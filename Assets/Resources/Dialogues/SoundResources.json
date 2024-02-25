@@ -1,0 +1,12 @@
+{
+    "SoundResources": [
+        {
+            "key": "s_test_1",
+            "sound_path": "Dialogue/a_Introduce"
+        },
+        {
+            "key": "s_test_2",
+            "sound_path": "Dialogue/p_Introduce"
+        }
+    ]
+}

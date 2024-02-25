@@ -41,13 +41,21 @@ namespace Dialogue
 
         protected void JsonToDicts(string name)
         {
-            DialogueParsing parsing = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "test").text);
+            DialogueParsing parsing = new DialogueParsing();
+            parsing.stringTalk = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "StringTalk").text).stringTalk;
+            parsing.select = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "Select").text).select;
+            parsing.graphicResources = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "GraphicResources").text).graphicResources;
+            parsing.soundResource = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "SoundResources").text).soundResource;
+            parsing.localTable = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "LocalTable").text).localTable;
+
+
             dialogues = new DialogueUnits();
 
             dialogues.name = name;
             dialogues.uList = new LinkedList<DialogueUnit>();
+            dialogues.TextSpeed = GameManager.instance.TextSpeed;
 
-            foreach(DialogueParsing.StringTalk it in parsing.stringTalk)
+            foreach (DialogueParsing.StringTalk it in parsing.stringTalk)
             {
                 DialogueUnit unit = new DialogueUnit();
                 unit.id = it.id;
@@ -58,7 +66,7 @@ namespace Dialogue
                 if(it.script != "")
                 {
                     DialogueParsing.LocalTable localTable = parsing.localTable.Find(value => value.key == it.script);
-                    //만일 한국어, 경우 넣을것
+                    //TODO : 만일 한국어, 경우 넣을것
                     if(localTable != null)
                         unit.sentence = localTable.ko;
                 }
@@ -67,7 +75,7 @@ namespace Dialogue
                 if (it.speaker != "")
                 {
                     DialogueParsing.LocalTable localTable = parsing.localTable.Find(value => value.key == it.speaker);
-                    //만일 한국어, 경우 넣을것
+                    //TODO : 만일 한국어, 경우 넣을것
                     if (localTable != null)
                         unit.speaker = localTable.ko;
                 }
@@ -82,11 +90,14 @@ namespace Dialogue
                     {
                         if (unit.action != "")
                             unit.action += " | ";
-                        unit.action += "%ControlCharacter1";
+                        else
+                            unit.action += "GeneralDialogue | EnableDialogueCircle |";
+
+                        unit.action += "%CG1";
                         if (unit.param != "")
                             unit.param += " | ";
 
-                        unit.param += $"ControlCharacter1 : ControlCharacter : {"Seongho"}, {"Smile"}, {""}, -4, -1, true";
+                        unit.param += $"CG1 : ControlCharacter : {path.image_path}, {""}, {""}, -4, -1, true";
                     }
                 }
 
@@ -97,10 +108,13 @@ namespace Dialogue
                     {
                         if (unit.action != "")
                             unit.action += " | ";
-                        unit.action += "%ControlCharacter1";
+                        else
+                            unit.action += "GeneralDialogue | EnableDialogueCircle |";
+
+                        unit.action += "%CG2";
                         if (unit.param != "")
                             unit.param += " | ";
-                        unit.param += $"ControlCharacter1 : ControlCharacter : {"Seongho"}, {"Smile"},{""}, 0, -1, true";
+                        unit.param += $"CG2 : ControlCharacter : {path.image_path}, {""},{""}, 0, -1, true";
                     }
                 }
 
@@ -111,10 +125,12 @@ namespace Dialogue
                     {
                         if (unit.action != "")
                             unit.action += " | ";
-                        unit.action += "%ControlCharacter1";
+                        else
+                            unit.action += "GeneralDialogue | EnableDialogueCircle |";
+                        unit.action += "%CG3";
                         if (unit.param != "")
                             unit.param += " | ";
-                        unit.param += $"ControlCharacter1 : ControlCharacter : {"Seongho"}, {"Smile"}, {""}, 4, -1, true";
+                        unit.param += $"CG3 : ControlCharacter : {path.image_path}, {""}, {""}, 4, -1, true";
                     }
                 }
 
@@ -125,24 +141,28 @@ namespace Dialogue
                     {
                         if (unit.action != "")
                             unit.action += " | ";
-                        unit.action += "PlayAudio";
+                        else
+                            unit.action += "GeneralDialogue | EnableDialogueCircle |";
+                        unit.action += "Sound1";
                         if (unit.param != "")
                             unit.param += " | ";
-                        unit.param += $"AudioName : string : {path.sound_path}";
+                        unit.param += $"Sound1P : string : {path.sound_path}";
                     }
                 }
 
-                if(it.sound1 == "" && it.sound2 != "")
+                if(it.sound2 != "")
                 {
                     DialogueParsing.SoundResource path = parsing.soundResource.Find(value => value.key == it.sound2);
                     if (path != null)
                     {
                         if (unit.action != "")
                             unit.action += " | ";
-                        unit.action += "PlayAudio";
+                        else
+                            unit.action += "GeneralDialogue | EnableDialogueCircle |";
+                        unit.action += "Sound2";
                         if (unit.param != "")
                             unit.param += " | ";
-                        unit.param += $"AudioName : string : {path.sound_path}";
+                        unit.param += $"Sound2P : string : {path.sound_path}";
                     }
                 }
 
@@ -236,6 +256,145 @@ namespace Dialogue
 
             yield break;
         }
+
+        //
+        public IEnumerator Sound1(DialogueUnit unit)
+        {
+            string audioName = (string)unit.EtcInfo["Sound1P"];
+            if (audioName == null)
+            {
+                yield break;
+            }
+
+            AudioManager.instance.PlayVoice(audioName);
+
+            yield break;
+        }
+        public IEnumerator Sound2(DialogueUnit unit)
+        {
+            string audioName = (string)unit.EtcInfo["Sound2P"];
+            if (audioName == null)
+            {
+                yield break;
+            }
+
+            AudioManager.instance.PlayVoice(audioName);
+
+            yield break;
+        }
+
+        public IEnumerator CG1(DialogueUnit unit)
+        {
+            ControlCharacter control = (ControlCharacter)unit.EtcInfo["CG1"];
+
+
+            GameObject character;
+            character = GameObject.Find(control.name);
+            if (character == null)
+            {
+                float appearSpeed = Time.deltaTime * 3;
+                character = Instantiate(GameManager.LoadPrefab("Character"), control.position, new Quaternion(), GameObject.Find("BgrWrapper").transform);
+                character.GetComponent<SpriteRenderer>().sprite = GameManager.LoadGraphicResources(control.name);
+                character.name = control.name;
+
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.flipX = control.flip;
+                Color color = sprite.color;
+
+                float f = 0;
+                while (f < 1)
+                {
+                    sprite.color = new Color(color.r, color.g, color.b, f);
+                    f += appearSpeed;
+                    yield return null;
+                }
+            }
+            else
+            {
+                character.transform.position = control.position;
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.sprite = GameManager.LoadGraphicResources(control.name);
+                sprite.flipX = control.flip;
+            }
+
+            yield break;
+        }
+        public IEnumerator CG2(DialogueUnit unit)
+        {
+            ControlCharacter control = (ControlCharacter)unit.EtcInfo["CG2"];
+
+
+            GameObject character;
+            character = GameObject.Find(control.name);
+            if (character == null)
+            {
+                float appearSpeed = Time.deltaTime * 3;
+                character = Instantiate(GameManager.LoadPrefab("Character"), control.position, new Quaternion(), GameObject.Find("BgrWrapper").transform);
+                character.GetComponent<SpriteRenderer>().sprite =
+                GameManager.LoadGraphicResources(control.name);
+                character.name = control.name;
+
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.flipX = control.flip;
+                Color color = sprite.color;
+
+                float f = 0;
+                while (f < 1)
+                {
+                    sprite.color = new Color(color.r, color.g, color.b, f);
+                    f += appearSpeed;
+                    yield return null;
+                }
+            }
+            else
+            {
+                character.transform.position = control.position;
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.sprite = GameManager.LoadGraphicResources(control.name);
+                sprite.flipX = control.flip;
+            }
+
+            yield break;
+        }
+        public IEnumerator CG3(DialogueUnit unit)
+        {
+            ControlCharacter control = (ControlCharacter)unit.EtcInfo["CG3"];
+
+
+            GameObject character;
+            character = GameObject.Find(control.name);
+            if (character == null)
+            {
+                float appearSpeed = Time.deltaTime * 3;
+                character = Instantiate(GameManager.LoadPrefab("Character"), control.position, new Quaternion(), GameObject.Find("BgrWrapper").transform);
+                character.GetComponent<SpriteRenderer>().sprite =
+                GameManager.LoadGraphicResources(control.name);
+                character.name = control.name;
+
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.flipX = control.flip;
+                Color color = sprite.color;
+
+                float f = 0;
+                while (f < 1)
+                {
+                    sprite.color = new Color(color.r, color.g, color.b, f);
+                    f += appearSpeed;
+                    yield return null;
+                }
+            }
+            else
+            {
+                character.transform.position = control.position;
+                SpriteRenderer sprite = character.GetComponent<SpriteRenderer>();
+                sprite.sprite = GameManager.LoadGraphicResources(control.name);
+                sprite.flipX = control.flip;
+            }
+
+            yield break;
+        }
+
+
 
         public IEnumerator GeneralDialogue(DialogueUnit unit)
         {
@@ -734,6 +893,7 @@ namespace Dialogue
                 yield return new WaitForSeconds(deltaTimeDivDur);
             }
         }
+
 
 
 

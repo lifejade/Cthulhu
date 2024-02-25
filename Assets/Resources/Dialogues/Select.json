@@ -1,0 +1,31 @@
+{
+    "Select": [
+        {
+            "key": "select_00001",
+            "select_1": "Character_select_1",
+            "select_2": "",
+            "select_3": "",
+            "select_1_Script": "Character_Script_68",
+            "select_2_Script": "",
+            "select_3_Script": ""
+        },
+        {
+            "key": "select_00002",
+            "select_1": "Character_select_2_1",
+            "select_2": "Character_select_2_2",
+            "select_3": "",
+            "select_1_Script": "",
+            "select_2_Script": "Character_Script_74",
+            "select_3_Script": ""
+        },
+        {
+            "key": "select_00003",
+            "select_1": "Character_select_3_1",
+            "select_2": "Character_select_3_2",
+            "select_3": "Character_select_3_3",
+            "select_1_Script": "",
+            "select_2_Script": "",
+            "select_3_Script": "Character_Script_78"
+        }
+    ]
+}
