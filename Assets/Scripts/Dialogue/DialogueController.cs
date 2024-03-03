@@ -38,8 +38,9 @@ namespace Dialogue
 
         public void DialogueEnd()
         {
-            if(!Managers.PlayerData.Clear_MainChapter.ContainsKey(1))
-                Managers.PlayerData.Clear_MainChapter.Add(1, true);
+            int chapternum = Methods.chapternum + 1;
+            if(!Managers.PlayerData.Clear_MainChapter.ContainsKey(chapternum))
+                Managers.PlayerData.Clear_MainChapter.Add(chapternum, true);
 
             SceneChanger.instance.ChangeScene("Lobby");
         }

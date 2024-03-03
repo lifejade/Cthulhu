@@ -19,6 +19,7 @@ namespace Dialogue
         //List of coroutines using in this chapter.
         public AnimationCurve animCurve;
         public AnimationCurve animCurve2;
+        public string stringTalkName;
 
         // Start is called before the first frame update
         private void Start()
@@ -53,7 +54,7 @@ namespace Dialogue
             corDict.Add("CG2", CG2);
             corDict.Add("CG3", CG3);
 
-            JsonToDicts("Chapter1");
+            JsonToDicts(stringTalkName, 0);
             //dialogues = JsonConvert.DeserializeObject<DialogueUnits>(GameManager.LoadResource<TextAsset>("Dialogues/" + "dialogue1").text);
             dialogues.GetReadyToUse(corDict);
         }

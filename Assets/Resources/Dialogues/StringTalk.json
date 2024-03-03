@@ -4355,18 +4355,96 @@
             "speaker": "",
             "Script": "Character_Script_324"
         },
-        {
-            "id": 336,
-            "cg1": "",
-            "cg2": "cg_seola",
-            "cg3": "",
-            "sound1": "",
-            "sound2": "",
-            "action": "",
-            "param": "",
-            "select": "",
-            "speaker": "",
-            "Script": "Character_Script_325"
-        }
+      {
+        "id": 336,
+        "cg1": "",
+        "cg2": "cg_seola",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "",
+        "param": "",
+        "select": "",
+        "speaker": "",
+        "Script": "Character_Script_325"
+      },
+      {
+        "id": 337,
+        "cg1": "",
+        "cg2": "cg_seola",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "",
+        "param": "",
+        "select": "",
+        "speaker": "",
+        "Script": "Character_Script_325"
+      },
+      {
+        "id": 338,
+        "cg1": "",
+        "cg2": "cg_seola",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "",
+        "param": "",
+        "select": "",
+        "speaker": "",
+        "Script": "Character_Script_325"
+      },
+      {
+        "id": 339,
+        "cg1": "",
+        "cg2": "cg_seola",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "",
+        "param": "",
+        "select": "",
+        "speaker": "",
+        "Script": "Character_Script_325"
+      },
+      {
+        "id": 340,
+        "cg1": "",
+        "cg2": "cg_seola",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "",
+        "param": "",
+        "select": "",
+        "speaker": "",
+        "Script": "Character_Script_325"
+      },
+      {
+        "id": 341,
+        "cg1": "",
+        "cg2": "cg_seola",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "",
+        "param": "",
+        "select": "",
+        "speaker": "",
+        "Script": "Character_Script_325"
+      },
+      {
+        "id": 342,
+        "cg1": "",
+        "cg2": "cg_seola",
+        "cg3": "",
+        "sound1": "",
+        "sound2": "",
+        "action": "",
+        "param": "",
+        "select": "",
+        "speaker": "",
+        "Script": "Character_Script_325"
+      }
     ]
 }

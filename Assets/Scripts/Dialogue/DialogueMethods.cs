@@ -16,6 +16,7 @@ namespace Dialogue
        
         //Dictionary to save a coroutines that might be stopped
         private Dictionary<string, IEnumerator> coroutineDict = new Dictionary<string, IEnumerator>();
+        public int chapternum = 0;
 
         protected DialogueController controller;
         protected bool isDWrapperEnabled = false;
@@ -39,7 +40,15 @@ namespace Dialogue
             }
         }
 
-        protected void JsonToDicts(string name)
+        protected void cutStringTalkList(List<DialogueParsing.StringTalk> list, int fromidx, int toidx = -1)
+        {
+            if (toidx >= 0)
+                list.RemoveRange(toidx, list.Count - toidx);
+
+            list.RemoveRange(0, fromidx);
+        }
+
+        protected void JsonToDicts(string name, int chapternum)
         {
             DialogueParsing parsing = new DialogueParsing();
             parsing.stringTalk = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "StringTalk").text).stringTalk;
@@ -47,7 +56,32 @@ namespace Dialogue
             parsing.graphicResources = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "GraphicResources").text).graphicResources;
             parsing.soundResource = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "SoundResources").text).soundResource;
             parsing.localTable = JsonConvert.DeserializeObject<DialogueParsing>(GameManager.LoadResource<TextAsset>("Dialogues/" + "LocalTable").text).localTable;
+            this.chapternum = chapternum;
 
+            switch (chapternum)
+            {
+                case 0 :
+                    cutStringTalkList(parsing.stringTalk, 0, 337);
+                    break;
+                case 1:
+                    cutStringTalkList(parsing.stringTalk, 337, 338);
+                    break;
+                case 2:
+                    cutStringTalkList(parsing.stringTalk, 338, 339);
+                    break;
+                case 3:
+                    cutStringTalkList(parsing.stringTalk, 339, 340);
+                    break;
+                case 4:
+                    cutStringTalkList(parsing.stringTalk, 340, 341);
+                    break;
+                case 5:
+                    cutStringTalkList(parsing.stringTalk, 341, 342);
+                    break;
+                default:
+                    cutStringTalkList(parsing.stringTalk, 342, 343);
+                    break;
+            }
 
             dialogues = new DialogueUnits();
 

@@ -28,6 +28,10 @@ public class CheckClearChapterSeq : MonoBehaviour
             if (chapter_blackout.Count > it.Key && chapter_blackout[it.Key] != null)
                 chapter_blackout[it.Key - 1].SetActive(!it.Value);
         }
-        chapter_blackout[maxCleared].SetActive(false);
+        if(chapter_blackout.Count > maxCleared)
+            chapter_blackout[maxCleared].SetActive(false);
+        else
+            chapter_blackout[chapter_blackout.Count - 1].SetActive(false);
+
     }
 }

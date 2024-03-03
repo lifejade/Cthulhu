@@ -727,6 +727,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  stringTalkName: Chapter1
 --- !u!114 &310898445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3719,6 +3720,7 @@ MonoBehaviour:
   matchToWidth: 0
   screenBottomLeftInWorld: {x: 0, y: 0}
   screenTopRightInWorld: {x: 0, y: 0}
+  TextSpeed: 0
 --- !u!4 &1345268993
 Transform:
   m_ObjectHideFlags: 0
@@ -3776,6 +3778,10 @@ MonoBehaviour:
   bgmAudioSource: {fileID: 291816152}
   audioSource: {fileID: 623030095}
   voiceSource: {fileID: 1291493176}
+  char1_voice: 1
+  char2_voice: 1
+  char3_voice: 1
+  etc_voice: 1
 --- !u!1 &1361957701
 GameObject:
   m_ObjectHideFlags: 0
